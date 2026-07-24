@@ -8,7 +8,7 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - **Official organization/public website name:** American West Educational Center
 - **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** Day 0 shared shell plus complete structural Home, About Us, Contact, Business Operations, and News pages. Operations and News use typed local collections, reusable listing/detail components, and professional empty states; both collections currently contain no records.
+- **State:** Day 0 foundation and structural shell complete. Home, About Us, Contact, Business Operations, News, both typed detail architectures, and the shared not-found experience are implemented. Operations and News collections remain intentionally empty pending approved Day 1 content.
 
 ## Runtime and package management
 
@@ -32,7 +32,8 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 
 ## Existing application foundation
 
-- `src/app/layout.tsx` — project metadata and the shared header, main landmark, and footer layout
+- `src/app/layout.tsx` — project metadata, keyboard skip link, and the shared header, main landmark, and footer layout
+- `src/app/not-found.tsx` — site-level not-found presentation using the root shell and shared page container
 - `src/app/globals.css` — design tokens and global base styles
 - `src/app/page.tsx` — structural homepage with hero, organization introduction, focus areas, Operations and News previews, and a contact call-to-action
 - `src/app/favicon.ico` — generated favicon retained pending future branding
@@ -51,13 +52,14 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - `/operations/[slug]` — statically generated operation detail route driven by `src/content/operations.ts`; unknown or unpublished slugs return not found
 - `/news` — complete structural News landing page with introduction, collection area, empty state, and About Us call-to-action
 - `/news/[slug]` — statically generated semantic article route driven by `src/content/news.ts`; unknown or unpublished slugs return not found
+- Unknown static and dynamic paths — shared site-level not-found page with Home and Contact links
 
 All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only slugs in the corresponding local collection can generate pages. Both collections are intentionally empty during Day 0, so no detail pages are currently generated.
 
 ## Shared components
 
 - `src/components/layout/SiteHeader.tsx` — site-name home link plus responsive navigation
-- `src/components/layout/DesktopNavigation.tsx` — desktop primary navigation
+- `src/components/layout/DesktopNavigation.tsx` — desktop primary navigation with current-page state
 - `src/components/layout/MobileNavigation.tsx` — client-side mobile menu with semantic toggle state, Escape closing, link-selection closing, and focus management
 - `src/components/layout/SiteFooter.tsx` — shared descriptive notice, footer navigation, and copyright line
 - `src/components/sections/PageIntro.tsx` — shared neutral placeholder-page introduction
@@ -92,11 +94,15 @@ The following directory is retained with `.gitkeep` and contains no implementati
 
 `BLUEPRINT.md` remains the source for future approved content and later product work. No CMS, database, authentication, analytics, email integration, or deployment configuration has been added.
 
+## Client-content preparation
+
+- `CLIENT_CONTENT_INTAKE.md` — Day 1 checklist for approved identity, language, page copy, Operations, News, contact details, images and permissions, legal material, technical decisions, and final approval status
+
 ## Current verification status
 
-During the 2026-07-24 Operations and News structural session:
+During the final 2026-07-24 Day 0 audit:
 
 - `pnpm lint` passed with no ESLint findings when run with the repository's expected Node 24 runtime on `PATH`.
-- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all landing routes plus `/_not-found`; the two empty collection detail templates were recognized as SSG routes.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all landing routes plus the custom `/_not-found`; the two empty collection detail templates were recognized as SSG routes.
 - The first sandboxed build attempt failed because Turbopack was not permitted to bind a local port; this was an execution-environment restriction rather than an application error.
 - Final diff checks and browser-based responsive and interaction checks are recorded in `DAILY_LOG.md`.

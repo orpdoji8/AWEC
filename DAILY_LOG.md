@@ -318,3 +318,66 @@ Both routes use their local collection for `generateStaticParams`, set `dynamicP
 ### Suggested next step
 
 Perform a final Day 0 cross-page accessibility and documentation audit, then prepare a client-content intake checklist for Day 1 without beginning client-content integration.
+
+## 2026-07-24 — Final Day 0 quality audit and closeout
+
+### Goal
+
+Close Day 0 by auditing every implemented route and shared pattern, correcting only verified content-independent issues, adding a consistent site-level not-found experience, synchronizing project documentation, and preparing the client-content intake checklist for Day 1.
+
+### Audit work
+
+- Reviewed every route, shared component, local content file, shared type, root layout, global style, repository document, Git status, and recent commit history.
+- Audited headings, landmarks, metadata, links, spacing, container behavior, focus treatment, navigation state, mobile-menu behavior, footer layout, empty states, temporary notices, disabled-form communication, unknown-slug handling, responsive wrapping, and horizontal overflow.
+- Confirmed that the Operations and News models require meaningful image alt text and that News detail dates use semantic `<time>` elements.
+- Confirmed that global reduced-motion handling disables nonessential transition and animation duration for users who request reduced motion.
+- Calculated representative text/background contrast ratios from the design tokens; normal text combinations ranged from 4.78:1 to 15.02:1.
+
+### Issues discovered
+
+- Desktop primary navigation did not expose the current route through `aria-current` even though mobile navigation did.
+- The root layout already provided a `main-content` target but did not expose a skip link, and the target was not explicitly focusable.
+- Unknown routes used the framework default instead of a project-consistent not-found presentation.
+- The Blueprint described the milestone and future work but did not explicitly name the Day 0, Day 1, and Day 2 delivery phases requested for closeout.
+
+No broken internal links, heading-order failures, duplicate primary headings, unsupported content, dependency changes, form activation, horizontal overflow, or application console errors were found.
+
+### Corrections made
+
+- Added current-page state to desktop primary navigation using the existing pathname pattern.
+- Added a visible-on-focus skip link and a programmatically focusable main landmark.
+- Added the concise delivery-phase section to `BLUEPRINT.md` without rewriting unrelated product direction.
+- Updated the factual codebase map and README to identify Day 0 as complete and Day 1 content as pending approval.
+
+### Not-found page
+
+- Added `src/app/not-found.tsx` with project metadata, one clear `h1`, neutral explanatory wording, and links to Home and Contact.
+- Reused the root shell, `PageContainer`, design tokens, focus treatment, and established button language without adding another header or footer.
+- Verified the same presentation for an unknown static path and unknown Operations and News slugs.
+
+### Client intake checklist
+
+- Added `CLIENT_CONTENT_INTAKE.md` covering organization identity, languages, every page, individual Operations and News records, contact channels, image permissions, legal/privacy material, technical ownership, and final approvals.
+- Included explicit confirmation requirements for YES-related, partnership, sponsorship, administration, endorsement, and official-affiliation claims.
+- Left all client answers blank and identified `meixiedu` as the continuing technical project and expected future domain identity.
+
+### Verification performed
+
+- `pnpm lint` passed with no ESLint findings.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation.
+- Browser checks covered `/`, `/about`, `/contact`, `/operations`, `/news`, `/this-page-does-not-exist`, `/operations/not-a-real-operation`, and `/news/not-a-real-article` at approximately 375, 768, and 1280 pixels.
+- Confirmed one `h1` per tested page, logical heading progression, shared landmarks, accurate page metadata, desktop current-page state, mobile-menu focus movement, Escape closing and focus return, visible dark-surface focus indication, link-selection closing, disabled form state and labels, truthful collection empty states, shared not-found rendering, full-width header/main/footer behavior, no horizontal overflow, and no application console warnings or errors.
+- Final `git status --short`, `git diff --stat`, and `git diff --check` results are recorded in the completion handoff.
+
+### Day 0 completion decision
+
+Day 0 is complete. All planned structural routes and templates exist; shared navigation, shell, responsive behavior, empty states, not-found handling, centralized temporary content, documentation, and client-input preparation meet the milestone definition without implying client approval.
+
+### Deferred Day 1 work
+
+- Client-approved copy, identity details, branding, images, Operations records, News articles, contact channels, form delivery/privacy decisions, and legal material remain unimplemented.
+- Real collection cards, detail pages, image crops, long approved titles, bilingual behavior, and any production integrations require review when actual approved material exists.
+
+### Suggested next step
+
+Review `CLIENT_CONTENT_INTAKE.md` with the client, record approvals, and define the first narrow Day 1 content-integration task.

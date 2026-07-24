@@ -599,6 +599,14 @@ These are future possibilities only and are not part of the current scope.
 
 ---
 
-## 17. Current Guiding Principle
+## 17. Delivery Phases
+
+- **Day 0 — Foundation and Structural Shell:** Establish the repository, reusable site shell, structural routes, local content architecture, accessibility baseline, and project documentation without implying unapproved client content.
+- **Day 1 — Client Content and Brand Integration:** Replace temporary copy and populate routes only with client-approved identity, content, imagery, contact details, and branding.
+- **Day 2 — Production, Deployment, and Handoff:** Complete approved production integrations, deployment configuration, launch checks, documentation, and ownership handoff.
+
+---
+
+## 18. Current Guiding Principle
 
 > Build a clean, reusable, and trustworthy website shell first. Let approved client content determine the final operations, news, and program details later.

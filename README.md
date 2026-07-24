@@ -4,7 +4,7 @@ meixiedu is the technical project and repository for the American West Education
 
 ## Current status
 
-The shared website shell and all five Day 0 structural landing pages are implemented with responsive navigation and a provisional dark-green visual system. Business Operations and News now have typed local collections, reusable listing/detail routes, and professional empty states; both collections intentionally remain empty until approved records are available. Final branding and client-approved organization details remain future work.
+Day 0 — Foundation and Structural Shell is complete. The shared shell, all five structural landing pages, typed Operations and News detail architectures, professional empty states, and a site-level not-found page are implemented with a provisional dark-green visual system. Client-approved wording, records, branding, images, contact details, and legal material are still pending; Day 1 will replace temporary content and populate Operations and News only after approval.
 
 ## Confirmed stack
 
@@ -66,6 +66,7 @@ pnpm build
 - `DEV_PROCESS.md` — repeatable developer, ChatGPT, and Codex workflow
 - `CODEBASE_MAP.md` — factual map of files and implementation currently present
 - `DAILY_LOG.md` — chronological development-session record
+- `CLIENT_CONTENT_INTAKE.md` — structured checklist for gathering and approving Day 1 client material
 
 ## Repository structure
 
@@ -76,6 +77,7 @@ src/components/          Shared shell, page-section, Operations, and News compon
 src/content/             Shared identity, temporary page copy, and empty typed collections
 src/lib/                 Empty area for future utilities
 src/types/               Shared local content types
+CLIENT_CONTENT_INTAKE.md Day 1 client-material and approval checklist
 BLUEPRINT.md             Approved product direction
 AGENTS.md                Agent instructions
 DEV_PROCESS.md           Development workflow
@@ -89,4 +91,4 @@ Do not invent company history, services, statistics, testimonials, partners, cer
 
 ## Next step
 
-Complete a final cross-page Day 0 responsive, accessibility, and documentation review, then prepare a client-content intake checklist for Day 1 without adding unapproved content.
+Gather client responses using `CLIENT_CONTENT_INTAKE.md`, confirm approvals, and define the first narrow Day 1 content-integration task.
