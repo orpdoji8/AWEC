@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page-background: #f6f7f3;
+  --text-primary: #18231f;
+  --text-muted: #59655f;
+  --surface: #ffffff;
+  --surface-subtle: #e9efeb;
+  --border: #cfd9d3;
+  --accent: #2f6b55;
+  --accent-hover: #245542;
+  --accent-foreground: #ffffff;
+  --focus-ring: #2f6b55;
+  --focus-ring-on-dark: #b9e2cc;
+  --chrome-background: #163f32;
+  --chrome-background-hover: #0f3228;
+  --chrome-text: #f7faf8;
+  --chrome-text-muted: #d7e4dd;
+  --chrome-border: #527567;
+  --chrome-action: #f1f6f2;
+  --chrome-action-hover: #dcebe2;
+  --chrome-action-text: #163f32;
+  --content-max: 72rem;
+  --page-padding: clamp(1rem, 4vw, 2rem);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--page-background);
+  --color-foreground: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-focus-ring: var(--focus-ring);
+  --color-focus-ring-on-dark: var(--focus-ring-on-dark);
+  --color-chrome-background: var(--chrome-background);
+  --color-chrome-background-hover: var(--chrome-background-hover);
+  --color-chrome-text: var(--chrome-text);
+  --color-chrome-text-muted: var(--chrome-text-muted);
+  --color-chrome-border: var(--chrome-border);
+  --color-chrome-action: var(--chrome-action);
+  --color-chrome-action-hover: var(--chrome-action-hover);
+  --color-chrome-action-text: var(--chrome-action-text);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  background: var(--page-background);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.site-chrome :focus-visible {
+  outline-color: var(--focus-ring-on-dark);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 24%, white);
+  color: var(--text-primary);
+}
+
+.page-container {
+  width: min(100%, calc(var(--content-max) + (2 * var(--page-padding))));
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

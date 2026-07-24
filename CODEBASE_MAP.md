@@ -1,12 +1,14 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-07-23. The planned architecture in `BLUEPRINT.md` is identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-07-24. The planned architecture in `BLUEPRINT.md` is identified separately and must not be treated as implemented.
 
 ## Project identity
 
 - **Name:** meixiedu
+- **Official organization/public website name:** American West Educational Center
+- **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** initialized Create Next App starter plus Day 0 documentation and empty organizational directories. No project-specific website shell or client content is implemented.
+- **State:** initial shared visual foundation and website shell. The site has a project-specific root layout, shared navigation and footer, a minimal homepage preview, and neutral placeholder pages. Full page content and feature-specific detail routes are not implemented.
 
 ## Runtime and package management
 
@@ -14,6 +16,7 @@ This file describes the repository as it exists on 2026-07-23. The planned archi
 - pnpm 11.7.0 is pinned by the `packageManager` field in `package.json`.
 - `pnpm-lock.yaml` records installed dependency resolution.
 - `pnpm-workspace.yaml` preserves build-script approval settings for `sharp` and `unrs-resolver`.
+- No dependency was added for the shared-shell implementation.
 
 ## Confirmed framework and styling
 
@@ -22,64 +25,63 @@ This file describes the repository as it exists on 2026-07-23. The planned archi
 - TypeScript with strict checking and the `@/*` to `src/*` path alias
 - Tailwind CSS 4 through `@tailwindcss/postcss`
 - ESLint 9 with Next.js Core Web Vitals and TypeScript configurations
-- Generated global CSS variables, light/dark color rules, Tailwind import, and starter utility classes
-- Geist and Geist Mono are loaded by the generated root layout; the generated body rule currently specifies an Arial/Helvetica fallback stack
+- Replaceable CSS custom properties for page, text, surface, border, accent, focus, width, spacing, and typography values
+- A provisional dark-green header/footer and green interactive accent system, centralized through CSS custom properties
+- A system sans-serif font stack; no external font download or `next/font` integration
+- Global box sizing, focus-visible treatment, selection styling, responsive page-container sizing, and reduced-motion handling
 
-## Existing configuration and foundation files
+## Existing application foundation
 
-- `.gitignore` — generated ignore rules
-- `.nvmrc` — Node major version
-- `package.json` and `pnpm-lock.yaml` — scripts, dependencies, and resolution
-- `pnpm-workspace.yaml` — pnpm build-script policy
-- `tsconfig.json` — TypeScript configuration
-- `eslint.config.mjs` — ESLint configuration
-- `next.config.ts` — currently contains no project-specific Next.js options
-- `postcss.config.mjs` — Tailwind PostCSS plugin
-- `BLUEPRINT.md` — approved product direction and planned architecture
-- `AGENTS.md`, `DEV_PROCESS.md`, `CODEBASE_MAP.md`, and `DAILY_LOG.md` — Day 0 operating documentation
-- `README.md` — project overview and local setup
+- `src/app/layout.tsx` — project metadata and the shared header, main landmark, and footer layout
+- `src/app/globals.css` — design tokens and global base styles
+- `src/app/page.tsx` — minimal homepage preview with neutral introductory content and links to About and Contact
+- `src/app/favicon.ico` — generated favicon retained pending future branding
+- `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
 
 ## Current routes
 
-`src/app/` contains only generated starter files:
+- `/` — minimal homepage preview
+- `/about` — neutral About Us placeholder
+- `/contact` — neutral Contact placeholder; no contact details or form
+- `/operations` — neutral Business Operations placeholder; no cards or detail routes
+- `/news` — neutral News placeholder; no cards or detail routes
 
-- `layout.tsx` — generated root layout and generic Create Next App metadata
-- `page.tsx` — generated starter homepage at `/`
-- `globals.css` — generated global Tailwind and color setup
-- `favicon.ico` — generated favicon
+All current routes are statically generated. Operation and news detail routes described in `BLUEPRINT.md` remain planned only.
 
-There are no About, Contact, Operations, News, or dynamic routes. Shared navigation, a header, a footer, and project-specific page shells have not been implemented.
+## Shared components
+
+- `src/components/layout/SiteHeader.tsx` — site-name home link plus responsive navigation
+- `src/components/layout/DesktopNavigation.tsx` — desktop primary navigation
+- `src/components/layout/MobileNavigation.tsx` — client-side mobile menu with semantic toggle state, Escape closing, link-selection closing, and focus management
+- `src/components/layout/SiteFooter.tsx` — shared descriptive notice, footer navigation, and copyright line
+- `src/components/sections/PageIntro.tsx` — shared neutral placeholder-page introduction
+- `src/components/ui/PageContainer.tsx` — shared constrained responsive container primitive
 
 ## Current public assets
 
-`public/` contains the generated starter SVG assets: `file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, and `window.svg`.
+`public/` contains the generated starter SVG assets: `file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, and `window.svg`. They are not used by the current pages.
 
-`public/images/` and `public/documents/` are empty organizational directories retained with `.gitkeep`. No company images, documents, logo, or visual content exist.
+`public/images/` and `public/documents/` are empty organizational directories retained with `.gitkeep`. No company images, documents, logo, or final visual branding exist.
 
-## Current organizational directories
+## Empty organizational directories
 
-The following empty directories are retained with `.gitkeep` and contain no implementation:
+The following directories are retained with `.gitkeep` and contain no implementation:
 
-- `src/components/layout/`
-- `src/components/sections/`
-- `src/components/operations/`
-- `src/components/news/`
 - `src/components/forms/`
-- `src/components/ui/`
-- `src/content/`
+- `src/components/news/`
+- `src/components/operations/`
 - `src/lib/`
 - `src/types/`
 
-No components, local content records, utilities, or project types have been created.
-
 ## Planned architecture only
 
-`BLUEPRINT.md` proposes Home, About, Contact, Operations, and News routes; operation and news detail routes; reusable layout and feature components; and local content files. These are future plans, not current files or implemented features.
+`BLUEPRINT.md` proposes fully developed Home, About, and Contact pages; operation and news detail routes; local operation and news content files; and feature-specific reusable components. These remain future plans. No CMS, database, authentication, analytics, email integration, or deployment configuration has been added.
 
 ## Current verification status
 
-During the 2026-07-23 Day 0 session:
+During the resumed 2026-07-24 shared-shell session:
 
-- `pnpm lint` passed.
-- `pnpm build` passed with network access, including compilation, TypeScript checking, page-data collection, and static generation for `/` and `/_not-found`. The initial restricted-network attempt failed because the generated `next/font` setup could not fetch Geist and Geist Mono from Google Fonts; no application change was needed.
-- `git status --short` and `git diff --stat` were run after the documentation update; see `DAILY_LOG.md` for the final working-tree summary.
+- `pnpm lint` passed with no ESLint findings when run with the repository's expected Node 24 runtime on `PATH`.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all five current routes plus `/_not-found`.
+- The first sandboxed build attempt failed because Turbopack was not permitted to bind a local port; this was an execution-environment restriction rather than an application error.
+- Final diff checks and browser-based responsive and interaction checks are recorded in `DAILY_LOG.md`.

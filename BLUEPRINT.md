@@ -3,6 +3,8 @@
 ## 1. Project Identity
 
 **Project name:** meixiedu
+**Official organization/public website name:** American West Educational Center
+**Expected future domain identity:** meixiedu
 **Project type:** Informational corporate website
 **Primary purpose:** Present the company, explain its role in international education and overseas opportunities, share future operations and news, and provide a clear way for visitors to make contact.
 
@@ -12,7 +14,7 @@ The company works with educational resources and overseas opportunities involvin
 
 ## 2. Current Product Vision
 
-meixiedu will begin as a clean, professional, and welcoming informational website.
+American West Educational Center will begin with a clean, professional, and welcoming informational website. The technical project and expected future domain identity remain `meixiedu`.
 
 The visual direction should reflect:
 
@@ -472,7 +474,7 @@ Each entry should include:
 
 ### Milestone: Initial Website Shell
 
-The immediate goal is to create a functional and visually coherent shell for meixiedu.
+The immediate goal is to create a functional and visually coherent American West Educational Center website shell within the `meixiedu` project.
 
 #### Included
 

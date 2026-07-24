@@ -1,10 +1,10 @@
 # meixiedu
 
-meixiedu is the repository for a corporate informational website focused on presenting the company, its future work in international education and overseas opportunities, news, and contact information. Company and program details remain subject to client approval.
+meixiedu is the technical project and repository for the American West Educational Center public website. The expected future domain identity remains `meixiedu`. The website will present approved information about the organization, its future work in international education and overseas opportunities, news, and contact options. Company and program details remain subject to client approval.
 
 ## Current status
 
-The project is in Day 0 foundation setup. Create Next App has generated a runnable homepage, but the meixiedu website shell, project-specific routes, shared navigation, components, content, and visual design have not been implemented.
+The shared website shell is implemented with a minimal homepage preview, neutral placeholder routes, responsive navigation, and a provisional dark-green visual system. Full page content, operation and news detail routes, final branding, and client-approved organization details remain future work.
 
 ## Confirmed stack
 
@@ -18,7 +18,7 @@ The project is in Day 0 foundation setup. Create Next App has generated a runnab
 
 ## Current scope
 
-The repository currently provides the generated application foundation, project operating documentation, and empty directories for future components, content, utilities, types, images, and documents. The approved product direction is documented in `BLUEPRINT.md`.
+The repository currently provides the application foundation, shared layout components, local site configuration, global design tokens, project operating documentation, and empty organizational areas for future feature-specific work. The approved product direction is documented in `BLUEPRINT.md`.
 
 Explicitly excluded from the current architecture are a CMS, database, authentication, client dashboard, payment system, customer portal, and unapproved third-party integrations. These must not be added without an approved scope change.
 
@@ -71,9 +71,9 @@ pnpm build
 
 ```text
 public/                  Generated assets; empty images/ and documents/ areas
-src/app/                 Generated App Router root layout, homepage, and globals
-src/components/          Empty organizational areas for future components
-src/content/             Empty area for future approved local content
+src/app/                 Shared root layout, homepage, and placeholder routes
+src/components/          Shared shell components plus empty feature areas
+src/content/             Shared public identity and navigation configuration
 src/lib/                 Empty area for future utilities
 src/types/               Empty area for future project types
 BLUEPRINT.md             Approved product direction
@@ -85,8 +85,8 @@ DAILY_LOG.md             Session history
 
 ## Content accuracy
 
-Do not invent company history, services, statistics, testimonials, partners, certifications, team members, or program details. Do not claim that meixiedu administers, sponsors, partners with, or holds an official role in the YES program without client-confirmed wording. Planned routes and content in the blueprint are not implemented merely because they are documented.
+Do not invent company history, services, statistics, testimonials, partners, certifications, team members, or program details. Do not claim that American West Educational Center administers, sponsors, partners with, or holds an official role in the YES program without client-confirmed wording. Planned routes and content in the blueprint are not implemented merely because they are documented.
 
 ## Next step
 
-Review and approve the Day 0 foundation, then define a separate, narrow task for the initial shared website shell. That task should preserve the content safeguards and avoid presenting planned company or program information as confirmed.
+Review and approve the public identity and provisional green visual direction, then define a separate narrow task for one full page using client-confirmed content only.
