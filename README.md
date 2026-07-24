@@ -4,7 +4,7 @@ meixiedu is the technical project and repository for the American West Education
 
 ## Current status
 
-The shared website shell and Day 0 structural Home, About Us, and Contact pages are implemented with centralized temporary copy, responsive navigation, a disabled contact-form preview, and a provisional dark-green visual system. Operations and News structures, final branding, and client-approved organization details remain future work.
+The shared website shell and all five Day 0 structural landing pages are implemented with responsive navigation and a provisional dark-green visual system. Business Operations and News now have typed local collections, reusable listing/detail routes, and professional empty states; both collections intentionally remain empty until approved records are available. Final branding and client-approved organization details remain future work.
 
 ## Confirmed stack
 
@@ -71,11 +71,11 @@ pnpm build
 
 ```text
 public/                  Generated assets; empty images/ and documents/ areas
-src/app/                 Shared layout, three structural pages, and placeholders
-src/components/          Shared shell components plus empty feature areas
-src/content/             Shared identity, navigation, and temporary page copy
+src/app/                 Shared layout, five structural pages, and two dynamic detail routes
+src/components/          Shared shell, page-section, Operations, and News components
+src/content/             Shared identity, temporary page copy, and empty typed collections
 src/lib/                 Empty area for future utilities
-src/types/               Empty area for future project types
+src/types/               Shared local content types
 BLUEPRINT.md             Approved product direction
 AGENTS.md                Agent instructions
 DEV_PROCESS.md           Development workflow
@@ -89,4 +89,4 @@ Do not invent company history, services, statistics, testimonials, partners, cer
 
 ## Next step
 
-Review the Day 0 Home, About, and Contact structures, then implement the approved Operations and News listing/detail shells without inventing content.
+Complete a final cross-page Day 0 responsive, accessibility, and documentation review, then prepare a client-content intake checklist for Day 1 without adding unapproved content.

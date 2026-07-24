@@ -236,3 +236,85 @@ Complete professional structural versions of Home, About Us, and Contact using n
 ### Suggested next task
 
 Create the Operations and News listing/detail shells without adding fake operation records, news articles, or unapproved program claims.
+
+## 2026-07-24 — Day 0 Operations and News structures
+
+### Task goal
+
+Complete the remaining content-independent Day 0 structure for Business Operations and News, including typed empty collections, reusable listing and detail presentations, static detail routes, and professional empty states.
+
+### Work completed
+
+- Replaced both route placeholders with complete structural landing pages using the approved shell, spacing, typography, card language, notices, and call-to-action patterns.
+- Added local typed content structures for Operations and News without adding fictional records.
+- Added reusable collection cards and lists that will render approved records later and show shared text-based empty states now.
+- Added reusable detail presentations with conditional optional sections, back navigation, image alt-text requirements, semantic dates, and semantic article markup.
+- Added `/operations/[slug]` and `/news/[slug]` routes with generated metadata, local static parameters, and proper not-found handling for unknown content.
+- Reviewed the existing Home previews and retained them because their neutral wording and links remain accurate.
+
+### Files created
+
+- `src/app/operations/[slug]/page.tsx`
+- `src/app/news/[slug]/page.tsx`
+- `src/components/operations/OperationCard.tsx`
+- `src/components/operations/OperationList.tsx`
+- `src/components/operations/OperationDetail.tsx`
+- `src/components/news/NewsCard.tsx`
+- `src/components/news/NewsList.tsx`
+- `src/components/news/NewsArticle.tsx`
+- `src/components/sections/CollectionEmptyState.tsx`
+- `src/components/ui/BackLink.tsx`
+- `src/content/operations.ts`
+- `src/content/news.ts`
+- `src/types/content.ts`
+
+### Files modified
+
+- `src/app/operations/page.tsx`
+- `src/app/news/page.tsx`
+- `CODEBASE_MAP.md`
+- `DAILY_LOG.md`
+- `README.md`
+
+### Data and content structures
+
+- The Operations model supports a slug, title, summary, optional hero image, overview, intended audience, detail sections, gallery, and contact call-to-action.
+- The News model supports a slug, title, publication date, summary, optional featured image, article sections, gallery, and explicit related-article slugs.
+- Shared image and text-section types keep both collections local, typed, JSX-free, and straightforward to edit.
+- `operations` and `newsArticles` are explicitly typed readonly arrays and intentionally contain zero records.
+
+### Routes created
+
+- `/operations/[slug]`
+- `/news/[slug]`
+
+Both routes use their local collection for `generateStaticParams`, set `dynamicParams = false`, derive metadata only from matched records, and call `notFound()` when a record is missing.
+
+### Empty-state strategy
+
+- The landing pages remain visually complete through introductions, restrained temporary-content notices, bordered collection areas, supporting context, and existing calls to action.
+- A shared empty-state component communicates that approved information will appear later without fake cards, counts, categories, dates, images, or decorative placeholders.
+
+### Decisions made
+
+- Used direct arrays and small helper functions rather than a CMS abstraction, schema library, repository class, Markdown pipeline, or generic content engine.
+- Kept related News links explicit through stored slugs rather than introducing an algorithm.
+- Required meaningful alt text in the shared image type and rendered optional detail sections only when their content exists.
+- Added no dependencies, images, program claims, contact details, affiliations, or client content.
+
+### Verification performed
+
+- `pnpm lint` passed with no ESLint findings.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation. Both detail templates were recognized as SSG routes while generating no record pages from the empty arrays.
+- The first sandboxed build attempt was blocked by Turbopack's local-port restriction rather than an application error.
+- Responsive route, unknown-slug, navigation, overflow, heading, and console checks are recorded in the completion handoff.
+- Final `git status --short`, `git diff --stat`, and `git diff --check` results are recorded in the completion handoff.
+
+### Remaining Day 0 work
+
+- Conduct a final human cross-page visual and content-safety review before staging or committing.
+- A reusable site-level not-found presentation and a client-content intake checklist may be considered as separate, narrow Day 0 tasks; route-specific loading or error UI is not currently necessary for static local content.
+
+### Suggested next step
+
+Perform a final Day 0 cross-page accessibility and documentation audit, then prepare a client-content intake checklist for Day 1 without beginning client-content integration.

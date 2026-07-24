@@ -8,7 +8,7 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - **Official organization/public website name:** American West Educational Center
 - **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** Day 0 shared shell plus complete structural Home, About Us, and Contact pages using centralized temporary copy. Operations and News remain neutral route placeholders; feature-specific listing and detail structures are not implemented.
+- **State:** Day 0 shared shell plus complete structural Home, About Us, Contact, Business Operations, and News pages. Operations and News use typed local collections, reusable listing/detail components, and professional empty states; both collections currently contain no records.
 
 ## Runtime and package management
 
@@ -38,16 +38,21 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - `src/app/favicon.ico` — generated favicon retained pending future branding
 - `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
 - `src/content/pages.ts` — clearly marked temporary Home, About, and Contact content for Day 0 review and Day 1 replacement
+- `src/content/operations.ts` — typed, currently empty Operations collection, landing-page copy, slug lookup, and static-parameter helper
+- `src/content/news.ts` — typed, currently empty News collection, landing-page copy, slug lookup, static-parameter helper, and explicit related-article resolution
+- `src/types/content.ts` — small shared image and text-section types used by both local collections
 
 ## Current routes
 
 - `/` — complete Day 0 structural homepage with neutral, temporary content
 - `/about` — complete Day 0 organization-information structure with overview, direction, focus, background, team, and contact areas
 - `/contact` — complete Day 0 contact structure with a disabled form preview, future-channel placeholders, and response-procedure notice; no delivery behavior or real contact details
-- `/operations` — neutral Business Operations placeholder; no cards or detail routes
-- `/news` — neutral News placeholder; no cards or detail routes
+- `/operations` — complete structural Business Operations landing page with introduction, collection area, empty state, supporting explanation, and contact call-to-action
+- `/operations/[slug]` — statically generated operation detail route driven by `src/content/operations.ts`; unknown or unpublished slugs return not found
+- `/news` — complete structural News landing page with introduction, collection area, empty state, and About Us call-to-action
+- `/news/[slug]` — statically generated semantic article route driven by `src/content/news.ts`; unknown or unpublished slugs return not found
 
-All current routes are statically generated. Operation and news detail routes described in `BLUEPRINT.md` remain planned only.
+All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only slugs in the corresponding local collection can generate pages. Both collections are intentionally empty during Day 0, so no detail pages are currently generated.
 
 ## Shared components
 
@@ -59,7 +64,15 @@ All current routes are statically generated. Operation and news detail routes de
 - `src/components/sections/SectionIntro.tsx` — shared section eyebrow, heading, and description treatment
 - `src/components/sections/TemporaryContentNotice.tsx` — restrained notice for content awaiting approval
 - `src/components/sections/CallToAction.tsx` — shared green closing call-to-action section
+- `src/components/sections/CollectionEmptyState.tsx` — shared text-based empty state for approved-content collections
 - `src/components/forms/ContactFormShell.tsx` — semantic but fully disabled inquiry-form preview with no submission behavior
+- `src/components/operations/OperationCard.tsx` — future-ready operation summary and detail link
+- `src/components/operations/OperationList.tsx` — semantic operation list with the current empty-state fallback
+- `src/components/operations/OperationDetail.tsx` — conditional detail presentation for approved operation content
+- `src/components/news/NewsCard.tsx` — future-ready article summary with a semantic publication date
+- `src/components/news/NewsList.tsx` — semantic article list with the current empty-state fallback
+- `src/components/news/NewsArticle.tsx` — semantic article detail presentation with optional media and related links
+- `src/components/ui/BackLink.tsx` — reusable return navigation for collection detail pages
 - `src/components/ui/FeatureCard.tsx` — shared restrained card for temporary page information
 - `src/components/ui/PageContainer.tsx` — shared constrained responsive container primitive
 
@@ -71,22 +84,19 @@ All current routes are statically generated. Operation and news detail routes de
 
 ## Empty organizational directories
 
-The following directories are retained with `.gitkeep` and contain no implementation:
+The following directory is retained with `.gitkeep` and contains no implementation:
 
-- `src/components/news/`
-- `src/components/operations/`
 - `src/lib/`
-- `src/types/`
 
 ## Planned architecture only
 
-`BLUEPRINT.md` proposes fully developed Home, About, and Contact pages; operation and news detail routes; local operation and news content files; and feature-specific reusable components. These remain future plans. No CMS, database, authentication, analytics, email integration, or deployment configuration has been added.
+`BLUEPRINT.md` remains the source for future approved content and later product work. No CMS, database, authentication, analytics, email integration, or deployment configuration has been added.
 
 ## Current verification status
 
-During the resumed 2026-07-24 shared-shell session:
+During the 2026-07-24 Operations and News structural session:
 
 - `pnpm lint` passed with no ESLint findings when run with the repository's expected Node 24 runtime on `PATH`.
-- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all five current routes plus `/_not-found`.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all landing routes plus `/_not-found`; the two empty collection detail templates were recognized as SSG routes.
 - The first sandboxed build attempt failed because Turbopack was not permitted to bind a local port; this was an execution-environment restriction rather than an application error.
 - Final diff checks and browser-based responsive and interaction checks are recorded in `DAILY_LOG.md`.
