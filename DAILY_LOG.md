@@ -170,3 +170,69 @@ Clarify the official public organization name and replace the provisional blue-g
 ### Suggested next task
 
 After human approval of the identity and green visual direction, define a narrow content-structure task for one approved full page using client-confirmed copy only.
+
+## 2026-07-24 — Day 0 Home, About, and Contact structures
+
+### Task goal
+
+Complete professional structural versions of Home, About Us, and Contact using neutral temporary content while preserving the approved shared shell and excluding Operations and News implementation.
+
+### Work completed
+
+- Replaced the minimal homepage preview with hero, organization introduction, focus areas, Operations preview, News preview, and contact call-to-action sections.
+- Replaced the About placeholder with organization overview, mission and vision, educational focus, background, team/leadership preparation, and contact call-to-action sections.
+- Replaced the Contact placeholder with a page introduction, disabled semantic inquiry-form preview, future contact-channel structure, and response-expectation notice.
+- Added page-specific titles and neutral metadata descriptions.
+- Kept all temporary standalone-page copy in one clearly marked local content file for Day 1 replacement.
+
+### Files created
+
+- `src/content/pages.ts`
+- `src/components/sections/SectionIntro.tsx`
+- `src/components/sections/TemporaryContentNotice.tsx`
+- `src/components/sections/CallToAction.tsx`
+- `src/components/ui/FeatureCard.tsx`
+- `src/components/forms/ContactFormShell.tsx`
+
+### Files modified
+
+- `src/app/page.tsx`
+- `src/app/about/page.tsx`
+- `src/app/contact/page.tsx`
+- `CODEBASE_MAP.md`
+- `DAILY_LOG.md`
+- `README.md`
+
+### Components added
+
+- `SectionIntro` for consistent section hierarchy
+- `TemporaryContentNotice` for restrained content-status notes
+- `CallToAction` for shared page endings
+- `FeatureCard` for repeated, restrained information blocks
+- `ContactFormShell` for a semantic, visibly disabled inquiry interface
+
+### Decisions and temporary-content strategy
+
+- Used simple typed constant objects rather than a page-builder or CMS-like abstraction.
+- Marked `src/content/pages.ts` as temporary Day 0 copy and kept page components focused on semantic structure and presentation.
+- Disabled the entire contact-form fieldset and submit control so the preview cannot accept or imply delivery of data.
+- Linked to existing Operations and News placeholders without adding feature data, fake entries, or detail routes.
+- Added no dependencies, organization claims, contact details, people, dates, statistics, affiliations, or guaranteed outcomes.
+
+### Verification performed
+
+- `pnpm lint` passed with no ESLint findings.
+- `pnpm build` passed outside the restricted sandbox after correcting one missing centralized description field; all current routes were statically generated.
+- The sandboxed build attempt was blocked by Turbopack's local-port requirement rather than an application error.
+- Responsive browser, form-semantics, navigation, overflow, and console results are recorded in the completion handoff.
+- Final `git status --short`, `git diff --stat`, and `git diff --check` results are recorded in the completion handoff.
+
+### Remaining Day 0 work
+
+- Implement the Business Operations listing and reusable detail structure with an approved empty state.
+- Implement the News listing and reusable detail structure with an approved empty state.
+- Continue human visual and content-safety review before staging or committing the accumulated Day 0 work.
+
+### Suggested next task
+
+Create the Operations and News listing/detail shells without adding fake operation records, news articles, or unapproved program claims.

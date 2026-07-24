@@ -8,7 +8,7 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - **Official organization/public website name:** American West Educational Center
 - **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** initial shared visual foundation and website shell. The site has a project-specific root layout, shared navigation and footer, a minimal homepage preview, and neutral placeholder pages. Full page content and feature-specific detail routes are not implemented.
+- **State:** Day 0 shared shell plus complete structural Home, About Us, and Contact pages using centralized temporary copy. Operations and News remain neutral route placeholders; feature-specific listing and detail structures are not implemented.
 
 ## Runtime and package management
 
@@ -34,15 +34,16 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 
 - `src/app/layout.tsx` — project metadata and the shared header, main landmark, and footer layout
 - `src/app/globals.css` — design tokens and global base styles
-- `src/app/page.tsx` — minimal homepage preview with neutral introductory content and links to About and Contact
+- `src/app/page.tsx` — structural homepage with hero, organization introduction, focus areas, Operations and News previews, and a contact call-to-action
 - `src/app/favicon.ico` — generated favicon retained pending future branding
 - `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
+- `src/content/pages.ts` — clearly marked temporary Home, About, and Contact content for Day 0 review and Day 1 replacement
 
 ## Current routes
 
-- `/` — minimal homepage preview
-- `/about` — neutral About Us placeholder
-- `/contact` — neutral Contact placeholder; no contact details or form
+- `/` — complete Day 0 structural homepage with neutral, temporary content
+- `/about` — complete Day 0 organization-information structure with overview, direction, focus, background, team, and contact areas
+- `/contact` — complete Day 0 contact structure with a disabled form preview, future-channel placeholders, and response-procedure notice; no delivery behavior or real contact details
 - `/operations` — neutral Business Operations placeholder; no cards or detail routes
 - `/news` — neutral News placeholder; no cards or detail routes
 
@@ -55,6 +56,11 @@ All current routes are statically generated. Operation and news detail routes de
 - `src/components/layout/MobileNavigation.tsx` — client-side mobile menu with semantic toggle state, Escape closing, link-selection closing, and focus management
 - `src/components/layout/SiteFooter.tsx` — shared descriptive notice, footer navigation, and copyright line
 - `src/components/sections/PageIntro.tsx` — shared neutral placeholder-page introduction
+- `src/components/sections/SectionIntro.tsx` — shared section eyebrow, heading, and description treatment
+- `src/components/sections/TemporaryContentNotice.tsx` — restrained notice for content awaiting approval
+- `src/components/sections/CallToAction.tsx` — shared green closing call-to-action section
+- `src/components/forms/ContactFormShell.tsx` — semantic but fully disabled inquiry-form preview with no submission behavior
+- `src/components/ui/FeatureCard.tsx` — shared restrained card for temporary page information
 - `src/components/ui/PageContainer.tsx` — shared constrained responsive container primitive
 
 ## Current public assets
@@ -67,7 +73,6 @@ All current routes are statically generated. Operation and news detail routes de
 
 The following directories are retained with `.gitkeep` and contain no implementation:
 
-- `src/components/forms/`
 - `src/components/news/`
 - `src/components/operations/`
 - `src/lib/`

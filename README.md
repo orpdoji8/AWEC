@@ -4,7 +4,7 @@ meixiedu is the technical project and repository for the American West Education
 
 ## Current status
 
-The shared website shell is implemented with a minimal homepage preview, neutral placeholder routes, responsive navigation, and a provisional dark-green visual system. Full page content, operation and news detail routes, final branding, and client-approved organization details remain future work.
+The shared website shell and Day 0 structural Home, About Us, and Contact pages are implemented with centralized temporary copy, responsive navigation, a disabled contact-form preview, and a provisional dark-green visual system. Operations and News structures, final branding, and client-approved organization details remain future work.
 
 ## Confirmed stack
 
@@ -71,9 +71,9 @@ pnpm build
 
 ```text
 public/                  Generated assets; empty images/ and documents/ areas
-src/app/                 Shared root layout, homepage, and placeholder routes
+src/app/                 Shared layout, three structural pages, and placeholders
 src/components/          Shared shell components plus empty feature areas
-src/content/             Shared public identity and navigation configuration
+src/content/             Shared identity, navigation, and temporary page copy
 src/lib/                 Empty area for future utilities
 src/types/               Empty area for future project types
 BLUEPRINT.md             Approved product direction
@@ -89,4 +89,4 @@ Do not invent company history, services, statistics, testimonials, partners, cer
 
 ## Next step
 
-Review and approve the public identity and provisional green visual direction, then define a separate narrow task for one full page using client-confirmed content only.
+Review the Day 0 Home, About, and Contact structures, then implement the approved Operations and News listing/detail shells without inventing content.
