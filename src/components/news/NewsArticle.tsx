@@ -10,6 +10,8 @@ type NewsArticleProps = {
 };
 
 function formatPublishedDate(date: string) {
+  if (/^\d{4}$/.test(date)) return date;
+
   return new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
     timeZone: "UTC",
@@ -20,12 +22,14 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
   return (
     <article>
       <PageContainer className="py-12 sm:py-16">
-        <BackLink href="/news">Back to News</BackLink>
+        <BackLink href="/news">Back to News &amp; Activities</BackLink>
         <header className="mt-8 max-w-4xl">
-          <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">
-            {formatPublishedDate(article.publishedAt)}
-          </time>
-          <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl">
+          {article.publishedAt ? (
+            <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">
+              {formatPublishedDate(article.publishedAt)}
+            </time>
+          ) : null}
+          <h1 className={`${article.publishedAt ? "mt-3" : ""} text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl`}>
             {article.title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -79,7 +83,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
         {relatedArticles.length ? (
           <aside className="mt-14 border-t border-border pt-10" aria-labelledby="related-news">
             <h2 id="related-news" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
-              Related news
+              Related news &amp; activities
             </h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {relatedArticles.map((relatedArticle) => (

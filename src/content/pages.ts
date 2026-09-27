@@ -1,4 +1,4 @@
-// Temporary Day 0 copy. Replace these values with client-approved content during Day 1.
+// Temporary page copy. Replace only with verified or clearly identified provisional content.
 export const homeContent = {
   metadata: {
     title: "American West Educational Center",
@@ -48,10 +48,10 @@ export const homeContent = {
       "The Business Operations area is ready for approved summaries and supporting information when that material becomes available.",
   },
   news: {
-    eyebrow: "News and activities",
-    title: "A future home for approved updates",
+    eyebrow: "News & Activities",
+    title: "Historical activities and future updates",
     description:
-      "News and activity updates will be published after client material has been reviewed and approved.",
+      "Explore source-backed historical activities recovered from the legacy website. Future dated news may be added alongside them.",
   },
   contact: {
     eyebrow: "Start a conversation",

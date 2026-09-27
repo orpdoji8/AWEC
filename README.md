@@ -1,10 +1,10 @@
 # meixiedu
 
-meixiedu is the technical project and repository for the American West Educational Center public website. The expected future domain identity remains `meixiedu`. The website will present approved information about the organization, its future work in international education and overseas opportunities, news, and contact options. Company and program details remain subject to client approval.
+meixiedu is the technical project and repository for the American West Educational Center public website. The expected future domain identity remains `meixiedu`. The website presents provisional legacy-derived information about historical business operations and activities while current company and program details remain subject to client confirmation.
 
 ## Current status
 
-Day 0 — Foundation and Structural Shell is complete. The shared shell, all five structural landing pages, typed Operations and News detail architectures, professional empty states, and a site-level not-found page are implemented with a provisional dark-green visual system. Client-approved wording, records, branding, images, contact details, and legal material are still pending; Day 1 will replace temporary content and populate Operations and News only after approval.
+Day 0 — Foundation and Structural Shell is complete. Day 1 legacy-content integration now includes six provisional Business Operations categories and 15 historical records in the public **News & Activities** section. The `/news` route architecture is unchanged. Images, current-status confirmation, final branding, contact details, and legal material remain pending.
 
 ## Confirmed stack
 
@@ -18,7 +18,7 @@ Day 0 — Foundation and Structural Shell is complete. The shared shell, all fiv
 
 ## Current scope
 
-The repository currently provides the application foundation, shared layout components, local site configuration, global design tokens, project operating documentation, and empty organizational areas for future feature-specific work. The approved product direction is documented in `BLUEPRINT.md`.
+The repository currently provides the application foundation, shared layout components, local site configuration, global design tokens, project operating documentation, and populated local Operations and News & Activities collections. The approved product direction is documented in `BLUEPRINT.md`.
 
 Explicitly excluded from the current architecture are a CMS, database, authentication, client dashboard, payment system, customer portal, and unapproved third-party integrations. These must not be added without an approved scope change.
 
@@ -74,7 +74,7 @@ pnpm build
 public/                  Generated assets; empty images/ and documents/ areas
 src/app/                 Shared layout, five structural pages, and two dynamic detail routes
 src/components/          Shared shell, page-section, Operations, and News components
-src/content/             Shared identity, temporary page copy, and empty typed collections
+src/content/             Shared identity, temporary page copy, and populated typed collections
 src/lib/                 Empty area for future utilities
 src/types/               Shared local content types
 CLIENT_CONTENT_INTAKE.md Day 1 client-material and approval checklist
@@ -91,4 +91,4 @@ Do not invent company history, services, statistics, testimonials, partners, cer
 
 ## Next step
 
-Gather client responses using `CLIENT_CONTENT_INTAKE.md`, confirm approvals, and define the first narrow Day 1 content-integration task.
+Review the provisional legacy-derived records, then add the project owner's manually recovered images in a separate narrow task while client verification continues.

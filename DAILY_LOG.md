@@ -381,3 +381,97 @@ Day 0 is complete. All planned structural routes and templates exist; shared nav
 ### Suggested next step
 
 Review `CLIENT_CONTENT_INTAKE.md` with the client, record approvals, and define the first narrow Day 1 content-integration task.
+
+## 2026-08-21 — Day 1 legacy content recovery planning
+
+### Starting state
+
+- Day 0 was complete, including the structural routes, local content architecture, shared shell, and documentation baseline.
+- Client verification and content intake remained pending.
+- `CLIENT_CONTENT_INTAKE.md` existed but was intentionally not relied upon as completed client approval.
+
+### Decision made
+
+- Development will proceed using the previous Google Sites Home and About pages as provisional legacy-content recovery sources.
+- Material visibly present there may be classified as legacy-confirmed or legacy-derived, but it is not automatically current or newly approved by the client.
+- Client confirmation remains necessary before provisional material is treated as final/current, especially where publication could imply a current relationship or role.
+
+### Recovered direction
+
+- The six legacy-derived Business Operations categories are Professional Training, Business Visits, International Exhibitions, Round-table Seminars, Global Branding, and Marketing.
+- Approximately 15 historical visits, training activities, exhibitions, seminars, and related events from the legacy Home page will be structured systematically as a recoverable dataset.
+- The public News section will be reframed as **News & Activities**, allowing future dated news and historical activities to coexist.
+- The existing `/news` and `/news/[slug]` route architecture is intended to remain unless a separate task approves a route change.
+- The project owner will manually recover and supply the corresponding legacy images later.
+
+### Safeguards
+
+- Do not invent dates; historical records with unknown dates must be allowed to omit them.
+- Do not invent partnerships, sponsorships, affiliations, relationships, statistics, or similar claims.
+- Do not make unsupported claims about American West Educational Center's role in any activity or program.
+- Sensitive or potentially current details remain dependent on client verification.
+
+### Documentation completed
+
+- Updated `BLUEPRINT.md` to record the revised Day 1 strategy, recovered content direction, News & Activities decision, and content-status safeguards.
+- Updated `CODEBASE_MAP.md` to distinguish the unchanged Day 0 implementation from approved but unimplemented Day 1 content work.
+- No application code, content collection, route, component, style, asset, dependency, or configuration was changed.
+
+### Next step
+
+The next Codex task should implement the approved legacy-derived content structures and **News & Activities** presentation using the recovered dataset, while keeping image integration ready for the project owner's later manual assets.
+
+## 2026-08-21 — Day 1 legacy content structures and activities
+
+### Goal
+
+Populate the six recovered Business Operations structures, rebrand the public News section as **News & Activities**, and create all 15 recovered historical activity entries without inventing missing details.
+
+### Work completed
+
+- Added all six operation records with stable `OP-###` IDs, source status, verification notes, and source-constrained summaries.
+- Added all 15 historical activity records with stable `HIST-###` IDs, participant and destination fields, optional dates, proposed operation categories, provenance notes, concise summaries, and source-backed body copy.
+- Made activity dates optional throughout the type and UI. Fourteen records omit dates; the NAB activity displays only its source-backed year, 2018.
+- Changed public navigation, landing-page metadata and headings, detail back links, related-section wording, homepage preview, and calls to action from News to **News & Activities** without changing `/news` or `/news/[slug]`.
+- Retained image-ready optional media fields without adding images; manual image recovery remains pending.
+- Preserved `LEGACY_CONTENT_RECOVERY.json` and `CLIENT_CONTENT_INTAKE.md` as existing untracked user-owned files.
+
+### Files modified
+
+- `src/content/operations.ts`
+- `src/content/news.ts`
+- `src/content/site.ts`
+- `src/content/pages.ts`
+- `src/components/operations/OperationDetail.tsx`
+- `src/components/news/NewsCard.tsx`
+- `src/components/news/NewsArticle.tsx`
+- `src/app/news/page.tsx`
+- `src/app/page.tsx`
+- `CODEBASE_MAP.md`
+- `README.md`
+- `DAILY_LOG.md`
+
+### Verification performed
+
+- `pnpm lint` passed with no ESLint findings using the repository's Node 24 runtime.
+- The first sandboxed `pnpm build` attempt hit the known Turbopack local-port restriction.
+- `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation of 29 pages: six operation details, 15 activity details, the landing routes, and the shared not-found page.
+- Browser checks confirmed 15 activity cards, six operation cards, one rendered date on the collection, no date on an undated detail page, `2018` on the dated NAB detail page, mobile News & Activities navigation, no horizontal overflow, and no console warnings or errors.
+
+### Decisions and safeguards
+
+- Kept provenance and verification fields in the local models without presenting internal notes as current public facts.
+- Used only dataset-backed participants, destinations, titles, categories, and source wording.
+- Did not infer dates, current relationships, partnerships, sponsorships, affiliations, or American West Educational Center roles.
+- Retained the explicitly source-backed statement that American West Educational Center organized the Techtextil promotion meeting, without expanding it into a relationship claim.
+- Left Marketing without a forced historical-activity assignment because the recovered dataset does not support one.
+
+### Remaining work
+
+- The project owner still needs to supply and map the corresponding legacy images.
+- Client confirmation remains required before provisional records or operation labels are treated as current/final.
+- Company-level legacy data, current contact details, branding, legal material, and form activation remain outside this task.
+
+### Suggested next step
+
+Review the rendered provisional records, then define a narrow image-integration task using the manually recovered assets and stable `HIST-###` IDs.

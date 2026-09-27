@@ -1,0 +1,384 @@
+{
+  "source_pages": {
+    "home": "https://sites.google.com/meixiedu.org/meixiedu/home?authuser=0",
+    "about": "https://sites.google.com/meixiedu.org/meixiedu/about?authuser=0"
+  },
+  "operations": [
+    {
+      "id": "OP-001",
+      "slug": "professional-training",
+      "name": "Professional Training",
+      "status": "legacy-confirmed"
+    },
+    {
+      "id": "OP-002",
+      "slug": "business-visits",
+      "name": "Business Visits",
+      "status": "legacy-confirmed"
+    },
+    {
+      "id": "OP-003",
+      "slug": "international-exhibitions",
+      "name": "International Exhibitions",
+      "status": "legacy-confirmed"
+    },
+    {
+      "id": "OP-004",
+      "slug": "round-table-seminars",
+      "name": "Round-table Seminars",
+      "status": "legacy-confirmed"
+    },
+    {
+      "id": "OP-005",
+      "slug": "global-branding",
+      "name": "Global Branding",
+      "status": "legacy-confirmed"
+    },
+    {
+      "id": "OP-006",
+      "slug": "marketing",
+      "name": "Marketing",
+      "status": "legacy-confirmed"
+    }
+  ],
+  "historical_records": [
+    {
+      "id": "HIST-001",
+      "slug": "water-resources-management-delegation-walnut-water-district",
+      "proposed_title": "Water Resources Management Delegation Visit",
+      "participant": "Water Resources Management Delegation",
+      "host_destination_activity": "Walnut Water District",
+      "source_wording": "Visiting Walnut Water District",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Visit is supported by the legacy site. Do not imply partnership, sponsorship, or a broader institutional relationship.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-002",
+      "slug": "hainan-higher-peoples-court-san-bernardino-superior-court",
+      "proposed_title": "Hainan Higher People's Court Delegation Visit",
+      "participant": "Hainan Higher People's Court Delegation",
+      "host_destination_activity": "San Bernardino Superior Court",
+      "source_wording": "Visiting San Bernardino Superior Court",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Visit is supported. Do not imply a formal court partnership or continuing relationship.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-003",
+      "slug": "chongqing-business-delegation-la-chamber-of-commerce",
+      "proposed_title": "Chongqing Business Delegation Visit",
+      "participant": "Chongqing Business Delegation",
+      "host_destination_activity": "LA Chamber of Commerce",
+      "source_wording": "Visiting LA Chamber of Commerce",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Legacy page confirms the visit only. Do not convert this into a partnership claim.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-004",
+      "slug": "shanghai-water-authority-wrd-southern-california",
+      "proposed_title": "Shanghai Water Authority Delegation Visit",
+      "participant": "Shanghai Water Authority Delegation",
+      "host_destination_activity": "WRD, Southern California",
+      "source_wording": "Visiting WRD, Southern California",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Preserve the source wording 'WRD, Southern California' unless the organization name is separately verified.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-005",
+      "slug": "national-radio-television-administration-2018-nab-las-vegas",
+      "proposed_title": "National Radio and Television Administration at NAB 2018",
+      "participant": "National Radio and Television Administration Delegation",
+      "host_destination_activity": "2018 NAB Exhibition, Las Vegas, USA",
+      "source_wording": "2018 NAB Exhibition, Las Vegas, USA",
+      "known_date": "2018",
+      "proposed_categories": [
+        "International Exhibitions"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "very high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "The year and exhibition are explicitly stated. AWEC's exact role is not.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-006",
+      "slug": "pingan-bank-delegation-coinbase",
+      "proposed_title": "PingAn Bank Delegation Visit",
+      "participant": "PingAn Bank Delegation",
+      "host_destination_activity": "Coinbase",
+      "source_wording": "Visiting Coinbase",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Visit is supported. Do not imply a commercial partnership.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-007",
+      "slug": "shanghai-municipal-administration-ladwp",
+      "proposed_title": "Shanghai Municipal Administration Delegation Visit",
+      "participant": "Shanghai Municipal Administration Delegation",
+      "host_destination_activity": "Los Angeles Department of Water and Power (LADWP)",
+      "source_wording": "Visiting Los Angeles Department of Water and Power (LADWP)",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Destination is explicitly named by the legacy page.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-008",
+      "slug": "ccb-trust-rockefeller-foundation-meeting",
+      "proposed_title": "CCB Trust Delegation Meeting",
+      "participant": "CCB Trust Delegation",
+      "host_destination_activity": "Rockefeller Foundation",
+      "source_wording": "Meeting with Rockefeller Foundation",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits",
+        "Round-table Seminars"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "A meeting is supported; the specific operation category and AWEC's role are not stated.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-009",
+      "slug": "china-tobacco-administration-wcct-global",
+      "proposed_title": "China Tobacco Administration Delegation Visit",
+      "participant": "China Tobacco Administration Delegation",
+      "host_destination_activity": "WCCT Global",
+      "source_wording": "Visiting WCCT Global",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Visit is supported. Do not infer a continuing relationship.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-010",
+      "slug": "kaifeng-childrens-hospital-city-of-hope",
+      "proposed_title": "Kaifeng Children's Hospital Delegation Visit",
+      "participant": "Kaifeng Children's Hospital Delegation",
+      "host_destination_activity": "City of Hope Cancer Center",
+      "source_wording": "Visiting City of Hope Cancer Center",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "The visit is supported. Do not describe it as medical training unless separately verified.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-011",
+      "slug": "nanhai-experimental-middle-school-shadow-study-anaheim",
+      "proposed_title": "Nanhai Experimental Middle School Shadow Study",
+      "participant": "Students from Nanhai Experimental Middle School",
+      "host_destination_activity": "Anaheim Unified School District",
+      "source_wording": "Shadow Study at Anaheim Unified School District",
+      "known_date": "",
+      "proposed_categories": [
+        "Professional Training"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "very high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "The source explicitly identifies the activity as a shadow study. 'Educational Exchange' may be descriptive but is not one of the six legacy operation labels.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-012",
+      "slug": "everbright-bank-delegation-training-ucla",
+      "proposed_title": "Everbright Bank Delegation Training at UCLA",
+      "participant": "Everbright Bank Delegation",
+      "host_destination_activity": "UCLA",
+      "source_wording": "Training at UCLA",
+      "known_date": "",
+      "proposed_categories": [
+        "Professional Training"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "very high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Training at UCLA is explicitly stated. AWEC's exact role is not.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-013",
+      "slug": "mark-chandler-san-francisco-city-hall",
+      "proposed_title": "San Francisco City Hall Activity",
+      "participant": "Mark Chandler",
+      "host_destination_activity": "San Francisco City Hall",
+      "source_wording": "With Mark Chandler, Global Trade Director, San Francisco City/County — San Francisco City Hall",
+      "known_date": "",
+      "proposed_categories": [
+        "Business Visits",
+        "Round-table Seminars"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "medium",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "The legacy page identifies Mark Chandler with the listed title, but the activity itself is not described. Reverify the person's title before public reuse.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-014",
+      "slug": "techtextil-north-america-promotion-meeting",
+      "proposed_title": "Techtextil North America Promotion Meeting",
+      "participant": "Manufacturers; Messe Frankfurt Inc.",
+      "host_destination_activity": "Meeting to promote the Techtextil North America Show",
+      "source_wording": "AWEC organized a meeting between Manufactures and Messe Frankfurt Inc. to promote the Techtextil North America Show.",
+      "known_date": "",
+      "proposed_categories": [
+        "Global Branding",
+        "International Exhibitions"
+      ],
+      "category_status": "source-linked",
+      "source_confidence": "very high",
+      "awec_role": "Organized a meeting",
+      "awec_role_status": "explicitly stated by legacy site",
+      "verification_note": "Strong candidate for a richer activity page. Do not upgrade the relationship to partnership, sponsorship, or official affiliation.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    },
+    {
+      "id": "HIST-015",
+      "slug": "winning-with-leasing-sudhir-amembal-beijing",
+      "proposed_title": "\"Winning with Leasing\" Lecture Series",
+      "participant": "Sudhir Amembal",
+      "host_destination_activity": "Cheung Kong Graduate School of Business, Beijing",
+      "source_wording": "The \"Winning with Leasing\" lecture series",
+      "known_date": "",
+      "proposed_categories": [
+        "Professional Training",
+        "Round-table Seminars"
+      ],
+      "category_status": "inferred",
+      "source_confidence": "very high",
+      "awec_role": "",
+      "awec_role_status": "not stated",
+      "verification_note": "Lecture title and institution are explicit. AWEC's exact role is not stated in the visible legacy copy.",
+      "image_status": "manual upload pending",
+      "source_page": "legacy-home"
+    }
+  ],
+  "company_data": [
+    {
+      "field": "public_name",
+      "value": "American West Educational Center",
+      "status": "legacy-confirmed",
+      "note": "Public organization name shown on legacy site."
+    },
+    {
+      "field": "abbreviation",
+      "value": "AWEC",
+      "status": "legacy-confirmed",
+      "note": "Used in About-page body copy."
+    },
+    {
+      "field": "registration_location_statement",
+      "value": "Registered in Los Angeles, California, United States",
+      "status": "legacy-confirmed / verify current",
+      "note": "Legacy statement; verify current legal/business accuracy before final launch."
+    },
+    {
+      "field": "positioning",
+      "value": "Bridge connecting the United States and the world",
+      "status": "legacy-confirmed messaging",
+      "note": "Suitable as source material for rewritten About copy."
+    },
+    {
+      "field": "institutional_relationship_claim",
+      "value": "Strong relationships with numerous government agencies and institutions in China and the United States",
+      "status": "needs client verification",
+      "note": "Do not convert to current partnership/affiliation claims without confirmation."
+    },
+    {
+      "field": "address",
+      "value": "17870 Castleton Street, City of Industry, CA 91748",
+      "status": "legacy-confirmed / verify current",
+      "note": "Appears on both Home and About."
+    },
+    {
+      "field": "email",
+      "value": "info@meixiedu.org",
+      "status": "legacy-confirmed / verify current",
+      "note": "Appears on both Home and About."
+    }
+  ],
+  "public_section": {
+    "label": "News & Activities",
+    "route": "/news",
+    "detail_route": "/news/[slug]"
+  }
+}

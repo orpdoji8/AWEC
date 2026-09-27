@@ -37,7 +37,7 @@ export default function NewsPage() {
       <section className="border-y border-border bg-surface-subtle" aria-labelledby="news-collection">
         <PageContainer className="py-16 sm:py-22">
           <h2 id="news-collection" className="sr-only">
-            Published news articles
+            Historical activities and news
           </h2>
           <NewsList
             articles={newsArticles}

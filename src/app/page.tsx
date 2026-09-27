@@ -88,7 +88,7 @@ export default function HomePage() {
                     href={isOperations ? "/operations" : "/news"}
                     className="mt-6 inline-flex min-h-11 items-center self-start rounded-md font-semibold text-accent hover:text-accent-hover"
                   >
-                    {isOperations ? "View Business Operations" : "View News"}
+                    {isOperations ? "View Business Operations" : "View News & Activities"}
                   </Link>
                 </section>
               );

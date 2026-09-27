@@ -46,7 +46,7 @@ Possible shell sections include:
 - Latest news placeholder
 - Contact call-to-action
 
-All wording must remain general until the client provides approved content.
+Current placeholder wording remains general. Day 1 may replace it with clearly identified legacy-derived or provisional material under the verification safeguards in Section 14; that material must not be presented as newly approved or current fact.
 
 #### About Us
 
@@ -83,7 +83,16 @@ The initial form may send an email without storing submissions in a database.
 
 ### Business Operations
 
-The Business Operations section must support separate operation pages, but the content will remain empty until the client decides what should be included.
+The Business Operations section supports separate operation pages. For Day 1, the legacy website is an approved provisional recovery source for the following legacy-confirmed business-operation categories:
+
+- Professional Training
+- Business Visits
+- International Exhibitions
+- Round-table Seminars
+- Global Branding
+- Marketing
+
+These categories may be used as the provisional basis for content migration and development, but they remain subject to client confirmation before being treated as final or current information.
 
 Example routes:
 
@@ -116,9 +125,11 @@ The reusable operation detail template may reserve space for:
 
 No specific operation should be described as official, sponsored, partnered, or administered by the company without client confirmation.
 
-### News
+### News & Activities
 
-The News section must support separate articles and event pages, but the content will remain empty until the client provides material from the old website or other sources.
+The public-facing News section will be presented as **News & Activities**. This is a content-positioning change, not a route rewrite: `/news` and `/news/[slug]` remain the intended route architecture unless a later task explicitly changes them.
+
+Future dated news and legacy-derived historical activities may coexist in this section. The legacy Home page contains approximately 15 recoverable historical visits, training activities, exhibitions, seminars, and related events that may be structured as a provisional dataset during Day 1. Historical records with unknown dates must omit dates rather than use fabricated dates.
 
 Example routes:
 
@@ -147,7 +158,7 @@ The reusable news detail template may reserve space for:
 - Related articles
 - Back-to-news navigation
 
-The initial News landing page may display a neutral message such as:
+Until that later implementation task is complete, the existing News landing page may continue to display a neutral message such as:
 
 > News and activity updates will be added soon.
 
@@ -472,9 +483,9 @@ Each entry should include:
 
 ## 12. Current Development Milestone
 
-### Milestone: Initial Website Shell
+### Completed milestone: Initial Website Shell
 
-The immediate goal is to create a functional and visually coherent American West Educational Center website shell within the `meixiedu` project.
+Day 0 completed the functional and visually coherent American West Educational Center website shell within the `meixiedu` project.
 
 #### Included
 
@@ -536,7 +547,20 @@ The milestone is complete when:
 
 ## 14. Content Rules
 
-Until the client supplies approved material:
+Day 1 uses these content-status distinctions:
+
+- **Legacy-confirmed / legacy-derived:** information visibly present on the previous website.
+- **Provisional:** information suitable for migration or development use but still subject to client confirmation.
+- **Needs client verification:** information that may be outdated, relationship-sensitive, or otherwise unsafe to present as current fact without confirmation.
+
+The legacy Google Sites Home and About pages are approved as provisional content-recovery sources:
+
+- `https://sites.google.com/meixiedu.org/meixiedu/home?authuser=0`
+- `https://sites.google.com/meixiedu.org/meixiedu/about?authuser=0`
+
+Legacy material must not be described as newly client-approved or automatically current. Client confirmation remains required before provisional legacy content is treated as final/current. The project owner will manually recover and provide corresponding legacy images later.
+
+For all temporary and recovered material:
 
 - Use neutral placeholder text
 - Avoid fabricated company history
@@ -546,6 +570,7 @@ Until the client supplies approved material:
 - Avoid fabricated certifications
 - Avoid claiming official YES administration or sponsorship
 - Avoid presenting sample operations as confirmed services
+- Do not invent dates, relationships, partnerships, affiliations, sponsorships, organizational roles, statistics, or similar claims when the source does not explicitly provide them
 - Clearly distinguish placeholders from final client content
 
 Temporary content should sound professional enough to evaluate the design but should remain easy to identify and replace.
@@ -564,7 +589,7 @@ The website shell should not be blocked by these questions, but the client will 
 - Confirmed business operations
 - The company’s exact role in the YES program
 - Program names and descriptions
-- Old website URL or exported content
+- Client confirmation of recovered legacy content and any current-status changes
 - News articles and event dates
 - Original photos and usage permission
 - Team information
@@ -602,11 +627,11 @@ These are future possibilities only and are not part of the current scope.
 ## 17. Delivery Phases
 
 - **Day 0 — Foundation and Structural Shell:** Establish the repository, reusable site shell, structural routes, local content architecture, accessibility baseline, and project documentation without implying unapproved client content.
-- **Day 1 — Client Content and Brand Integration:** Replace temporary copy and populate routes only with client-approved identity, content, imagery, contact details, and branding.
+- **Day 1 — Legacy Content Recovery & Integration:** Use the approved legacy Google Sites pages to recover provisional content, structure the six legacy-derived Business Operations categories and historical activity dataset, and prepare the **News & Activities** presentation while preserving existing route architecture. Legacy images will be supplied manually by the project owner, and client confirmation remains necessary before provisional material is treated as final/current.
 - **Day 2 — Production, Deployment, and Handoff:** Complete approved production integrations, deployment configuration, launch checks, documentation, and ownership handoff.
 
 ---
 
 ## 18. Current Guiding Principle
 
-> Build a clean, reusable, and trustworthy website shell first. Let approved client content determine the final operations, news, and program details later.
+> Preserve the completed reusable shell while recovering legacy content transparently: distinguish legacy-derived and provisional material from verified current facts, and never invent missing details.

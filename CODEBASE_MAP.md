@@ -1,6 +1,6 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-07-24. The planned architecture in `BLUEPRINT.md` is identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-08-21. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
 
 ## Project identity
 
@@ -8,7 +8,7 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - **Official organization/public website name:** American West Educational Center
 - **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** Day 0 foundation and structural shell complete. Home, About Us, Contact, Business Operations, News, both typed detail architectures, and the shared not-found experience are implemented. Operations and News collections remain intentionally empty pending approved Day 1 content.
+- **State:** Day 0 foundation and structural shell complete. Day 1 legacy-content integration is in progress. The six legacy-derived Business Operations categories and 15 historical activity records are implemented, and the public News section is now presented as News & Activities while retaining its existing routes.
 
 ## Runtime and package management
 
@@ -38,9 +38,9 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - `src/app/page.tsx` — structural homepage with hero, organization introduction, focus areas, Operations and News previews, and a contact call-to-action
 - `src/app/favicon.ico` — generated favicon retained pending future branding
 - `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
-- `src/content/pages.ts` — clearly marked temporary Home, About, and Contact content for Day 0 review and Day 1 replacement
-- `src/content/operations.ts` — typed, currently empty Operations collection, landing-page copy, slug lookup, and static-parameter helper
-- `src/content/news.ts` — typed, currently empty News collection, landing-page copy, slug lookup, static-parameter helper, and explicit related-article resolution
+- `src/content/pages.ts` — temporary Home, About, and Contact content plus the updated News & Activities homepage preview
+- `src/content/operations.ts` — typed collection of six legacy-confirmed operation labels with stable `OP-###` IDs, provisional-status notes, landing-page copy, slug lookup, and static-parameter helper
+- `src/content/news.ts` — typed collection of 15 legacy-derived historical activities with stable `HIST-###` IDs, optional dates, category assignments, internal provenance notes, concise source-backed bodies, slug lookup, static-parameter helper, and explicit related-article resolution
 - `src/types/content.ts` — small shared image and text-section types used by both local collections
 
 ## Current routes
@@ -48,13 +48,13 @@ This file describes the repository as it exists on 2026-07-24. The planned archi
 - `/` — complete Day 0 structural homepage with neutral, temporary content
 - `/about` — complete Day 0 organization-information structure with overview, direction, focus, background, team, and contact areas
 - `/contact` — complete Day 0 contact structure with a disabled form preview, future-channel placeholders, and response-procedure notice; no delivery behavior or real contact details
-- `/operations` — complete structural Business Operations landing page with introduction, collection area, empty state, supporting explanation, and contact call-to-action
-- `/operations/[slug]` — statically generated operation detail route driven by `src/content/operations.ts`; unknown or unpublished slugs return not found
-- `/news` — complete structural News landing page with introduction, collection area, empty state, and About Us call-to-action
-- `/news/[slug]` — statically generated semantic article route driven by `src/content/news.ts`; unknown or unpublished slugs return not found
+- `/operations` — Business Operations landing page listing all six provisional legacy-confirmed categories
+- `/operations/[slug]` — six statically generated operation detail pages driven by `src/content/operations.ts`; unknown slugs return not found
+- `/news` — public News & Activities landing page listing 15 legacy-derived historical records
+- `/news/[slug]` — 15 statically generated activity detail pages driven by `src/content/news.ts`; unknown slugs return not found
 - Unknown static and dynamic paths — shared site-level not-found page with Home and Contact links
 
-All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only slugs in the corresponding local collection can generate pages. Both collections are intentionally empty during Day 0, so no detail pages are currently generated.
+All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only the six operation slugs and 15 activity slugs in the local collections generate pages.
 
 ## Shared components
 
@@ -68,12 +68,12 @@ All landing routes are statically generated. The dynamic detail routes use `gene
 - `src/components/sections/CallToAction.tsx` — shared green closing call-to-action section
 - `src/components/sections/CollectionEmptyState.tsx` — shared text-based empty state for approved-content collections
 - `src/components/forms/ContactFormShell.tsx` — semantic but fully disabled inquiry-form preview with no submission behavior
-- `src/components/operations/OperationCard.tsx` — future-ready operation summary and detail link
-- `src/components/operations/OperationList.tsx` — semantic operation list with the current empty-state fallback
-- `src/components/operations/OperationDetail.tsx` — conditional detail presentation for approved operation content
-- `src/components/news/NewsCard.tsx` — future-ready article summary with a semantic publication date
-- `src/components/news/NewsList.tsx` — semantic article list with the current empty-state fallback
-- `src/components/news/NewsArticle.tsx` — semantic article detail presentation with optional media and related links
+- `src/components/operations/OperationCard.tsx` — operation-category summary and detail link
+- `src/components/operations/OperationList.tsx` — semantic operation list with a retained empty-state fallback
+- `src/components/operations/OperationDetail.tsx` — conditional detail presentation identifying records as legacy-derived categories
+- `src/components/news/NewsCard.tsx` — activity summary with a semantic date only when a source-backed date exists
+- `src/components/news/NewsList.tsx` — semantic activity list with a retained empty-state fallback
+- `src/components/news/NewsArticle.tsx` — semantic activity detail presentation with optional dates, media, and related links
 - `src/components/ui/BackLink.tsx` — reusable return navigation for collection detail pages
 - `src/components/ui/FeatureCard.tsx` — shared restrained card for temporary page information
 - `src/components/ui/PageContainer.tsx` — shared constrained responsive container primitive
@@ -94,9 +94,22 @@ The following directory is retained with `.gitkeep` and contains no implementati
 
 `BLUEPRINT.md` remains the source for future approved content and later product work. No CMS, database, authentication, analytics, email integration, or deployment configuration has been added.
 
+## Implemented Day 1 legacy-content work
+
+Day 1 is **Legacy Content Recovery & Integration**. The previous Google Sites website is an approved provisional recovery source, but its material is not automatically current or client-approved.
+
+- The implemented legacy-derived Business Operations categories are Professional Training, Business Visits, International Exhibitions, Round-table Seminars, Global Branding, and Marketing.
+- Fifteen historical activities from the legacy Home page are implemented as recoverable records.
+- The public label is **News & Activities** while `/news` and `/news/[slug]` remain unchanged.
+- Historical records may omit unknown dates; missing dates and unsupported claims must not be invented.
+- Legacy images have not been added and will be recovered and supplied manually by the project owner.
+- Client verification remains required before provisional legacy content is treated as final or current.
+
+The records remain provisional and verification-dependent. Company-level legacy data, current-status claims, contact details, and images have not been migrated.
+
 ## Client-content preparation
 
-- `CLIENT_CONTENT_INTAKE.md` — Day 1 checklist for approved identity, language, page copy, Operations, News, contact details, images and permissions, legal material, technical decisions, and final approval status
+- `CLIENT_CONTENT_INTAKE.md` — existing checklist for client verification and final approval; it has not been treated as completed client approval
 
 ## Current verification status
 
@@ -106,3 +119,9 @@ During the final 2026-07-24 Day 0 audit:
 - `pnpm build` passed outside the restricted sandbox, including compilation, TypeScript checking, page-data collection, and static generation for all landing routes plus the custom `/_not-found`; the two empty collection detail templates were recognized as SSG routes.
 - The first sandboxed build attempt failed because Turbopack was not permitted to bind a local port; this was an execution-environment restriction rather than an application error.
 - Final diff checks and browser-based responsive and interaction checks are recorded in `DAILY_LOG.md`.
+
+During the 2026-08-21 Day 1 legacy-content implementation:
+
+- `pnpm lint` passed with no ESLint findings.
+- `pnpm build` passed outside the restricted sandbox and generated 29 static pages, including six Operations detail pages and 15 News & Activities detail pages.
+- Browser checks confirmed collection counts, optional-date rendering, mobile navigation labeling, no horizontal overflow, and no console warnings or errors.

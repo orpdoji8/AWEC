@@ -7,6 +7,8 @@ type NewsCardProps = {
 };
 
 function formatPublishedDate(date: string) {
+  if (/^\d{4}$/.test(date)) return date;
+
   return new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
     timeZone: "UTC",
@@ -24,10 +26,12 @@ export function NewsCard({ article }: NewsCardProps) {
         />
       ) : null}
       <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">
-          {formatPublishedDate(article.publishedAt)}
-        </time>
-        <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-foreground">
+        {article.publishedAt ? (
+          <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">
+            {formatPublishedDate(article.publishedAt)}
+          </time>
+        ) : null}
+        <h2 className={`${article.publishedAt ? "mt-3" : ""} text-2xl font-semibold tracking-[-0.02em] text-foreground`}>
           {article.title}
         </h2>
         <p className="mt-3 flex-1 leading-7 text-muted">{article.summary}</p>
@@ -35,7 +39,7 @@ export function NewsCard({ article }: NewsCardProps) {
           href={`/news/${article.slug}`}
           className="mt-5 inline-flex min-h-11 items-center self-start rounded-md font-semibold text-accent hover:text-accent-hover"
         >
-          Read {article.title}
+          View activity
         </Link>
       </div>
     </article>
