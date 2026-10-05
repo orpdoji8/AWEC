@@ -4,7 +4,7 @@ meixiedu is the technical project and repository for the American West Education
 
 ## Current status
 
-Day 0 — Foundation and Structural Shell is complete. Day 1 legacy-content integration now includes six provisional Business Operations categories and 15 historical records in the public **News & Activities** section. The `/news` route architecture is unchanged. Images, current-status confirmation, final branding, contact details, and legal material remain pending.
+Day 0 — Foundation and Structural Shell is complete. Day 1 legacy-content integration now includes six provisional Business Operations categories and 15 historical records in the public **News & Activities** section. The `/news` route architecture is unchanged. Fourteen activities now have source-matched legacy photos. The Techtextil video remains unavailable; current-status confirmation, final branding, contact details, and legal material remain pending.
 
 ## Confirmed stack
 
@@ -22,42 +22,53 @@ The repository currently provides the application foundation, shared layout comp
 
 Explicitly excluded from the current architecture are a CMS, database, authentication, client dashboard, payment system, customer portal, and unapproved third-party integrations. These must not be added without an approved scope change.
 
-## Local development on macOS
+## Local development on Windows
 
 Requirements:
 
-- macOS with Git installed
+- Windows with Git and PowerShell installed
 - Node.js 24 (see `.nvmrc`)
 - pnpm 11.7.0 (pinned in `package.json`)
 
-With `nvm` and Corepack available:
+With Node 24 and Corepack available, run this from the repository folder in PowerShell:
 
-```bash
-nvm use
-corepack enable
-corepack prepare pnpm@11.7.0 --activate
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-windows.ps1
 ```
 
-Install dependencies:
+The script checks Node 24, selects pnpm 11.7.0 through Corepack, and installs locked dependencies. The execution-policy override applies only to that process. It does not change the machine's policy or global package-manager configuration.
 
-```bash
-pnpm install
+On a new PC, install Node.js 24 and Git for Windows, then reopen PowerShell. If Corepack is missing, run `npm.cmd install --global corepack` before running setup.
+
+Use `corepack pnpm` for this project because a bare `pnpm` command may resolve to another tool's version. To reinstall dependencies manually:
+
+```powershell
+corepack pnpm install --frozen-lockfile
 ```
 
 Start the development server:
 
-```bash
-pnpm dev
+```powershell
+corepack pnpm dev
 ```
 
 Then open `http://localhost:3000`.
 
 Run project checks:
 
-```bash
-pnpm lint
-pnpm build
+```powershell
+corepack pnpm lint
+corepack pnpm typecheck
+corepack pnpm build
 ```
+
+To preview a successful production build, run `corepack pnpm start`. Stop either server with Ctrl+C before switching modes. No service credentials or environment variables are required for the current local-content website; the contact form remains disabled.
+
+Dependencies (`node_modules`) and generated output (`.next`) are local and ignored by Git. Install them separately on each computer rather than copying them from macOS.
+
+## macOS compatibility
+
+The application remains cross-platform. On macOS, select Node 24 with `nvm use`, ensure Corepack is available, and use the same `corepack pnpm` commands above. `.gitattributes` keeps text files at LF across operating systems.
 
 ## Documentation index
 
@@ -72,6 +83,7 @@ pnpm build
 
 ```text
 public/                  Generated assets; empty images/ and documents/ areas
+scripts/                 Windows dependency-setup script
 src/app/                 Shared layout, five structural pages, and two dynamic detail routes
 src/components/          Shared shell, page-section, Operations, and News components
 src/content/             Shared identity, temporary page copy, and populated typed collections
@@ -91,4 +103,4 @@ Do not invent company history, services, statistics, testimonials, partners, cer
 
 ## Next step
 
-Review the provisional legacy-derived records, then add the project owner's manually recovered images in a separate narrow task while client verification continues.
+Review the 14 illustrated historical activities and their source mapping in `old content/EVENT_IMAGE_MAP.md`. Confirm client content and image usage before final launch; uncaptained About photos remain unassigned and Techtextil media remains unavailable.

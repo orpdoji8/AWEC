@@ -46,6 +46,12 @@ export const newsPageContent = {
 export const newsArticles: readonly NewsArticleContent[] = [
   {
     id: "HIST-001",
+    featuredImage: {
+      src: "/images/activities/water-resources-management-delegation-walnut-water-district.webp",
+      alt: "Group portrait during the Water Resources Management Delegation visit to Walnut Water District.",
+      width: 1280,
+      height: 545,
+    },
     slug: "water-resources-management-delegation-walnut-water-district",
     title: "Water Resources Management Delegation Visit",
     participant: "Water Resources Management Delegation",
@@ -58,6 +64,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-002",
+    featuredImage: {
+      src: "/images/activities/hainan-higher-peoples-court-san-bernardino-superior-court.webp",
+      alt: "Delegation group outside San Bernardino Superior Court during the Hainan court visit.",
+      width: 1280,
+      height: 1008,
+    },
     slug: "hainan-higher-peoples-court-san-bernardino-superior-court",
     title: "Hainan Higher People's Court Delegation Visit",
     participant: "Hainan Higher People's Court Delegation",
@@ -70,6 +82,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-003",
+    featuredImage: {
+      src: "/images/activities/chongqing-business-delegation-la-chamber-of-commerce.webp",
+      alt: "Chongqing Business Delegation group outside the LA Chamber of Commerce building.",
+      width: 1280,
+      height: 546,
+    },
     slug: "chongqing-business-delegation-la-chamber-of-commerce",
     title: "Chongqing Business Delegation Visit",
     participant: "Chongqing Business Delegation",
@@ -82,6 +100,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-004",
+    featuredImage: {
+      src: "/images/activities/shanghai-water-authority-wrd-southern-california.webp",
+      alt: "Shanghai Water Authority Delegation wearing safety vests during the WRD visit.",
+      width: 1280,
+      height: 1008,
+    },
     slug: "shanghai-water-authority-wrd-southern-california",
     title: "Shanghai Water Authority Delegation Visit",
     participant: "Shanghai Water Authority Delegation",
@@ -94,6 +118,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-005",
+    featuredImage: {
+      src: "/images/activities/national-radio-television-administration-2018-nab-las-vegas.webp",
+      alt: "National Radio and Television Administration Delegation at the NAB 2018 exhibition.",
+      width: 1280,
+      height: 545,
+    },
     slug: "national-radio-television-administration-2018-nab-las-vegas",
     title: "National Radio and Television Administration at NAB 2018",
     participant: "National Radio and Television Administration Delegation",
@@ -107,6 +137,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-006",
+    featuredImage: {
+      src: "/images/activities/pingan-bank-delegation-coinbase.webp",
+      alt: "PingAn Bank Delegation group beneath the Coinbase sign.",
+      width: 1280,
+      height: 1008,
+    },
     slug: "pingan-bank-delegation-coinbase",
     title: "PingAn Bank Delegation Visit",
     participant: "PingAn Bank Delegation",
@@ -119,6 +155,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-007",
+    featuredImage: {
+      src: "/images/activities/shanghai-municipal-administration-ladwp.webp",
+      alt: "Shanghai Municipal Administration Delegation group during the LADWP visit.",
+      width: 1280,
+      height: 546,
+    },
     slug: "shanghai-municipal-administration-ladwp",
     title: "Shanghai Municipal Administration Delegation Visit",
     participant: "Shanghai Municipal Administration Delegation",
@@ -131,6 +173,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-008",
+    featuredImage: {
+      src: "/images/activities/ccb-trust-rockefeller-foundation-meeting.webp",
+      alt: "CCB Trust Delegation seated around a meeting table at the Rockefeller Foundation.",
+      width: 1280,
+      height: 545,
+    },
     slug: "ccb-trust-rockefeller-foundation-meeting",
     title: "CCB Trust Delegation Meeting",
     participant: "CCB Trust Delegation",
@@ -143,6 +191,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-009",
+    featuredImage: {
+      src: "/images/activities/china-tobacco-administration-wcct-global.webp",
+      alt: "Presentation during the China Tobacco Administration Delegation visit to WCCT Global.",
+      width: 1280,
+      height: 545,
+    },
     slug: "china-tobacco-administration-wcct-global",
     title: "China Tobacco Administration Delegation Visit",
     participant: "China Tobacco Administration Delegation",
@@ -155,6 +209,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-010",
+    featuredImage: {
+      src: "/images/activities/kaifeng-childrens-hospital-city-of-hope.webp",
+      alt: "Kaifeng Children's Hospital Delegation group with a framed gift during the City of Hope visit.",
+      width: 1280,
+      height: 545,
+    },
     slug: "kaifeng-childrens-hospital-city-of-hope",
     title: "Kaifeng Children's Hospital Delegation Visit",
     participant: "Kaifeng Children's Hospital Delegation",
@@ -167,6 +227,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-011",
+    featuredImage: {
+      src: "/images/activities/nanhai-experimental-middle-school-shadow-study-anaheim.webp",
+      alt: "Nanhai Experimental Middle School students posing with a banner during their Anaheim shadow study.",
+      width: 1280,
+      height: 546,
+    },
     slug: "nanhai-experimental-middle-school-shadow-study-anaheim",
     title: "Nanhai Experimental Middle School Shadow Study",
     participant: "Students from Nanhai Experimental Middle School",
@@ -179,6 +245,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-012",
+    featuredImage: {
+      src: "/images/activities/everbright-bank-delegation-training-ucla.webp",
+      alt: "Classroom presentation during the Everbright Bank Delegation training at UCLA.",
+      width: 1280,
+      height: 545,
+    },
     slug: "everbright-bank-delegation-training-ucla",
     title: "Everbright Bank Delegation Training at UCLA",
     participant: "Everbright Bank Delegation",
@@ -191,6 +263,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-013",
+    featuredImage: {
+      src: "/images/activities/mark-chandler-san-francisco-city-hall.webp",
+      alt: "Two participants posing by a staircase during the San Francisco City Hall activity.",
+      width: 1280,
+      height: 545,
+    },
     slug: "mark-chandler-san-francisco-city-hall",
     title: "San Francisco City Hall Activity",
     participant: "Mark Chandler",
@@ -215,6 +293,12 @@ export const newsArticles: readonly NewsArticleContent[] = [
   },
   {
     id: "HIST-015",
+    featuredImage: {
+      src: "/images/activities/winning-with-leasing-sudhir-amembal-beijing.webp",
+      alt: "Audience attending the Winning with Leasing lecture at Cheung Kong Graduate School of Business.",
+      width: 1084,
+      height: 854,
+    },
     slug: "winning-with-leasing-sudhir-amembal-beijing",
     title: "\"Winning with Leasing\" Lecture Series",
     participant: "Sudhir Amembal",

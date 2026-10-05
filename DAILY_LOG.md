@@ -475,3 +475,83 @@ Populate the six recovered Business Operations structures, rebrand the public Ne
 ### Suggested next step
 
 Review the rendered provisional records, then define a narrow image-integration task using the manually recovered assets and stable `HIST-###` IDs.
+
+## 2026-09-28 — Windows development setup and initial verification
+
+### Work completed
+
+- Used the existing Windows Node 24.14.1 and Corepack 0.34.6 installation. Downloaded and installed project dependencies with the pinned pnpm 11.7.0 and frozen lockfile.
+- Added a repeatable Windows setup script that checks Node, verifies the package-manager version, and installs dependencies without changing global package-manager settings.
+- Declared Node 24 in package.json and added a standalone typecheck command.
+- Added cross-platform LF text-line-ending rules, updated Windows/macOS setup guidance and verification commands, and documented the tracked legacy recovery dataset.
+- Preserved website content, dependencies, lockfile, and route behavior. No credentials were needed and no commit or push was performed.
+
+### Files created or modified
+
+- Created `.gitattributes` and `scripts/setup-windows.ps1`.
+- Modified `package.json`, `README.md`, `DEV_PROCESS.md`, `CODEBASE_MAP.md`, and `DAILY_LOG.md`.
+- Installation and verification generated ignored local dependencies, Next.js output, route declarations, and TypeScript cache files.
+
+### Verification performed
+
+- `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup-windows.ps1` passed, including a repeat installation with the frozen lockfile.
+- `corepack pnpm lint` passed.
+- `corepack pnpm typecheck` passed.
+- `corepack pnpm build` passed and generated 29 pages.
+- Production HTTP checks: all 26 content URLs returned 200 and contained one h1; three unknown URLs returned 404. The contact fieldset remained disabled and the activity listing rendered exactly one date.
+- Development server started successfully; Home, News, and an operation detail returned 200.
+- Test servers were stopped after verification. No browser visual or interaction audit was performed.
+
+### Findings and remaining work
+
+- The pnpm command supplied by the surrounding desktop tooling reports a different version. Explicit `corepack pnpm` commands correctly select the repository's pinned version.
+- Installation completed despite temporary registry download-speed warnings.
+- Unknown Operations and News slugs returned 404, but the production server also logged `Internal: NoFallbackError` for those two requests. Investigate this routing diagnostic separately; application route settings and framework versions were not changed during environment setup.
+- Inspected the installed Next.js app-page implementation: it throws NoFallbackError for non-prerendered slugs when dynamicParams is false. The remaining issue is the logged internal diagnostic; HTTP responses were correct. No framework patch or routing workaround was introduced.
+- `git diff --check` passed; the dependency lockfile is unchanged.
+- Day 1 content status is unchanged: images, approved company copy, contact channels, branding, and client verification remain pending.
+
+## 2026-09-28 — Partial legacy website source and image recovery
+
+- Created `old content/` at the project owner's request.
+- The web-reading tool could not access the legacy Home URL, but a direct HTTPS request succeeded. Retrieved the linked Home, About, and Contact Us pages and preserved original HTML, readable section Markdown, and complete extracted text.
+- Downloaded 15 images (26,207,577 bytes total); verified their file signatures and SHA-256 hashes locally. Recorded source URLs, page contexts, links, embedded video details, and download state in the manifest.
+- Stopped all network retrieval when the embedded Drive video thumbnail redirected to Google sign-in, following the user's explicit stop-on-retrieval-failure instruction.
+- Twenty unique image references remain unsaved: the blocked thumbnail, the final homepage activity image, 17 About images, and one Contact image. The video itself was not downloaded. Unattempted assets are not assumed to be inaccessible.
+- Recovered legacy contact information and company-description text as archival material only. No live website content or public assets were changed.
+- Created `old content/README.md`, `recover.py`, `manifest.json`, three HTML files, three Markdown page extracts, three full-text extracts, and 15 image files. Updated `CODEBASE_MAP.md` and this log.
+- No credentials were requested or used. No build/lint rerun was needed for this archive-only task; earlier Windows setup changes remain uncommitted.
+
+## 2026-09-29 — Resume public legacy-media recovery, skipping inaccessible items
+
+- Followed the owner's revised instruction to continue past inaccessible media rather than stop at the first failure.
+- Updated `old content/recover.py` to resume existing downloads, verify saved hashes, attempt images independently, and record skips. Checked the embedded video preview anonymously.
+- Old image URLs returned 403; refreshed all three public pages and confirmed unchanged extracted text and image-reference counts. Fresh URLs recovered 18 additional images.
+- Archive now holds 33 images (31 JPEG and two PNG), totaling 36,139,445 bytes. All 35 unique image references are accounted for: 33 downloaded, two skipped.
+- Remaining skips: the video thumbnail redirects to Google sign-in, one About-page image returns HTTP 403 with a refreshed URL, and the separate embedded video returns HTTP 401. No authentication or access-control workaround was attempted.
+- Added `old content/refreshed/{home,about,contact-us}.html` and `old content/images/image-17.jpg` through `image-35.png`, excluding unavailable image-26 (18 new files). Updated the archive manifest, recovery script, recovery report, codebase map, and this log.
+- Verified all 33 image hashes, byte counts, PNG/JPEG signatures, inventory counts, and Python script syntax. No application code changed; lint/build were not rerun for this archive task.
+- Retained earlier uncommitted work and did not commit or push.
+
+## 2026-09-29 — Match legacy event photos and integrate activity images
+
+### Completed
+
+- Matched 14 legacy Home photos to HIST-001 through HIST-013 and HIST-015 using each immediately preceding h3 caption in the saved HTML. Visually reviewed all 33 recovered images in a contact sheet.
+- Left HIST-014 without an image because its source media is the inaccessible Techtextil video. Left 16 uncaptained About photos, the logo, background, and Contact map unassigned to events.
+- Added 14 optimized WebP copies under `public/images/activities/` (1,498,000 bytes total) and populated the existing featuredImage fields with dimensions and descriptive alt text. Preserved archived originals.
+- Adjusted activity cards to contain complete photos and detail pages to show natural aspect ratios; added responsive image sizes.
+
+### Files created and modified
+
+- Created 14 WebP files named by the existing activity slugs in `public/images/activities/`.
+- Created `old content/EVENT_IMAGE_MAP.md`, `old content/event-image-map.json`, and `old content/image-inventory.jpg` with source evidence and exact output-file mapping.
+- Modified `src/content/news.ts`, `src/components/news/NewsCard.tsx`, `src/components/news/NewsArticle.tsx`, `README.md`, `CODEBASE_MAP.md`, `old content/README.md`, and this log.
+
+### Verification
+
+- `corepack pnpm lint`, `corepack pnpm typecheck`, and `corepack pnpm build` passed; build generated 29 pages.
+- HTTP checks passed for all 14 public WebP files, all 14 corresponding article image bindings, and all 14 Next.js optimized image requests. Techtextil remains image-free.
+- Browser inspection confirmed the 14-image listing, desktop and narrow mobile layouts without horizontal overflow, and a fully loaded uncropped image on a mobile detail page. Browser warning/error log was empty for the inspected views.
+- Left the production preview at http://127.0.0.1:3000/news running and open for owner review. Stop that server before running a new server on port 3000.
+- No new dependencies, content claims, commits, or pushes. Client verification of legacy material remains pending; source association does not establish current affiliations or image rights.

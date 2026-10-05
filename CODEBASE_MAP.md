@@ -1,6 +1,6 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-08-21. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-09-29. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
 
 ## Project identity
 
@@ -13,6 +13,11 @@ This file describes the repository as it exists on 2026-08-21. The planned archi
 ## Runtime and package management
 
 - Node.js 24 is expected by `.nvmrc`.
+- `package.json` also declares Node 24 through `engines`.
+- `scripts/setup-windows.ps1` checks Node and Corepack, verifies pinned pnpm, and installs dependencies with the frozen lockfile.
+- Windows commands use `corepack pnpm` explicitly to avoid other pnpm versions on PATH; macOS remains supported.
+- `corepack pnpm typecheck` generates Next.js route types and runs TypeScript without emitting JavaScript.
+- `.gitattributes` standardizes text line endings to LF across platforms.
 - pnpm 11.7.0 is pinned by the `packageManager` field in `package.json`.
 - `pnpm-lock.yaml` records installed dependency resolution.
 - `pnpm-workspace.yaml` preserves build-script approval settings for `sharp` and `unrs-resolver`.
@@ -82,7 +87,7 @@ All landing routes are statically generated. The dynamic detail routes use `gene
 
 `public/` contains the generated starter SVG assets: `file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, and `window.svg`. They are not used by the current pages.
 
-`public/images/` and `public/documents/` are empty organizational directories retained with `.gitkeep`. No company images, documents, logo, or final visual branding exist.
+`public/images/activities/` contains 14 event photos; `public/documents/` remains empty with `.gitkeep`. Fourteen matched activity photos now exist as optimized WebP copies under `public/images/activities/`; no final branding or public documents have been integrated.
 
 ## Empty organizational directories
 
@@ -102,16 +107,25 @@ Day 1 is **Legacy Content Recovery & Integration**. The previous Google Sites we
 - Fifteen historical activities from the legacy Home page are implemented as recoverable records.
 - The public label is **News & Activities** while `/news` and `/news/[slug]` remain unchanged.
 - Historical records may omit unknown dates; missing dates and unsupported claims must not be invented.
-- Legacy images have not been added and will be recovered and supplied manually by the project owner.
+- Fourteen legacy Home photos are matched to HIST-001 through HIST-013 and HIST-015 and displayed on activity cards and detail pages. HIST-014 remains text-only because its source video is inaccessible. Uncaptioned About photos remain unassigned.
 - Client verification remains required before provisional legacy content is treated as final or current.
 
-The records remain provisional and verification-dependent. Company-level legacy data, current-status claims, contact details, and images have not been migrated.
+The records remain provisional and verification-dependent. Company-level legacy data, current-status claims, and contact details have not been migrated; matched activity images have been integrated.
 
 ## Client-content preparation
 
 - `CLIENT_CONTENT_INTAKE.md` — existing checklist for client verification and final approval; it has not been treated as completed client approval
+- `LEGACY_CONTENT_RECOVERY.json` — tracked source-recovery dataset with operation IDs, historical records, source wording, and verification/image status; application pages use the typed collections in `src/content/`.
 
 ## Current verification status
+
+During the 2026-09-28 Windows setup:
+
+- Node 24.14.1 and Corepack-selected pnpm 11.7.0 installed dependencies from the unchanged lockfile; the setup script also passed on repeat execution.
+- `corepack pnpm lint`, `corepack pnpm typecheck`, and `corepack pnpm build` passed; the production build generated 29 pages.
+- HTTP checks passed for all 26 content URLs and three unknown URLs; each content page had one `h1`, the contact form remained disabled, and the activity listing rendered one date.
+- The production server logged `Internal: NoFallbackError` for the two unknown dynamic slugs despite returning HTTP 404. This routing diagnostic remains for a separate investigation; successful HTTP checks do not establish an error-free server log.
+- Development-server requests to Home, News, and an operation detail page returned HTTP 200. No visual browser audit was performed during environment setup.
 
 During the final 2026-07-24 Day 0 audit:
 
@@ -125,3 +139,11 @@ During the 2026-08-21 Day 1 legacy-content implementation:
 - `pnpm lint` passed with no ESLint findings.
 - `pnpm build` passed outside the restricted sandbox and generated 29 static pages, including six Operations detail pages and 15 News & Activities detail pages.
 - Browser checks confirmed collection counts, optional-date rendering, mobile navigation labeling, no horizontal overflow, and no console warnings or errors.
+
+## Legacy source archive (updated 2026-09-29)
+
+`old content/` contains the three legacy Google Sites pages as original and refreshed HTML snapshots, readable Markdown, full-text extracts, 33 downloaded images, a provenance/download manifest, a resumable recovery script, and a recovery report. The application does not import this folder. All 35 unique content-image references are accounted for: 33 saved and two skipped (Google sign-in for the video thumbnail; HTTP 403 for one About image). The embedded video returned HTTP 401 and remains unretrieved. The resumed pass refreshed expired image links and added 18 images without using an account. See `old content/README.md`; archived statements are not current client approval.
+
+## Event-image integration (2026-09-29)
+
+`old content/EVENT_IMAGE_MAP.md` and `event-image-map.json` record caption-based matches, archived source hashes, public paths, dimensions, and descriptive alt text. `image-inventory.jpg` is the visual inspection sheet. Fourteen optimized WebP files (1,498,000 bytes total) are referenced through the existing `featuredImage` fields in `src/content/news.ts`. Cards use contained images and responsive sizes; detail images preserve their natural proportions. Archive originals remain unchanged. The logo, stock/background image, Contact map, and 16 uncaptained About photos are not assigned to events.

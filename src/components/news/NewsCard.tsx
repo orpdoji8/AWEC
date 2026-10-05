@@ -22,7 +22,8 @@ export function NewsCard({ article }: NewsCardProps) {
         <Image
           {...article.featuredImage}
           alt={article.featuredImage.alt}
-          className="aspect-[16/9] w-full object-cover"
+          sizes="(min-width: 1200px) 564px, (min-width: 768px) 50vw, 100vw"
+          className="aspect-[16/9] w-full bg-surface-subtle object-contain"
         />
       ) : null}
       <div className="flex flex-1 flex-col p-6 sm:p-7">

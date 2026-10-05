@@ -32,8 +32,9 @@ Read `AGENTS.md`, `BLUEPRINT.md`, `DEV_PROCESS.md`, `CODEBASE_MAP.md`, and the l
 Run the checks named in the task plus checks appropriate to the changed area. Typical project checks are:
 
 ```bash
-pnpm lint
-pnpm build
+corepack pnpm lint
+corepack pnpm typecheck
+corepack pnpm build
 git status --short
 git diff --stat
 ```

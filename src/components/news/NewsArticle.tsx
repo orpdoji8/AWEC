@@ -42,7 +42,8 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
             {...article.featuredImage}
             alt={article.featuredImage.alt}
             priority
-            className="mt-10 aspect-[16/9] w-full rounded-lg object-cover"
+            sizes="(min-width: 1200px) 1152px, 100vw"
+            className="mt-10 h-auto w-full rounded-lg"
           />
         ) : null}
 
