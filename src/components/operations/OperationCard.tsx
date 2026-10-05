@@ -1,33 +1,31 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Operation } from "@/content/operations";
-
-type OperationCardProps = {
-  operation: Operation;
-};
-
-export function OperationCard({ operation }: OperationCardProps) {
+type OperationCardProps = { operation: Operation; index: number };
+export function OperationCard({ operation, index }: OperationCardProps) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface">
-      {operation.heroImage ? (
-        <Image
-          {...operation.heroImage}
-          alt={operation.heroImage.alt}
-          className="aspect-[16/9] w-full object-cover"
-        />
-      ) : null}
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-foreground">
-          {operation.title}
-        </h2>
-        <p className="mt-3 flex-1 leading-7 text-muted">{operation.summary}</p>
-        <Link
-          href={`/operations/${operation.slug}`}
-          className="mt-5 inline-flex min-h-11 items-center self-start rounded-md font-semibold text-accent hover:text-accent-hover"
+    <article>
+      <Link
+        href={`/operations/${operation.slug}`}
+        className="group grid grid-cols-[2rem_1fr_auto] items-center gap-4 py-7 transition-colors hover:bg-surface-subtle sm:gap-6 sm:py-9"
+      >
+        <span
+          aria-hidden="true"
+          className="self-start pt-1 font-mono text-sm text-accent"
         >
-          View {operation.title}
-        </Link>
-      </div>
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div>
+          <h2 className="text-2xl font-semibold tracking-tight group-hover:text-accent sm:text-3xl">
+            {operation.title}
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-muted">
+            {operation.summary}
+          </p>
+        </div>
+        <span aria-hidden="true" className="text-2xl text-accent">
+          →
+        </span>
+      </Link>
     </article>
   );
 }

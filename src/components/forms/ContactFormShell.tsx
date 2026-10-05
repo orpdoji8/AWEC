@@ -16,7 +16,7 @@ export function ContactFormShell({
 }: ContactFormShellProps) {
   return (
     <section aria-labelledby="inquiry-form-heading">
-      <div className="rounded-lg border border-border bg-surface p-6 shadow-sm sm:p-8">
+      <div className="min-w-0">
         <h2
           id="inquiry-form-heading"
           className="text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
@@ -26,7 +26,7 @@ export function ContactFormShell({
         <p className="mt-3 leading-7 text-muted">{description}</p>
         <p
           id="form-disabled-status"
-          className="mt-5 rounded-md border border-border bg-surface-subtle px-4 py-3 text-sm leading-6 text-muted"
+          className="mt-5 border-l-2 border-accent pl-4 text-sm leading-6 text-muted"
         >
           {status}
         </p>
@@ -38,17 +38,31 @@ export function ContactFormShell({
               <label htmlFor="name" className="font-medium text-foreground">
                 Name
               </label>
-              <input id="name" name="name" type="text" className={fieldClassName} />
+              <input
+                id="name"
+                name="name"
+                type="text"
+                className={fieldClassName}
+              />
             </div>
             <div>
               <label htmlFor="email" className="font-medium text-foreground">
                 Email
               </label>
-              <input id="email" name="email" type="email" className={fieldClassName} />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className={fieldClassName}
+              />
             </div>
             <div>
-              <label htmlFor="organization" className="font-medium text-foreground">
-                Organization <span className="font-normal text-muted">(optional)</span>
+              <label
+                htmlFor="organization"
+                className="font-medium text-foreground"
+              >
+                Organization{" "}
+                <span className="font-normal text-muted">(optional)</span>
               </label>
               <input
                 id="organization"
@@ -84,7 +98,7 @@ export function ContactFormShell({
                 disabled
                 className="inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground opacity-55 sm:w-auto"
               >
-                Send inquiry — unavailable
+                Send inquiry â€” unavailable
               </button>
             </div>
           </fieldset>

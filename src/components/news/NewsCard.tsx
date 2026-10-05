@@ -17,7 +17,7 @@ function formatPublishedDate(date: string) {
 
 export function NewsCard({ article }: NewsCardProps) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface">
+    <article className="flex h-full flex-col border-b border-border pb-6">
       {article.featuredImage ? (
         <Image
           {...article.featuredImage}
@@ -26,13 +26,18 @@ export function NewsCard({ article }: NewsCardProps) {
           className="aspect-[16/9] w-full bg-surface-subtle object-contain"
         />
       ) : null}
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
+      <div className="flex flex-1 flex-col pt-5">
         {article.publishedAt ? (
-          <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">
+          <time
+            dateTime={article.publishedAt}
+            className="text-sm font-semibold text-accent"
+          >
             {formatPublishedDate(article.publishedAt)}
           </time>
         ) : null}
-        <h2 className={`${article.publishedAt ? "mt-3" : ""} text-2xl font-semibold tracking-[-0.02em] text-foreground`}>
+        <h2
+          className={`${article.publishedAt ? "mt-3" : ""} text-2xl font-semibold tracking-[-0.02em] text-foreground`}
+        >
           {article.title}
         </h2>
         <p className="mt-3 flex-1 leading-7 text-muted">{article.summary}</p>

@@ -16,10 +16,10 @@ export function OperationList({ operations, emptyState }: OperationListProps) {
   }
 
   return (
-    <ul className="grid gap-6 md:grid-cols-2">
-      {operations.map((operation) => (
+    <ul className="divide-y divide-border border-y border-border">
+      {operations.map((operation, index) => (
         <li key={operation.slug}>
-          <OperationCard operation={operation} />
+          <OperationCard operation={operation} index={index} />
         </li>
       ))}
     </ul>

@@ -16,7 +16,7 @@ export function NewsList({ articles, emptyState }: NewsListProps) {
   }
 
   return (
-    <ul className="grid gap-6 md:grid-cols-2">
+    <ul className="grid gap-x-8 gap-y-12 md:grid-cols-2">
       {articles.map((article) => (
         <li key={article.slug}>
           <NewsCard article={article} />

@@ -1,56 +1,30 @@
 import type { Metadata } from "next";
 import { NewsList } from "@/components/news/NewsList";
-import { CallToAction } from "@/components/sections/CallToAction";
-import { TemporaryContentNotice } from "@/components/sections/TemporaryContentNotice";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { newsArticles, newsPageContent } from "@/content/news";
 
 export const metadata: Metadata = newsPageContent.metadata;
-
 export default function NewsPage() {
   return (
-    <>
-      <section aria-labelledby="news-heading">
-        <PageContainer className="py-16 sm:py-22">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              {newsPageContent.intro.eyebrow}
-            </p>
-            <h1
-              id="news-heading"
-              className="text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl"
-            >
-              {newsPageContent.intro.title}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              {newsPageContent.intro.description}
-            </p>
-            <div className="mt-7 max-w-3xl">
-              <TemporaryContentNotice>
-                {newsPageContent.intro.notice}
-              </TemporaryContentNotice>
-            </div>
-          </div>
-        </PageContainer>
+    <PageContainer className="py-12 sm:py-18">
+      <header className="grid items-end gap-6 border-b border-border pb-8 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <p className="eyebrow">The activity archive</p>
+          <h1 className="page-title mt-4">News & Activities</h1>
+        </div>
+        <p className="max-w-xl text-lg leading-8 text-muted">
+          {newsPageContent.intro.description}
+        </p>
+      </header>
+      <p className="max-w-3xl py-6 text-sm leading-7 text-muted">
+        {newsPageContent.intro.notice}
+      </p>
+      <section aria-label="Historical activities and news" className="pt-3">
+        <NewsList
+          articles={newsArticles}
+          emptyState={newsPageContent.emptyState}
+        />
       </section>
-
-      <section className="border-y border-border bg-surface-subtle" aria-labelledby="news-collection">
-        <PageContainer className="py-16 sm:py-22">
-          <h2 id="news-collection" className="sr-only">
-            Historical activities and news
-          </h2>
-          <NewsList
-            articles={newsArticles}
-            emptyState={newsPageContent.emptyState}
-          />
-        </PageContainer>
-      </section>
-
-      <CallToAction
-        {...newsPageContent.supporting}
-        href="/about"
-        linkLabel="About the Organization"
-      />
-    </>
+    </PageContainer>
   );
 }

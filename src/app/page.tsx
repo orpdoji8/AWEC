@@ -1,107 +1,152 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { CallToAction } from "@/components/sections/CallToAction";
-import { SectionIntro } from "@/components/sections/SectionIntro";
-import { TemporaryContentNotice } from "@/components/sections/TemporaryContentNotice";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { homeContent } from "@/content/pages";
+import { newsArticles } from "@/content/news";
+import { operations } from "@/content/operations";
 
 export const metadata: Metadata = homeContent.metadata;
+const featured = newsArticles.find((article) => article.id === "HIST-011");
+const selected = newsArticles.filter((article) =>
+  ["HIST-001", "HIST-005", "HIST-015"].includes(article.id),
+);
 
 export default function HomePage() {
   return (
     <>
-      <section aria-labelledby="home-heading">
-        <PageContainer className="py-18 sm:py-24 lg:py-28">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              {homeContent.hero.eyebrow}
-            </p>
-            <h1
-              id="home-heading"
-              className="text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl"
+      <PageContainer className="grid gap-10 py-12 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
+        <div>
+          <p className="eyebrow">{homeContent.hero.eyebrow}</p>
+          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            Learning and connection across borders.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+            {homeContent.hero.description}
+          </p>
+          <Link
+            className="mt-8 inline-flex min-h-12 items-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground hover:bg-accent-hover"
+            href="/news"
+          >
+            Explore historical activities{" "}
+            <span className="ml-4" aria-hidden="true">
+              →
+            </span>
+          </Link>
+        </div>
+        {featured?.featuredImage ? (
+          <figure className="min-w-0">
+            <Image
+              {...featured.featuredImage}
+              alt={featured.featuredImage.alt}
+              priority
+              sizes="(min-width: 1024px) 600px, 100vw"
+              className="h-auto w-full"
+            />
+            <figcaption className="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4 text-sm leading-6 text-muted">
+              <span className="max-w-sm">
+                From the archive · {featured.title}
+              </span>
+              <Link className="text-link" href={`/news/${featured.slug}`}>
+                View activity →
+              </Link>
+            </figcaption>
+          </figure>
+        ) : null}
+      </PageContainer>
+      <section className="border-y border-border bg-surface">
+        <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">About the organization</p>
+            <Link
+              href="/about"
+              className="text-link mt-5 inline-flex min-h-11 items-center"
             >
-              {homeContent.hero.title}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              {homeContent.hero.description}
+              Get to know AWEC →
+            </Link>
+          </div>
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              American West Educational Center
+            </h2>
+            <p className="mt-4 max-w-3xl leading-8 text-muted">
+              {homeContent.introduction.description}{" "}
+              {homeContent.introduction.body}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/about"
-                className="inline-flex min-h-12 items-center justify-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
-              >
-                About Us
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-accent bg-surface px-6 py-3 font-semibold text-accent transition-colors hover:bg-surface-subtle hover:text-accent-hover"
-              >
-                Contact
-              </Link>
-            </div>
           </div>
         </PageContainer>
       </section>
-
-      <section className="border-y border-border bg-surface">
-        <PageContainer className="grid gap-8 py-14 sm:py-18 lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)] lg:items-center">
-          <SectionIntro {...homeContent.introduction} />
-          <TemporaryContentNotice>
-            {homeContent.introduction.body}
-          </TemporaryContentNotice>
-        </PageContainer>
-      </section>
-
       <section>
-        <PageContainer className="py-16 sm:py-22">
-          <SectionIntro {...homeContent.focus} />
-          <div className="mt-9 grid gap-5 md:grid-cols-3">
-            {homeContent.focus.items.map((item) => (
-              <FeatureCard key={item.title} {...item} />
+        <PageContainer className="py-14 sm:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="eyebrow">From the archive</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Visits, learning & exchange
+              </h2>
+            </div>
+            <Link
+              href="/news"
+              className="text-link inline-flex min-h-11 items-center"
+            >
+              All activities →
+            </Link>
+          </div>
+          <p className="mt-4 max-w-2xl leading-7 text-muted">
+            Historical records recovered from the previous website. Details
+            remain subject to client verification.
+          </p>
+          <div className="mt-9 grid gap-9 md:grid-cols-3">
+            {selected.map((article) => (
+              <article key={article.id}>
+                {article.featuredImage ? (
+                  <Image
+                    {...article.featuredImage}
+                    alt={article.featuredImage.alt}
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="aspect-[16/9] w-full bg-surface-subtle object-contain"
+                  />
+                ) : null}
+                <h3 className="mt-5 text-xl font-semibold leading-snug">
+                  <Link
+                    className="hover:text-accent"
+                    href={`/news/${article.slug}`}
+                  >
+                    {article.title}
+                  </Link>
+                </h3>
+                <p className="mt-3 leading-7 text-muted">{article.summary}</p>
+              </article>
             ))}
           </div>
         </PageContainer>
       </section>
-
-      <section className="border-y border-border bg-surface-subtle">
-        <PageContainer className="py-16 sm:py-22">
-          <div className="grid gap-6 lg:grid-cols-2">
-            {[homeContent.operations, homeContent.news].map((preview) => {
-              const isOperations = preview === homeContent.operations;
-              return (
-                <section
-                  key={preview.title}
-                  className="flex flex-col rounded-lg border border-border bg-surface p-7 sm:p-8"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-                    {preview.eyebrow}
-                  </p>
-                  <h2 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
-                    {preview.title}
-                  </h2>
-                  <p className="mt-4 flex-1 leading-7 text-muted">
-                    {preview.description}
-                  </p>
-                  <Link
-                    href={isOperations ? "/operations" : "/news"}
-                    className="mt-6 inline-flex min-h-11 items-center self-start rounded-md font-semibold text-accent hover:text-accent-hover"
-                  >
-                    {isOperations ? "View Business Operations" : "View News & Activities"}
-                  </Link>
-                </section>
-              );
-            })}
+      <section className="border-t border-border bg-surface-subtle">
+        <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
+          <div>
+            <p className="eyebrow">Business Operations</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+              Explore the recovered categories
+            </h2>
+            <p className="mt-4 leading-7 text-muted">
+              Legacy categories, pending confirmation of their current scope.
+            </p>
           </div>
+          <ul className="grid gap-x-10 sm:grid-cols-2">
+            {operations.map((item) => (
+              <li key={item.id} className="border-b border-border">
+                <Link
+                  href={`/operations/${item.slug}`}
+                  className="flex min-h-16 items-center justify-between gap-4 py-5 font-semibold hover:text-accent"
+                >
+                  {item.title}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </PageContainer>
       </section>
-
-      <CallToAction
-        {...homeContent.contact}
-        href="/contact"
-        linkLabel="Visit Contact"
-      />
     </>
   );
 }

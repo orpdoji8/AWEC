@@ -555,3 +555,45 @@ Review the rendered provisional records, then define a narrow image-integration 
 - Browser inspection confirmed the 14-image listing, desktop and narrow mobile layouts without horizontal overflow, and a fully loaded uncropped image on a mobile detail page. Browser warning/error log was empty for the inspected views.
 - Left the production preview at http://127.0.0.1:3000/news running and open for owner review. Stop that server before running a new server on port 3000.
 - No new dependencies, content claims, commits, or pushes. Client verification of legacy material remains pending; source association does not establish current affiliations or image rights.
+
+## 2026-10-05 — Distinct page layouts and reduced boxed sections
+
+### Completed and decisions
+
+- Reworked the five main pages around their content: a photo-led Home, chapter-style About, numbered Operations directory, open News photo grid, and split Contact layout.
+- Kept the shared header/footer, green palette, existing routes, source-backed photos, and provisional-content status. Contact remains disabled. No new company claims, external services, or dependencies were introduced.
+- Home features the already matched Nanhai activity photo and three selected historical records. About has four in-page anchor links; Operations has full-row links and a desktop sticky introduction. Removed repeated outer card borders and repeated full-width call-to-action sections.
+- Added three small presentation classes to globals.css. Used a temporary pinned Prettier invocation for formatting without changing project dependencies or lockfile.
+- Saved earlier Windows setup and activity-image integration in baseline commit `d26760b` so this design change has a separate reviewable diff. The large raw `old content/` archive stays local/untracked.
+
+### Files modified in this design pass
+
+- `src/app/page.tsx`
+- `src/app/about/page.tsx`
+- `src/app/operations/page.tsx`
+- `src/app/news/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/app/globals.css`
+- `src/components/operations/OperationList.tsx`
+- `src/components/operations/OperationCard.tsx`
+- `src/components/news/NewsList.tsx`
+- `src/components/news/NewsCard.tsx`
+- `src/components/forms/ContactFormShell.tsx`
+- `CODEBASE_MAP.md`
+- `DAILY_LOG.md`
+
+No repository files were created in the design pass. A homepage review screenshot was saved outside the repository in the chat's visualization folder.
+
+### Verification
+
+- `corepack pnpm lint`, `corepack pnpm typecheck`, and `corepack pnpm build` passed; build generated 29 pages.
+- After replacing arrows that Windows displayed as blue emoji, targeted ESLint and the production build passed again.
+- Visually checked all five main pages on desktop and at a narrow mobile viewport. Each had one h1 and no horizontal overflow on mobile.
+- Verified mobile menu opening, navigation and closing, and the About Mission & vision anchor. Browser warning/error log was empty for the inspected pages.
+- HTTP checks passed for all five main pages and all 26 internal URLs linked by them. Confirmed four About anchor targets, 14 News images, and the disabled Contact fieldset.
+- `git diff --check` passed. Production preview remains running at http://127.0.0.1:3000/ for owner review.
+
+### Remaining work
+
+- Owner visual feedback and client verification of copy and images remain pending. The contact form is a preview, and current contact details/branding are not finalized.
+- No push or deployment was requested. The existing unknown-dynamic-slug framework diagnostic was outside this design pass.

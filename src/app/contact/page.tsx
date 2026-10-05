@@ -1,64 +1,46 @@
 import type { Metadata } from "next";
 import { ContactFormShell } from "@/components/forms/ContactFormShell";
-import { SectionIntro } from "@/components/sections/SectionIntro";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { contactContent } from "@/content/pages";
 
 export const metadata: Metadata = contactContent.metadata;
-
 export default function ContactPage() {
   return (
-    <>
-      <section aria-labelledby="contact-heading">
-        <PageContainer className="py-16 sm:py-22">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              {contactContent.intro.eyebrow}
-            </p>
-            <h1
-              id="contact-heading"
-              className="text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl"
-            >
-              {contactContent.intro.title}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              {contactContent.intro.description}
-            </p>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section className="border-y border-border bg-surface-subtle">
-        <PageContainer className="grid gap-8 py-16 sm:py-22 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-start">
-          <ContactFormShell {...contactContent.form} />
-          <div>
-            <SectionIntro {...contactContent.channels} />
-            <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {contactContent.channels.items.map((item) => (
-                <FeatureCard
-                  key={item.label}
-                  title={item.label}
-                  description={item.value}
-                />
-              ))}
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section>
-        <PageContainer className="py-14 sm:py-18">
-          <div className="max-w-3xl rounded-lg border border-border bg-surface p-7 sm:p-8">
-            <h2 className="text-2xl font-semibold tracking-[-0.02em] text-foreground">
-              {contactContent.response.title}
-            </h2>
-            <p className="mt-3 leading-7 text-muted">
-              {contactContent.response.description}
-            </p>
-          </div>
-        </PageContainer>
-      </section>
-    </>
+    <PageContainer className="grid gap-12 py-12 sm:py-18 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div>
+        <header>
+          <p className="eyebrow">American West Educational Center</p>
+          <h1 className="page-title mt-4">Contact us</h1>
+          <p className="mt-5 text-lg leading-8 text-muted">
+            Official contact details and inquiry procedures will be published
+            after client approval.
+          </p>
+        </header>
+        <section className="mt-10" aria-labelledby="contact-channels">
+          <h2 id="contact-channels" className="eyebrow">
+            Contact channels · awaiting confirmation
+          </h2>
+          <dl className="mt-4 divide-y divide-border">
+            {contactContent.channels.items.map((item) => (
+              <div key={item.label} className="py-5">
+                <dt className="font-semibold">{item.label}</dt>
+                <dd className="mt-2 leading-7 text-muted">{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+        <section className="mt-6 border-t border-border pt-6">
+          <h2 className="text-lg font-semibold">
+            {contactContent.response.title}
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-muted">
+            {contactContent.response.description}
+          </p>
+        </section>
+      </div>
+      <div className="min-w-0 border-t border-border pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+        <ContactFormShell {...contactContent.form} />
+      </div>
+    </PageContainer>
   );
 }

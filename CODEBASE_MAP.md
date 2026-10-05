@@ -1,6 +1,6 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-09-29. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-10-05. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
 
 ## Project identity
 
@@ -40,7 +40,7 @@ This file describes the repository as it exists on 2026-09-29. The planned archi
 - `src/app/layout.tsx` — project metadata, keyboard skip link, and the shared header, main landmark, and footer layout
 - `src/app/not-found.tsx` — site-level not-found presentation using the root shell and shared page container
 - `src/app/globals.css` — design tokens and global base styles
-- `src/app/page.tsx` — structural homepage with hero, organization introduction, focus areas, Operations and News previews, and a contact call-to-action
+- `src/app/page.tsx` — photo-led homepage with a captioned historical photo, organization introduction, three selected activity previews, and linked operation categories
 - `src/app/favicon.ico` — generated favicon retained pending future branding
 - `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
 - `src/content/pages.ts` — temporary Home, About, and Contact content plus the updated News & Activities homepage preview
@@ -50,12 +50,12 @@ This file describes the repository as it exists on 2026-09-29. The planned archi
 
 ## Current routes
 
-- `/` — complete Day 0 structural homepage with neutral, temporary content
-- `/about` — complete Day 0 organization-information structure with overview, direction, focus, background, team, and contact areas
-- `/contact` — complete Day 0 contact structure with a disabled form preview, future-channel placeholders, and response-procedure notice; no delivery behavior or real contact details
-- `/operations` — Business Operations landing page listing all six provisional legacy-confirmed categories
+- `/` — photo-led homepage using existing historical content, with an archive action and selected activity previews
+- `/about` — editorial chapters with in-page navigation for overview, direction, focus, and background/people; company copy remains provisional
+- `/contact` — split contact layout with unboxed channel rows and a disabled form preview; no delivery behavior or real contact details
+- `/operations` — numbered directory of six provisional legacy-confirmed categories beside a desktop sticky introduction
 - `/operations/[slug]` — six statically generated operation detail pages driven by `src/content/operations.ts`; unknown slugs return not found
-- `/news` — public News & Activities landing page listing 15 legacy-derived historical records
+- `/news` — compact archive masthead and open two-column photo grid listing 15 historical records
 - `/news/[slug]` — 15 statically generated activity detail pages driven by `src/content/news.ts`; unknown slugs return not found
 - Unknown static and dynamic paths — shared site-level not-found page with Home and Contact links
 
@@ -73,7 +73,7 @@ All landing routes are statically generated. The dynamic detail routes use `gene
 - `src/components/sections/CallToAction.tsx` — shared green closing call-to-action section
 - `src/components/sections/CollectionEmptyState.tsx` — shared text-based empty state for approved-content collections
 - `src/components/forms/ContactFormShell.tsx` — semantic but fully disabled inquiry-form preview with no submission behavior
-- `src/components/operations/OperationCard.tsx` — operation-category summary and detail link
+- `src/components/operations/OperationCard.tsx` — numbered operation row with a full-row detail link
 - `src/components/operations/OperationList.tsx` — semantic operation list with a retained empty-state fallback
 - `src/components/operations/OperationDetail.tsx` — conditional detail presentation identifying records as legacy-derived categories
 - `src/components/news/NewsCard.tsx` — activity summary with a semantic date only when a source-backed date exists
@@ -147,3 +147,7 @@ During the 2026-08-21 Day 1 legacy-content implementation:
 ## Event-image integration (2026-09-29)
 
 `old content/EVENT_IMAGE_MAP.md` and `event-image-map.json` record caption-based matches, archived source hashes, public paths, dimensions, and descriptive alt text. `image-inventory.jpg` is the visual inspection sheet. Fourteen optimized WebP files (1,498,000 bytes total) are referenced through the existing `featuredImage` fields in `src/content/news.ts`. Cards use contained images and responsive sizes; detail images preserve their natural proportions. Archive originals remain unchanged. The logo, stock/background image, Contact map, and 16 uncaptained About photos are not assigned to events.
+
+## Distinct page layouts (2026-10-05)
+
+The five main pages now use different compositions while sharing the green palette, type scale, header, and footer. Home is photo-led; About uses chapters and anchor navigation; Operations is a numbered directory; News uses open photo articles; Contact pairs channel rows with its disabled form. Repeated boxed sections and repeated full-width calls to action were reduced. `.eyebrow`, `.page-title`, and `.text-link` are small shared presentation classes in `globals.css`. No routes, content collections, dependencies, or form behavior changed. The raw `old content/` archive remains local/untracked; the optimized activity images are committed.

@@ -22,8 +22,9 @@
   --chrome-action-text: #163f32;
   --content-max: 72rem;
   --page-padding: clamp(1rem, 4vw, 2rem);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 @theme inline {
@@ -121,5 +122,17 @@ svg {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.16em] text-accent;
+  }
+  .page-title {
+    @apply text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl;
+  }
+  .text-link {
+    @apply font-semibold text-accent underline-offset-4 hover:text-accent-hover hover:underline;
   }
 }

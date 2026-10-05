@@ -1,63 +1,48 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { OperationList } from "@/components/operations/OperationList";
-import { CallToAction } from "@/components/sections/CallToAction";
-import { SectionIntro } from "@/components/sections/SectionIntro";
-import { TemporaryContentNotice } from "@/components/sections/TemporaryContentNotice";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { operations, operationsPageContent } from "@/content/operations";
 
 export const metadata: Metadata = operationsPageContent.metadata;
-
 export default function OperationsPage() {
   return (
-    <>
-      <section aria-labelledby="operations-heading">
-        <PageContainer className="py-16 sm:py-22">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              {operationsPageContent.intro.eyebrow}
-            </p>
-            <h1
-              id="operations-heading"
-              className="text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl"
-            >
-              {operationsPageContent.intro.title}
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              {operationsPageContent.intro.description}
-            </p>
-            <div className="mt-7 max-w-3xl">
-              <TemporaryContentNotice>
-                {operationsPageContent.intro.notice}
-              </TemporaryContentNotice>
-            </div>
-          </div>
-        </PageContainer>
-      </section>
-
-      <section className="border-y border-border bg-surface-subtle" aria-labelledby="operations-collection">
-        <PageContainer className="py-16 sm:py-22">
-          <h2 id="operations-collection" className="sr-only">
-            Published business operations
-          </h2>
+    <PageContainer className="py-12 sm:py-18">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+        <header className="lg:sticky lg:top-8 lg:self-start">
+          <p className="eyebrow">A directory of legacy categories</p>
+          <h1 className="page-title mt-5">Business Operations</h1>
+          <p className="mt-6 text-lg leading-8 text-muted">
+            {operationsPageContent.intro.description}
+          </p>
+          <p className="mt-6 border-l-2 border-accent pl-4 text-sm leading-7 text-muted">
+            {operationsPageContent.intro.notice}
+          </p>
+        </header>
+        <section aria-label="Legacy business operation categories">
           <OperationList
             operations={operations}
             emptyState={operationsPageContent.emptyState}
           />
-        </PageContainer>
-      </section>
-
-      <section>
-        <PageContainer className="py-16 sm:py-22">
-          <SectionIntro {...operationsPageContent.supporting} />
-        </PageContainer>
-      </section>
-
-      <CallToAction
-        {...operationsPageContent.contact}
-        href="/contact"
-        linkLabel="Visit Contact"
-      />
-    </>
+        </section>
+      </div>
+      <aside className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-border py-8">
+        <div>
+          <p className="eyebrow">See the historical records</p>
+          <h2 className="mt-3 text-2xl font-semibold">
+            Visits, training, exhibitions and more
+          </h2>
+          <p className="mt-3 max-w-2xl leading-7 text-muted">
+            {operationsPageContent.supporting.description}
+          </p>
+        </div>
+        <Link
+          href="/news"
+          className="text-link inline-flex min-h-11 items-center"
+        >
+          Explore News & Activities →
+        </Link>
+      </aside>
+    </PageContainer>
   );
 }
