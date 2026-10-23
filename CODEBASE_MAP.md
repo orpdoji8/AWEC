@@ -1,6 +1,6 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-10-05. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-10-23. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
 
 ## Project identity
 
@@ -8,7 +8,7 @@ This file describes the repository as it exists on 2026-10-05. The planned archi
 - **Official organization/public website name:** American West Educational Center
 - **Expected future domain identity:** meixiedu
 - **Purpose:** foundation for an informational corporate website concerning international education and overseas opportunities.
-- **State:** Day 0 foundation and structural shell complete. Day 1 legacy-content integration is in progress. The six legacy-derived Business Operations categories and 15 historical activity records are implemented, and the public News section is now presented as News & Activities while retaining its existing routes.
+- **State:** Day 0 foundation and structural shell complete. Day 1 legacy-content integration is in progress. Two client-named Business placeholders and 15 historical activity records are implemented, and the public News section is now presented as News & Activities while retaining its existing routes.
 
 ## Runtime and package management
 
@@ -40,11 +40,11 @@ This file describes the repository as it exists on 2026-10-05. The planned archi
 - `src/app/layout.tsx` — project metadata, keyboard skip link, and the shared header, main landmark, and footer layout
 - `src/app/not-found.tsx` — site-level not-found presentation using the root shell and shared page container
 - `src/app/globals.css` — design tokens and global base styles
-- `src/app/page.tsx` — photo-led homepage with a captioned historical photo, organization introduction, three selected activity previews, and linked operation categories
+- `src/app/page.tsx` — photo-led homepage with a captioned historical photo, organization introduction, three selected activity previews, and equal Business/Education entry points
 - `src/app/favicon.ico` — generated favicon retained pending future branding
 - `src/content/site.ts` — official public site identity, technical project identifier, shared metadata copy, and primary/footer navigation records
 - `src/content/pages.ts` — temporary Home, About, and Contact content plus the updated News & Activities homepage preview
-- `src/content/operations.ts` — typed collection of six legacy-confirmed operation labels with stable `OP-###` IDs, provisional-status notes, landing-page copy, slug lookup, and static-parameter helper
+- `src/content/operations.ts` — typed collection of two client-named placeholder sections with stable `BUS-###` IDs and content-status notes, landing-page copy, slug lookup, and static-parameter helper
 - `src/content/news.ts` — typed collection of 15 legacy-derived historical activities with stable `HIST-###` IDs, optional dates, category assignments, internal provenance notes, concise source-backed bodies, slug lookup, static-parameter helper, and explicit related-article resolution
 - `src/types/content.ts` — small shared image and text-section types used by both local collections
 
@@ -53,13 +53,19 @@ This file describes the repository as it exists on 2026-10-05. The planned archi
 - `/` — photo-led homepage using existing historical content, with an archive action and selected activity previews
 - `/about` — editorial chapters with in-page navigation for overview, direction, focus, and background/people; company copy remains provisional
 - `/contact` — split contact layout with unboxed channel rows and a disabled form preview; no delivery behavior or real contact details
-- `/operations` — numbered directory of six provisional legacy-confirmed categories beside a desktop sticky introduction
-- `/operations/[slug]` — six statically generated operation detail pages driven by `src/content/operations.ts`; unknown slugs return not found
-- `/news` — compact archive masthead and open two-column photo grid listing 15 historical records
+- `/business` — numbered directory of Build International Connect and International Exhibition, both empty placeholders
+- `/education` — two linked directions: China - US and US - China
+- `/education/china-us` — title, empty-content placeholder, and Back to Education link
+- `/education/us-china` — title, YES heading, and Back to Education link; no program details
+- `/operations` — permanent redirect to `/business`
+- `/operations/[slug]` — two statically generated Business placeholder detail pages driven by `src/content/operations.ts`; unknown slugs return not found
+- `/news` — landing page linking Historical Activities and Past YES
+- `/news/historical-activities` — open photo grid containing all 15 recovered historical records
+- `/news/past-yes` — empty placeholder; no activity subsections created yet
 - `/news/[slug]` — 15 statically generated activity detail pages driven by `src/content/news.ts`; unknown slugs return not found
 - Unknown static and dynamic paths — shared site-level not-found page with Home and Contact links
 
-All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only the six operation slugs and 15 activity slugs in the local collections generate pages.
+All landing routes are statically generated. The dynamic detail routes use `generateStaticParams` with `dynamicParams = false`, so only the two Business slugs and 15 activity slugs in the local collections generate pages.
 
 ## Shared components
 
@@ -151,3 +157,23 @@ During the 2026-08-21 Day 1 legacy-content implementation:
 ## Distinct page layouts (2026-10-05)
 
 The five main pages now use different compositions while sharing the green palette, type scale, header, and footer. Home is photo-led; About uses chapters and anchor navigation; Operations is a numbered directory; News uses open photo articles; Contact pairs channel rows with its disabled form. Repeated boxed sections and repeated full-width calls to action were reduced. `.eyebrow`, `.page-title`, and `.text-link` are small shared presentation classes in `globals.css`. No routes, content collections, dependencies, or form behavior changed. The raw `old content/` archive remains local/untracked; the optimized activity images are committed.
+
+## Business and Education split (2026-10-23)
+
+- `src/content/areas.ts` defines the two homepage entry points and the editorial selection of HIST-011/HIST-012 for Education; this does not reclassify the historical source data or assert current programs.
+- `src/app/business/page.tsx` reuses the existing directory presentation. `src/app/education/page.tsx` uses a split introduction and existing NewsList photo articles.
+- Header/mobile/footer navigation now lists Business and Education separately. Six category detail URLs remain at `/operations/[slug]`, with return links to `/business`.
+- Professional Training remains in Business pending specific client direction; the UCLA training activity is also presented as a historical learning example in Education.
+- Content remains provisional; contact delivery, hosting, authentication, and deployment are unchanged.
+
+## Business placeholders (2026-10-23, supersedes the initial split above)
+
+Business now lists only Build International Connect and International Exhibition. Their detail routes are `/operations/build-international-connect` and `/operations/international-exhibition`, each with an explicit currently-empty message. The six old category detail URLs now return 404. The Business landing page no longer includes the legacy archive aside. The homepage Business description reflects the new pair. Education and historical activity records are unchanged; legacy category classifications in those records remain archival data, not current Business offerings.
+
+## Education directions (2026-10-23, supersedes the initial split above)
+
+`src/content/areas.ts` now defines the two Education links and their travel-direction descriptions. The old historical selection was removed from Education only; both source articles and images remain in News & Activities. `src/app/education/page.tsx` displays two open text links; `src/app/education/china-us/page.tsx` and `src/app/education/us-china/page.tsx` are static detail pages. China - US has an empty-content placeholder, while US - China has only a YES heading below its page title. No new program facts or affiliations are asserted.
+
+## Activity collections (2026-10-23)
+
+`newsSections` in `src/content/news.ts` supplies the two collection links. Historical Activities contains all existing records without changing their IDs, slugs, dates, content, or images. The existing `/news/[slug]` article URLs remain valid and return to Historical Activities. Homepage archive links now point directly to that collection. Past YES is a static empty page, ready for future nested routes under `src/app/news/past-yes/`; no future subsection names or content have been invented. Business and Education remain unchanged.

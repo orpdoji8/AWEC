@@ -27,7 +27,7 @@ export const newsPageContent = {
     eyebrow: "News & Activities",
     title: "News & Activities",
     description:
-      "This section brings together recovered historical activities and future dated updates.",
+      "Explore Historical Activities and Past YES. Past YES is currently empty.",
     notice:
       "Historical entries are derived from the legacy website and remain subject to client verification. Unknown dates and missing details have been omitted.",
   },
@@ -42,6 +42,19 @@ export const newsPageContent = {
       "The About Us page provides the current structural overview while organization details remain under review.",
   },
 } as const;
+
+export const newsSections = [
+  {
+    title: "Historical Activities",
+    href: "/news/historical-activities",
+    description: "Browse all activities recovered from our previous website.",
+  },
+  {
+    title: "Past YES",
+    href: "/news/past-yes",
+    description: "This section is currently empty. Activities and subsections will be added later.",
+  },
+] as const;
 
 export const newsArticles: readonly NewsArticleContent[] = [
   {

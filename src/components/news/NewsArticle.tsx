@@ -22,7 +22,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
   return (
     <article>
       <PageContainer className="py-12 sm:py-16">
-        <BackLink href="/news">Back to News &amp; Activities</BackLink>
+        <BackLink href="/news/historical-activities">Back to Historical Activities</BackLink>
         <header className="mt-8 max-w-4xl">
           {article.publishedAt ? (
             <time dateTime={article.publishedAt} className="text-sm font-semibold text-accent">

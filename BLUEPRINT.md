@@ -81,25 +81,19 @@ The initial form may send an email without storing submissions in a database.
 
 ## 4. Structural Pages Only
 
-### Business Operations
+### Business and Education
 
-The Business Operations section supports separate operation pages. For Day 1, the legacy website is an approved provisional recovery source for the following legacy-confirmed business-operation categories:
+Approved on 2026-10-23: replace the single Business Operations navigation section with two equal top-level sections, **Business** (`/business`) and **Education** (`/education`). Both appear in the header, footer, and homepage. Business now contains only **Build International Connect** and **International Exhibition**, as subsequently specified by the owner on 2026-10-23. Both detail pages must remain empty placeholders until content is provided. Education contains two linked subsections: **China - US** for students going from China to the US, and **US - China** for students going from the US to China. China - US has only an empty-content placeholder. US - China has a **YES** heading and otherwise remains empty. These names were supplied by the owner on 2026-10-23; YES must not acquire unsupported affiliation or program claims. Current education program copy remains pending; do not invent programs or affiliations.
 
-- Professional Training
-- Business Visits
-- International Exhibitions
-- Round-table Seminars
-- Global Branding
-- Marketing
-
-These categories may be used as the provisional basis for content migration and development, but they remain subject to client confirmation before being treated as final or current information.
+The old `/operations` landing URL redirects permanently to `/business`. The two Business detail pages use `/operations/build-international-connect` and `/operations/international-exhibition`. The six former category pages are no longer published; their source material remains in the legacy archive and historical activity records.
 
 Example routes:
 
 ```text
-/operations
-/operations/yes
-/operations/nba-stuff
+/business
+/education
+/operations/build-international-connect
+/operations/international-exhibition
 ```
 
 Recommended structure:
@@ -127,7 +121,7 @@ No specific operation should be described as official, sponsored, partnered, or 
 
 ### News & Activities
 
-The public-facing News section will be presented as **News & Activities**. This is a content-positioning change, not a route rewrite: `/news` and `/news/[slug]` remain the intended route architecture unless a later task explicitly changes them.
+The public-facing News section will be presented as **News & Activities**. As approved on 2026-10-23, `/news` is a two-section landing page: **Historical Activities** (`/news/historical-activities`) contains all 15 existing recovered records, and **Past YES** (`/news/past-yes`) is an empty placeholder for future subsections. No YES records or subfolders should be invented. Existing article URLs at `/news/[slug]` remain valid.
 
 Future dated news and legacy-derived historical activities may coexist in this section. The legacy Home page contains approximately 15 recoverable historical visits, training activities, exhibitions, seminars, and related events that may be structured as a provisional dataset during Day 1. Historical records with unknown dates must omit dates rather than use fabricated dates.
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { homeContent } from "@/content/pages";
 import { newsArticles } from "@/content/news";
-import { operations } from "@/content/operations";
+import { focusAreas } from "@/content/areas";
 
 export const metadata: Metadata = homeContent.metadata;
 const featured = newsArticles.find((article) => article.id === "HIST-011");
@@ -26,7 +26,7 @@ export default function HomePage() {
           </p>
           <Link
             className="mt-8 inline-flex min-h-12 items-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground hover:bg-accent-hover"
-            href="/news"
+            href="/news/historical-activities"
           >
             Explore historical activities{" "}
             <span className="ml-4" aria-hidden="true">
@@ -86,7 +86,7 @@ export default function HomePage() {
               </h2>
             </div>
             <Link
-              href="/news"
+              href="/news/historical-activities"
               className="text-link inline-flex min-h-11 items-center"
             >
               All activities →
@@ -121,30 +121,22 @@ export default function HomePage() {
           </div>
         </PageContainer>
       </section>
-      <section className="border-t border-border bg-surface-subtle">
-        <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
-          <div>
-            <p className="eyebrow">Business Operations</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-              Explore the recovered categories
-            </h2>
-            <p className="mt-4 leading-7 text-muted">
-              Legacy categories, pending confirmation of their current scope.
-            </p>
-          </div>
-          <ul className="grid gap-x-10 sm:grid-cols-2">
-            {operations.map((item) => (
-              <li key={item.id} className="border-b border-border">
-                <Link
-                  href={`/operations/${item.slug}`}
-                  className="flex min-h-16 items-center justify-between gap-4 py-5 font-semibold hover:text-accent"
-                >
-                  {item.title}
-                  <span aria-hidden="true">→</span>
+      <section className="border-t border-border bg-surface-subtle" aria-labelledby="focus-areas">
+        <PageContainer className="py-14 sm:py-20">
+          <p className="eyebrow">Explore AWEC</p>
+          <h2 id="focus-areas" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Business and Education</h2>
+          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-16">
+            {focusAreas.map((area, index) => (
+              <article key={area.href} className="border-t border-border pt-6">
+                <p className="eyebrow" aria-hidden="true">0{index + 1}</p>
+                <h3 className="mt-4 text-3xl font-semibold">{area.title}</h3>
+                <p className="mt-4 max-w-lg leading-8 text-muted">{area.description}</p>
+                <Link href={area.href} className="text-link mt-6 inline-flex min-h-11 items-center">
+                  Explore {area.title} <span className="ml-3" aria-hidden="true">&rarr;</span>
                 </Link>
-              </li>
+              </article>
             ))}
-          </ul>
+          </div>
         </PageContainer>
       </section>
     </>

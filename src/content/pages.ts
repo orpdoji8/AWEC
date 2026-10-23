@@ -42,10 +42,10 @@ export const homeContent = {
     ],
   },
   operations: {
-    eyebrow: "Business operations",
-    title: "Confirmed operations will be added after review",
+    eyebrow: "Business and Education",
+    title: "Explore Business and Education",
     description:
-      "The Business Operations area is ready for approved summaries and supporting information when that material becomes available.",
+      "Business and Education have separate sections for recovered information and future approved content.",
   },
   news: {
     eyebrow: "News & Activities",

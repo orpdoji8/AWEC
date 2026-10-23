@@ -597,3 +597,74 @@ No repository files were created in the design pass. A homepage review screensho
 
 - Owner visual feedback and client verification of copy and images remain pending. The contact form is a preview, and current contact details/branding are not finalized.
 - No push or deployment was requested. The existing unknown-dynamic-slug framework diagnostic was outside this design pass.
+
+## 2026-10-23 - Separate Business and Education sections
+
+### Completed
+
+- Added top-level Business and Education routes and links in shared desktop/mobile/footer navigation.
+- Replaced the homepage category directory with two equally weighted, unboxed Business/Education introductions.
+- Business retains all six legacy categories. Education reuses HIST-011 (student shadow study) and HIST-012 (UCLA professional training) as historical examples, not current programs. This editorial selection is an implementation assumption pending client content/category guidance.
+- `/operations` now returns a permanent 308 redirect to `/business`. All six `/operations/[slug]` detail URLs remain valid and return to Business.
+- Updated the approved blueprint direction and current codebase map. No dependencies, authentication, hosting, or form behavior changed.
+
+### Files created
+
+- `src/app/business/page.tsx`
+- `src/app/education/page.tsx`
+- `src/content/areas.ts`
+
+### Files modified
+
+- `src/app/page.tsx`
+- `src/app/operations/page.tsx`
+- `src/components/operations/OperationDetail.tsx`
+- `src/content/site.ts`
+- `src/content/operations.ts`
+- `src/content/pages.ts`
+- `BLUEPRINT.md`
+- `CODEBASE_MAP.md`
+- `DAILY_LOG.md`
+
+Two review JPGs were saved outside the repository in the chat visualization directory: `education-section.jpg` and `business-education-home.jpg`.
+
+### Verification and remaining work
+
+- `corepack pnpm lint`, `corepack pnpm typecheck`, and `corepack pnpm build` passed; the build generated 31 pages.
+- Python urllib/HTMLParser checks passed for 17 internal URLs linked from Home/Business/Education, single h1 and navigation on all three pages, category return links, and the exact 308 redirect target.
+- Browser visual checks passed at desktop and 390px mobile widths for Home, Business, and Education; no horizontal overflow. Verified keyboard focus, desktop navigation, and mobile menu navigation/closing. Browser warning/error log was empty.
+- `git diff --check` passed. An initial Windows Python encoding error interrupted the homepage edit; restored the inspected HEAD content and reapplied the change using UTF-8 before all checks above.
+- Preview left running at http://127.0.0.1:3000/education. No commit or push requested/performed. Existing untracked archive, PDF output, and temporary files were preserved.
+- Current education program details and exact category allocation need client confirmation. No deployment performed; the earlier PDF represents the prior layout and has not been regenerated.
+
+## 2026-10-23 - Replace legacy Business categories with two empty sections
+
+- Replaced the six published legacy options with the exact owner-supplied names: Build International Connect and International Exhibition. Both detail pages state: "This section is currently empty. Content will be added later." No service descriptions or media were added.
+- Retained the existing numbered directory and detail template. Removed the Business archive aside and legacy wording; updated the homepage Business introduction. Education and News content remain unchanged.
+- New detail URLs: `/operations/build-international-connect` and `/operations/international-exhibition`. The old six category slugs are no longer generated and use the existing not-found behavior. Raw legacy records remain preserved.
+- Modified: `src/content/operations.ts`, `src/content/areas.ts`, `src/app/business/page.tsx`, `src/components/operations/OperationDetail.tsx`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, and `DAILY_LOG.md`. No new repository files. Review screenshot: `business-two-sections.jpg` in the chat visualization directory outside the repository.
+- Checks passed: `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (27 generated pages), and `git diff --check`. HTTP/HTML checks verified exactly two Business detail links, both placeholders with single h1 and return links, and Home/Education/News responses.
+- Browser checks verified both detail links and back navigation, desktop and narrow mobile layouts without horizontal overflow, and no browser warnings/errors. Existing unknown-dynamic-slug framework diagnostic was not retested or changed.
+- No blockers. Placeholder content is intentionally empty. Existing uncommitted changes preserved; no commit, push, or deployment. Production preview restarted at http://127.0.0.1:3000/business.
+
+## 2026-10-23 - Education directions and YES placeholder
+
+- Removed the two historical activity cards and archive link from Education. Historical articles and photos remain unchanged in News & Activities.
+- Added two linked directions using the exact labels China - US and US - China. China - US contains an empty-content placeholder. US - China contains the YES heading only beneath its title, plus standard navigation; no program details or affiliation claims.
+- Updated homepage Education copy to reflect the new directions. Business is unchanged.
+- Created: `src/app/education/china-us/page.tsx`, `src/app/education/us-china/page.tsx`.
+- Modified: `src/app/education/page.tsx`, `src/content/areas.ts`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, `DAILY_LOG.md`.
+- Checks passed: `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (29 pages), `git diff --check`; HTTP/HTML checks for all three Education routes, single h1, exact direction links, absent activity images, China-US empty message, and YES-only body.
+- Browser checks passed for both subsection links and return navigation, wide and mobile Education layouts with no horizontal overflow, and no browser warnings/errors. Screenshot saved outside the repo as `education-directions.jpg` in the chat visualization directory.
+- No blockers. Content intentionally remains empty for later work. No commit, push, or deployment; prior user changes preserved. Preview restarted at http://127.0.0.1:3000/education.
+
+## 2026-10-23 - Historical Activities and Past YES collections
+
+- Replaced the flat News & Activities listing with two linked collections. Chose Historical Activities as the user-permitted alternative to Legacy Activities.
+- Historical Activities contains all 15 existing records and 14 available images. Article URLs, content, IDs, dates, and images are preserved; article return links now lead to the historical collection. Homepage archive actions point directly to it.
+- Past YES has an explicit empty-state message. No activities, subfolders, or program/affiliation claims were created; future nested routes can live beneath its route directory.
+- Created: `src/app/news/historical-activities/page.tsx`, `src/app/news/past-yes/page.tsx`.
+- Modified: `src/app/news/page.tsx`, `src/content/news.ts`, `src/components/news/NewsArticle.tsx`, `src/app/page.tsx`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, `DAILY_LOG.md`.
+- Checks passed: `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (31 pages), `git diff --check`. Python checks confirmed unchanged article dataset against HEAD, all 15 article URLs and backlinks, 14 archive image elements, two landing collections, and an empty Past YES page.
+- Browser checks passed for collection links, return links, an article round trip, and wide/mobile layouts without horizontal overflow. Browser warning/error log was empty. Screenshot saved outside the repository as `news-collections.jpg` in the chat visualization directory.
+- No blockers. Business/Education content remains unchanged. No commit, push, or deployment performed; earlier working changes preserved. Preview running at http://127.0.0.1:3000/news. The earlier client PDF has not been regenerated.

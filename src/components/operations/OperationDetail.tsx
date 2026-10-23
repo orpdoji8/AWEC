@@ -13,10 +13,10 @@ export function OperationDetail({ operation }: OperationDetailProps) {
     <>
       <article>
         <PageContainer className="py-12 sm:py-16">
-          <BackLink href="/operations">Back to Business Operations</BackLink>
+          <BackLink href="/business">Back to Business</BackLink>
           <header className="mt-8 max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              Legacy-derived category
+              Content coming soon
             </p>
             <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl">
               {operation.title}
