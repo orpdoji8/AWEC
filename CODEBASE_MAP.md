@@ -1,6 +1,6 @@
 # Codebase Map
 
-This file describes the repository as it exists on 2026-10-23. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
+This file describes the repository as it exists on 2026-10-24. The planned architecture and content direction in `BLUEPRINT.md` are identified separately and must not be treated as implemented.
 
 ## Project identity
 
@@ -56,7 +56,8 @@ This file describes the repository as it exists on 2026-10-23. The planned archi
 - `/business` — numbered directory of Build International Connect and International Exhibition, both empty placeholders
 - `/education` — two linked directions: China - US and US - China
 - `/education/china-us` — title, empty-content placeholder, and Back to Education link
-- `/education/us-china` — title, YES heading, and Back to Education link; no program details
+- `/education/us-china` — title, YES heading, a link to YES 2026 June, and Back to Education; no program details
+- `/education/us-china/yes-2026-june` — empty page with title and Back to YES link
 - `/operations` — permanent redirect to `/business`
 - `/operations/[slug]` — two statically generated Business placeholder detail pages driven by `src/content/operations.ts`; unknown slugs return not found
 - `/news` — landing page linking Historical Activities and Past YES
@@ -177,3 +178,7 @@ Business now lists only Build International Connect and International Exhibition
 ## Activity collections (2026-10-23)
 
 `newsSections` in `src/content/news.ts` supplies the two collection links. Historical Activities contains all existing records without changing their IDs, slugs, dates, content, or images. The existing `/news/[slug]` article URLs remain valid and return to Historical Activities. Homepage archive links now point directly to that collection. Past YES is a static empty page, ready for future nested routes under `src/app/news/past-yes/`; no future subsection names or content have been invented. Business and Education remain unchanged.
+
+## YES June draft (2026-10-24)
+
+`design-drafts/yes-2026-june/` contains a standalone HTML photo-journal proposal, 25 optimized WebP images, a source inventory, and image-review README. It is outside the Next.js build/public assets. All 25 supplied images decoded and were visually reviewed before layout. The live route remains empty; Past YES is unchanged. Client content and design approval remain pending.

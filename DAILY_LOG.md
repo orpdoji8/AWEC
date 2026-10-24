@@ -668,3 +668,21 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Checks passed: `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (31 pages), `git diff --check`. Python checks confirmed unchanged article dataset against HEAD, all 15 article URLs and backlinks, 14 archive image elements, two landing collections, and an empty Past YES page.
 - Browser checks passed for collection links, return links, an article round trip, and wide/mobile layouts without horizontal overflow. Browser warning/error log was empty. Screenshot saved outside the repository as `news-collections.jpg` in the chat visualization directory.
 - No blockers. Business/Education content remains unchanged. No commit, push, or deployment performed; earlier working changes preserved. Preview running at http://127.0.0.1:3000/news. The earlier client PDF has not been regenerated.
+
+## 2026-10-24 - YES June placeholder and separate photo-journal draft
+
+- Created YES 2026 June under Education > US - China > YES, interpreting "current YES" as the existing Education heading. The new page contains only its title and Back to YES; Past YES stays unchanged.
+- Fully decoded and visually inspected all 25 supplied files before designing: 22 HEIC and three JPEG, no unreadable images or exact duplicates. Recorded similar shots and darker exposures in the review README. Original Downloads files were not modified.
+- Built a standalone local photo-journal draft with 25 WebP derivatives, three editorial chapters, original proportions, descriptive captions, and full-image links. No chronology, affiliation, participant identities, or location claims inferred. Opening banner photo repeats once, for 26 image elements / 25 unique assets.
+- Files created: `src/app/education/us-china/yes-2026-june/page.tsx`; `design-drafts/yes-2026-june/index.html`, `README.md`, `inventory.json`, and 25 `images/*.webp` files (every filename listed in inventory.json).
+- Files modified: `src/app/education/us-china/page.tsx`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, `DAILY_LOG.md`.
+- Local scratch created: `tmp/yes-review/` with 25 review JPEGs, three contact sheets, inventory.json, and preview.jpg; `tmp/image-review-tools/` with Pillow/pillow-heif for HEIC decoding. No application dependencies changed. Draft files live outside public/ and src/app, so are excluded from the Next.js website build.
+- Checks passed: `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (32 pages). Browser verified all 25 unique draft images loaded (zero broken), no horizontal overflow at narrow/default and desktop widths, working chapter anchor, and empty route navigation/backlink. The placeholder has zero main-content images; narrow layout checked at 390px. Draft browser warning/error log empty. `git diff --check` passed.
+- Preview served locally at http://127.0.0.1:3001/ (Python static server, bound to loopback); website at http://127.0.0.1:3000/ (Next production preview). Draft opened for owner review. All existing local archive/output/scratch content preserved.
+- No blockers. Final photo selection, captions, and integration await owner review. No commit, push, or deployment requested/performed.
+
+## 2026-10-24 - Draft photo caption placeholders
+
+- Replaced all 26 visible photo captions (25 unique photos plus the repeated opening photo) with the exact text "placeholder". Removed visible photo numbers, descriptions, and filenames. Preserved descriptive image alt text and accessible link labels.
+- Modified only `design-drafts/yes-2026-june/index.html`, its `README.md`, and `DAILY_LOG.md`. The empty website page and image assets are unchanged.
+- Verified 26 placeholder captions and no remaining descriptive figcaption content through a file assertion; `git diff --check` passed. No application code changed, so build checks were not repeated. No commit or deployment.

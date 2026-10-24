@@ -629,3 +629,7 @@ These are future possibilities only and are not part of the current scope.
 ## 18. Current Guiding Principle
 
 > Preserve the completed reusable shell while recovering legacy content transparently: distinguish legacy-derived and provisional material from verified current facts, and never invent missing details.
+
+## 2026-10-24 — YES June page and image draft
+
+Owner requested YES 2026 June under the existing Education > US - China > YES section. Its route `/education/us-china/yes-2026-june` remains empty apart from its heading and navigation. A separate local photo-layout draft uses the 25 owner-supplied images for review before integration. This does not add content to Past YES or authorize program-role claims.
