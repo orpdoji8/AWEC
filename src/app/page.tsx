@@ -7,7 +7,6 @@ import { newsArticles } from "@/content/news";
 import { focusAreas } from "@/content/areas";
 
 export const metadata: Metadata = homeContent.metadata;
-const featured = newsArticles.find((article) => article.id === "HIST-011");
 const selected = newsArticles.filter((article) =>
   ["HIST-001", "HIST-005", "HIST-015"].includes(article.id),
 );
@@ -34,25 +33,26 @@ export default function HomePage() {
             </span>
           </Link>
         </div>
-        {featured?.featuredImage ? (
+
           <figure className="min-w-0">
             <Image
-              {...featured.featuredImage}
-              alt={featured.featuredImage.alt}
+              src="/images/yes-2026-june/homepage.jpg"
+              width={2275}
+              height={1280}
+              alt="YES June group holding a banner beside an exhibition display"
               priority
               sizes="(min-width: 1024px) 600px, 100vw"
               className="h-auto w-full"
             />
             <figcaption className="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4 text-sm leading-6 text-muted">
               <span className="max-w-sm">
-                From the archive · {featured.title}
+                YES PROGRAM-JUNE, 2026
               </span>
-              <Link className="text-link" href={`/news/${featured.slug}`}>
+              <Link className="text-link" href="/education/us-china/yes-2026-june">
                 View activity →
               </Link>
             </figcaption>
           </figure>
-        ) : null}
       </PageContainer>
       <section className="border-y border-border bg-surface">
         <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">

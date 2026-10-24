@@ -686,3 +686,28 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Replaced all 26 visible photo captions (25 unique photos plus the repeated opening photo) with the exact text "placeholder". Removed visible photo numbers, descriptions, and filenames. Preserved descriptive image alt text and accessible link labels.
 - Modified only `design-drafts/yes-2026-june/index.html`, its `README.md`, and `DAILY_LOG.md`. The empty website page and image assets are unchanged.
 - Verified 26 placeholder captions and no remaining descriptive figcaption content through a file assertion; `git diff --check` passed. No application code changed, so build checks were not repeated. No commit or deployment.
+
+## 2026-10-24 - Firebase static export preparation
+
+- Enabled Next.js static export to `out/`, trailing-slash route folders, and unoptimized local images in `next.config.ts`.
+- Added `firebase.json` for Hosting from `out/` and a permanent `/operations` to `/business` redirect.
+- `corepack pnpm build` passed and generated all 32 routes as static output. Confirmed `out/index.html`, the Operations route output, and Historical Activities output exist; export contains 301 files.
+- No Firebase CLI login, project linking, upload, or custom-domain changes were made. Firebase Hosting is not yet connected to a project; continue with `firebase init hosting` from the repository root and select the existing project.
+- No content or route design changed. No tests were added or run.
+## 2026-10-24 - Build and deploy workflow
+
+- Updated `AGENTS.md` and `DEV_PROCESS.md` to require a fresh production build and Firebase Hosting deployment after every approved local website code, content, or public-asset change. Deployment is conditional on a successful build; the affected live route must be checked and results recorded.
+- `corepack pnpm build` passed and generated 32 static routes. `firebase deploy --only hosting --project awec-1d59e` succeeded and released 299 files.
+- A cache-busted HTTP check of `/education/us-china/yes-2026-june/` returned 200 with the expected title and zero images; the page remains an intentional placeholder pending content integration. `git diff --check` passed. No application source, content, or assets changed.
+
+## 2026-10-24 - Publish YES June journal and homepage feature
+
+- Integrated the approved draft into `/education/us-china/yes-2026-june/` using the shared site shell. Preserved 25 unique photos, three visual chapters, uncropped images, full-image links, and 26 placeholder captions (opening photo repeats). Removed draft-only notices; no program role or affiliation claims added.
+- Replaced the homepage HIST-011 feature with the exact owner-supplied JPEG, caption "YES PROGRAM-JUNE, 2026", and View activity link to June. The historical Nanhai article and photo remain in the archive.
+- Created `src/content/yes-june.ts` and `public/images/yes-2026-june/` (25 WebPs copied from the approved draft plus homepage.jpg).
+- Modified `src/app/page.tsx`, `src/app/education/us-china/yes-2026-june/page.tsx`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, `design-drafts/yes-2026-june/README.md`, `DAILY_LOG.md`, and `.gitignore` (Firebase cache exclusion).
+- Included the existing Firebase/workflow setup from the other workflow in this release: `AGENTS.md`, `DEV_PROCESS.md`, `next.config.ts`, `.firebaserc`, `firebase.json`. Left the unrelated `CLIENT_CONTENT_INTAKE.md` deletion unstaged, and preserved local archive/output/tmp files.
+- Checks: `corepack pnpm typecheck` passed; final `corepack pnpm lint` passed with zero warnings after making the existing alt text explicit. Final `corepack pnpm build` passed (32 static routes). `git diff --check` passed. Static asset verification confirmed 25 unique photos, 26 gallery image elements, and exact supplied homepage bytes.
+- Browser checked desktop and 390px mobile June layouts without overflow, chapter anchor, homepage caption and navigation to June; no browser warnings/errors. Screenshot saved locally at `tmp/yes-review/live-home.jpg`.
+- `firebase deploy --only hosting --project awec-1d59e` succeeded, releasing 325 files. Live HTTP checks passed for Home, June, all 25 gallery assets, and exact homepage image bytes. Live June contains 26 captions. Firebase URL: https://awec-1d59e.web.app/education/us-china/yes-2026-june/ . Custom-domain DNS was not changed or tested.
+- No blockers. Captions remain placeholders by request; existing PDF is unchanged. Commit/push authorized by the standing workflow instruction.

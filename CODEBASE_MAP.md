@@ -14,6 +14,9 @@ This file describes the repository as it exists on 2026-10-24. The planned archi
 
 - Node.js 24 is expected by `.nvmrc`.
 - `package.json` also declares Node 24 through `engines`.
+- `next.config.ts` enables static export to `out/`, trailing-slash route folders, and unoptimized local images for static hosting.
+- `firebase.json` configures Firebase Hosting to serve `out/` and permanently redirect `/operations` to `/business`.
+- `.firebaserc` links this checkout to Firebase project `awec-1d59e`; `firebase.json` serves `out/` and redirects `/operations` to `/business`.
 - `scripts/setup-windows.ps1` checks Node and Corepack, verifies pinned pnpm, and installs dependencies with the frozen lockfile.
 - Windows commands use `corepack pnpm` explicitly to avoid other pnpm versions on PATH; macOS remains supported.
 - `corepack pnpm typecheck` generates Next.js route types and runs TypeScript without emitting JavaScript.
@@ -57,7 +60,7 @@ This file describes the repository as it exists on 2026-10-24. The planned archi
 - `/education` — two linked directions: China - US and US - China
 - `/education/china-us` — title, empty-content placeholder, and Back to Education link
 - `/education/us-china` — title, YES heading, a link to YES 2026 June, and Back to Education; no program details
-- `/education/us-china/yes-2026-june` — empty page with title and Back to YES link
+- `/education/us-china/yes-2026-june` — published photo journal with 25 photos, three chapters, placeholder captions, and Back to YES links
 - `/operations` — permanent redirect to `/business`
 - `/operations/[slug]` — two statically generated Business placeholder detail pages driven by `src/content/operations.ts`; unknown slugs return not found
 - `/news` — landing page linking Historical Activities and Past YES
@@ -179,6 +182,14 @@ Business now lists only Build International Connect and International Exhibition
 
 `newsSections` in `src/content/news.ts` supplies the two collection links. Historical Activities contains all existing records without changing their IDs, slugs, dates, content, or images. The existing `/news/[slug]` article URLs remain valid and return to Historical Activities. Homepage archive links now point directly to that collection. Past YES is a static empty page, ready for future nested routes under `src/app/news/past-yes/`; no future subsection names or content have been invented. Business and Education remain unchanged.
 
+## Firebase static export preparation (2026-10-24)
+
+`next.config.ts` enables Next.js static export. `firebase.json` serves the generated `out/` directory and preserves the legacy `/operations` to `/business` redirect at Firebase Hosting. The static build generates all 32 routes, including the 15 news articles and two Business detail pages. This checkout is linked to Firebase project `awec-1d59e` and has been deployed successfully (see DAILY_LOG.md). Next.js server rendering is not configured.
+
 ## YES June draft (2026-10-24)
 
-`design-drafts/yes-2026-june/` contains a standalone HTML photo-journal proposal, 25 optimized WebP images, a source inventory, and image-review README. It is outside the Next.js build/public assets. All 25 supplied images decoded and were visually reviewed before layout. The live route remains empty; Past YES is unchanged. Client content and design approval remain pending.
+`design-drafts/yes-2026-june/` contains a standalone HTML photo-journal proposal, 25 optimized WebP images, a source inventory, and image-review README. It is outside the Next.js build/public assets. All 25 supplied images decoded and were visually reviewed before layout. The approved design is now integrated into the live route; Past YES is unchanged. Individual captions remain placeholders.
+
+## YES June publication (2026-10-24)
+
+`src/content/yes-june.ts` defines the 25 photo records and three visual chapters. The June route renders the approved journal with full-image links and responsive, uncropped images. `public/images/yes-2026-june/` contains 25 WebP images and the owner-supplied `homepage.jpg`. Home features that new image with the caption "YES PROGRAM-JUNE, 2026" and a View activity link to the June page. Historical records remain unchanged.

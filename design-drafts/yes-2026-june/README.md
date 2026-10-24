@@ -22,3 +22,7 @@ An open photo journal, matching the website green and off-white palette. A wide 
 This folder is outside `public/` and the Next.js routes: it is a review artifact and is not included in the website build. The real `/education/us-china/yes-2026-june` page has a heading and return link only. Past YES remains unchanged. No commit, push, or deployment is included in this task.
 
 Conversion used Pillow and pillow-heif installed into the local scratch folder `tmp/image-review-tools`; no application dependencies changed. Reproduction requires those Python packages, source files, and the dimension/quality settings above.
+
+## Approved integration (2026-10-24)
+
+The owner approved publishing this design. The live June route now uses its photo journal with placeholder captions. This directory preserves the original review artifact; production assets are in `public/images/yes-2026-june/` and content is in `src/content/yes-june.ts`.

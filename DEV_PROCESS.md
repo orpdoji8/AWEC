@@ -41,6 +41,17 @@ git diff --stat
 
 For visual or interactive changes, also inspect affected routes at relevant viewport sizes and check keyboard use, semantics, and obvious regressions. Record exact commands and results; never report an unrun check as passed.
 
+### Build and deploy every local website change
+
+After each approved change to local website code, content, or public assets, create a fresh production build and deploy it to the existing Firebase Hosting site:
+
+```bash
+corepack pnpm build
+firebase deploy --only hosting --project awec-1d59e
+```
+
+Run the deploy command only if the build succeeds. If the build fails, do not deploy; investigate and fix an in-scope cause, then rebuild. After deployment, check the affected live route and record the build and deploy results in `DAILY_LOG.md`. This applies to incremental website changes as well as larger releases.
+
 ## 5. Handle failed checks
 
 Investigate whether the failure was introduced by the task. Fix in-scope causes and rerun the check. Do not refactor unrelated code to obtain a clean result. Report the failing command, useful error summary, likely cause, investigation performed, and whether verification remains incomplete.

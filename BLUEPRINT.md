@@ -633,3 +633,7 @@ These are future possibilities only and are not part of the current scope.
 ## 2026-10-24 — YES June page and image draft
 
 Owner requested YES 2026 June under the existing Education > US - China > YES section. Its route `/education/us-china/yes-2026-june` remains empty apart from its heading and navigation. A separate local photo-layout draft uses the 25 owner-supplied images for review before integration. This does not add content to Past YES or authorize program-role claims.
+
+## 2026-10-24 — Publish the YES June journal
+
+Owner approved integrating the June photo-journal draft into `/education/us-china/yes-2026-june`, retaining all 25 photos, three visual chapters, and placeholder captions. Home now features the newly supplied exhibition group photo with exact caption "YES PROGRAM-JUNE, 2026" and a link to that page. This supersedes the empty June page requirement; no affiliation claims are added. Hosting uses Firebase project `awec-1d59e` and static export.
