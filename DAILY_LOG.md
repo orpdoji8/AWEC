@@ -739,3 +739,12 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Review website changes in the browser and on affected live routes. Read client-supplied source PDFs when relevant to an assigned content task; create or inspect page PDF exports only on explicit request.
 - Modified only AGENTS.md, DEV_PROCESS.md, and DAILY_LOG.md. No website code, content, assets, structure, or implementation status changed; no build or Firebase deployment needed for this documentation-only update.
 - Verification: reviewed the documentation diff and ran git diff --check. Existing unrelated deletion and local archive/output/scratch files preserved.
+
+## 2026-10-25 - Homepage introduction from client outline
+
+- Adapted the supplied screenshot into concise English homepage hero, company introduction, metadata, and Business/Education descriptions. Included student/educator exchange, YES youth cultural exchange, school visits/short-term study, seasonal camps, education cooperation, business visits, trade, overseas business development, conferences/exhibitions, and the mission.
+- Shared Education introduction/metadata follows the same updated description. Replaced the shared footer preparation notice with the mission. Preserved every existing section, route, link, image, and historical verification caveat.
+- Did not add bilingual functionality, contact details, registration claims, or named partner claims. The screenshot provides no registration details/contact values and says relationship/authorization wording must follow current agreements.
+- Modified src/content/pages.ts, src/content/areas.ts, src/content/site.ts, CODEBASE_MAP.md, and DAILY_LOG.md. No new application files or dependencies. Local review screenshot: tmp/home-introduction.jpg.
+- Checks: corepack pnpm build passed (33 routes, including TypeScript); corepack pnpm lint passed; git diff --check passed. Browser confirmed updated homepage text, desktop and 390px mobile layout without horizontal overflow, and no console warnings/errors. Local static preview: http://127.0.0.1:3002/.
+- Firebase deployment attempted with firebase deploy --only hosting --project awec-1d59e but failed because saved credentials expired; requested firebase login --reauth from owner. Final build includes the footer update; deployment and live verification remain pending reauthentication. Standing workflow authorizes GitHub commit/push. Unrelated intake deletion and local archive/output/tmp preserved.

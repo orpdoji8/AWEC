@@ -20,6 +20,6 @@ export const siteConfig = {
   description:
     "Information about American West Educational Center and its work in international education and overseas opportunities.",
   footerDescription:
-    "Information about the company and its work in international education and overseas opportunities.",
-  contentNotice: "Website content is being prepared for review.",
+    "Connecting China and the United States through education, cultural exchange, and international business activities.",
+  contentNotice: "Education without borders, growing together through culture.",
 } as const;

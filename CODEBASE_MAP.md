@@ -201,3 +201,7 @@ Business now lists only Build International Connect and International Exhibition
 ## About profile integration (2026-10-25)
 
 About Us now uses client-profile-derived English copy in `src/content/pages.ts`, plus two California State Assembly Certificates of Recognition under `public/images/about/`. `ABOUT_CONTENT_SOURCES.md` maps claims and images to the two source PDFs and records omissions/conflicting dates. The existing chapter layout is retained; unrelated Home/Contact placeholder wording is unchanged.
+
+## Homepage client-outline copy (2026-10-25)
+
+Homepage hero, organization introduction, metadata, and Business/Education descriptions now use the owner-supplied Chinese outline. The shared Education description also appears on /education. Shared footer copy uses the client mission in place of the preparation notice. Sections, links, assets, and historical-record verification wording are unchanged. No bilingual interface or named-partner section was added.

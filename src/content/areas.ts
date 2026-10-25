@@ -3,13 +3,13 @@ export const focusAreas = [
     title: "Business",
     href: "/business",
     description:
-      "Build International Connect and International Exhibition. Both sections are currently empty, with content to be added later.",
+      "Connecting China and the United States through business visits, international trade cooperation, overseas business development, and international conferences and exhibitions.",
   },
   {
     title: "Education",
     href: "/education",
     description:
-      "Explore China - US and US - China student education sections. Details will be added later.",
+      "Explore YES youth cultural exchange, student and educator exchanges between China and the US, US school visits and short-term study, international summer and winter camps, and educational cooperation.",
   },
 ] as const;
 

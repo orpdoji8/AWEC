@@ -1,22 +1,22 @@
-// Temporary page copy. Replace only with verified or clearly identified provisional content.
+// Homepage introduction adapted from the client-supplied outline, 2026-10-25.
 export const homeContent = {
   metadata: {
     title: "American West Educational Center",
     description:
-      "A structural introduction to American West Educational Center and future approved education content.",
+      "American West Educational Center connects the United States and China through education, cultural exchange, and international business activities.",
   },
   hero: {
     eyebrow: "International education",
     title: "A place for learning, connection, and opportunity across borders.",
     description:
-      "This website is being prepared to share approved information about American West Educational Center, international learning, cultural exchange, and overseas opportunities.",
+      "Connecting the United States and China through education and cultural exchange. Discover student and educator exchanges, school visits, and opportunities to learn across cultures with American West Educational Center.",
   },
   introduction: {
     eyebrow: "Organization introduction",
-    title: "A clear foundation for the organization’s story",
+    title: "Education without borders, growing together through culture.",
     description:
-      "American West Educational Center will use this space to present approved organization information in a clear and accessible way.",
-    body: "Details about the organization’s purpose, approach, and work will be added during the client-content phase.",
+      "American West Educational Center (AWEC) brings together educational resources in the United States and supports educational and cultural exchange between China and the US.",
+    body: "Guided by the belief in education without borders and growing together through culture, our work spans international learning, educational cooperation, and business and cultural exchange.",
   },
   focus: {
     eyebrow: "Areas of focus",
