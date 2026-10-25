@@ -645,3 +645,7 @@ Approved event-introduction page at `/education/us-china/yes-2026-december/`, li
 ## 2026-10-25 — About Us client profiles
 
 Owner authorized adapting two supplied Chinese company profiles for About Us and displaying their recognition certificates. Publish concise company, mission, education/exchange information and accurately labeled historical recognition for AWEC (2018) and Linda Liu (2024). Do not turn those certificates into accreditation or official program-endorsement claims. Source mapping and omitted/conflicting material are recorded in ABOUT_CONTENT_SOURCES.md.
+
+## 2026-10-25 - December registration update
+
+Owner replaced the temporary June form with https://forms.gle/kR6SSRbzr779fTuS7 and confirmed it displays the December term and requires Google sign-in. Add the group photograph cropped from the supplied form screenshot to the December page. This supersedes the earlier approval to reuse the June form.

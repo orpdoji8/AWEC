@@ -205,3 +205,7 @@ About Us now uses client-profile-derived English copy in `src/content/pages.ts`,
 ## Homepage client-outline copy (2026-10-25)
 
 Homepage hero, organization introduction, metadata, and Business/Education descriptions now use the owner-supplied Chinese outline. The shared Education description also appears on /education. Shared footer copy uses the client mission in place of the preparation notice. Sections, links, assets, and historical-record verification wording are unchanged. No bilingual interface or named-partner section was added.
+
+## December registration update (2026-10-25)
+
+The December page now links to the owner-supplied December Google Form at https://forms.gle/kR6SSRbzr779fTuS7. It retains the sign-in notice and adds public/images/yes-2026-december/registration-group.png, an exact 461x345 crop of the supplied screenshot, below the registration details. No form UI or account details are included; the two existing trip photographs remain.

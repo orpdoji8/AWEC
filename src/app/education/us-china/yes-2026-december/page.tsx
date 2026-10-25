@@ -8,9 +8,8 @@ export const metadata: Metadata = {
   description: "Restart the December YES trip to China with AWEC.",
 };
 
-// Participant-facing URL discovered in the owner-supplied form. Owner approved
-// reusing this form despite its current June title. Google sign-in is required.
-const registrationUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf7wCopznO9Iroh-1spoxWsiTqS0DnL4HvLyq7jWbT4BiTXdg/viewform";
+// Owner-supplied December form; owner confirmed the term and Google sign-in requirement.
+const registrationUrl = "https://forms.gle/kR6SSRbzr779fTuS7";
 
 export default function YesDecemberPage() {
   return (
@@ -27,6 +26,7 @@ export default function YesDecemberPage() {
             Register for YES December 2026 <span aria-hidden="true">&rarr;</span>
           </a>
           <p className="mt-3 text-sm leading-6 text-muted">Opens Google Forms in a new tab. Google sign-in is required.</p>
+          <Image src="/images/yes-2026-december/registration-group.png" alt="Group in matching yellow shirts posing in front of a green display" width={461} height={345} sizes="(min-width: 1024px) 420px, 100vw" className="mt-8 h-auto w-full max-w-md" />
         </div>
         <div>
           <Image src="/images/yes-2026-december/welcome.webp" alt="Group holding an AWEC banner beneath a welcome sign on a previous trip" width={1800} height={1013} priority sizes="(min-width: 1024px) 650px, 100vw" className="h-auto w-full" />
