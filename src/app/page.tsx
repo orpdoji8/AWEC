@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
               <p className="eyebrow">From the archive</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
                 Visits, learning & exchange
               </h2>
             </div>
@@ -98,10 +98,6 @@ export default function HomePage() {
               All activities →
             </Link>
           </div>
-          <p className="mt-4 max-w-2xl leading-7 text-muted">
-            Historical records recovered from the previous website. Details
-            remain subject to client verification.
-          </p>
           <div className="mt-9 grid gap-9 md:grid-cols-3">
             {selected.map((article) => (
               <article key={article.id}>

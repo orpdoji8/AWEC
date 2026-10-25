@@ -749,3 +749,9 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Checks: corepack pnpm build passed (33 routes, including TypeScript); corepack pnpm lint passed; git diff --check passed. Browser confirmed updated homepage text, desktop and 390px mobile layout without horizontal overflow, and no console warnings/errors. Local static preview: http://127.0.0.1:3002/.
 - Firebase deployment attempted with firebase deploy --only hosting --project awec-1d59e but failed because saved credentials expired; requested firebase login --reauth from owner. Final build includes the footer update; deployment and live verification remain pending reauthentication. Standing workflow authorizes GitHub commit/push. Unrelated intake deletion and local archive/output/tmp preserved.
 - Deployment follow-up: owner completed Google reauthentication; Firebase Hosting retry succeeded (339 files) using the previously verified final build. Live Home and Education returned HTTP 200 and included the new introduction, mission, and education copy. Deployment blocker resolved.
+
+## 2026-10-25 - Simplify homepage activity heading
+
+- Removed the homepage historical-record verification paragraph at owner request and enlarged Visits, learning & exchange from 30/36px to 36/48px responsive type. Retained archive label, activity records, images, and links.
+- Modified src/app/page.tsx and DAILY_LOG.md only. No structure changes or new content claims.
+- corepack pnpm build passed (33 routes including TypeScript); Firebase Hosting deployment succeeded (339 files). Fresh live browser check confirmed paragraph absent and heading classes updated; desktop visual review and mobile overflow check passed. Initial browser response was cached; a fresh query loaded the released version. git diff --check passed. No blockers; unrelated local changes preserved.
