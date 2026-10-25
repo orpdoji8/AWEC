@@ -54,6 +54,12 @@ export default function HomePage() {
             </figcaption>
           </figure>
       </PageContainer>
+      <PageContainer className="pb-12">
+        <Link href="/education/us-china/yes-2026-december" className="group flex flex-wrap items-center justify-between gap-4 border-y border-border py-6">
+          <div><p className="eyebrow">Upcoming trip</p><h2 className="mt-2 text-2xl font-semibold">YES December 2026</h2></div>
+          <span className="text-link">Explore &amp; register <span aria-hidden="true">&rarr;</span></span>
+        </Link>
+      </PageContainer>
       <section className="border-y border-border bg-surface">
         <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
           <div>

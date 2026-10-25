@@ -193,3 +193,7 @@ Business now lists only Build International Connect and International Exhibition
 ## YES June publication (2026-10-24)
 
 `src/content/yes-june.ts` defines the 25 photo records and three visual chapters. The June route renders the approved journal with full-image links and responsive, uncropped images. `public/images/yes-2026-june/` contains 25 WebP images and the owner-supplied `homepage.jpg`. Home features that new image with the caption "YES PROGRAM-JUNE, 2026" and a View activity link to the June page. Historical records remain unchanged.
+
+## YES December introduction (2026-10-25)
+
+`src/app/education/us-china/yes-2026-december/page.tsx` is a static event-introduction route with registration link, short approved copy, and two prior-trip photos. `public/images/yes-2026-december/` contains `welcome.webp` (IMG_1124.JPG) and `tower.webp` (2343.JPG). Home includes an upcoming-trip link; the YES index lists December and June. Google Forms requires sign-in; access/submission after login was not tested. No embedded form or new application dependency.

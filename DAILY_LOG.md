@@ -711,3 +711,14 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Browser checked desktop and 390px mobile June layouts without overflow, chapter anchor, homepage caption and navigation to June; no browser warnings/errors. Screenshot saved locally at `tmp/yes-review/live-home.jpg`.
 - `firebase deploy --only hosting --project awec-1d59e` succeeded, releasing 325 files. Live HTTP checks passed for Home, June, all 25 gallery assets, and exact homepage image bytes. Live June contains 26 captions. Firebase URL: https://awec-1d59e.web.app/education/us-china/yes-2026-june/ . Custom-domain DNS was not changed or tested.
 - No blockers. Captions remain placeholders by request; existing PDF is unchanged. Commit/push authorized by the standing workflow instruction.
+
+## 2026-10-25 - YES December event introduction
+
+- Created the public static route `/education/us-china/yes-2026-december/` with a large YES December 2026 title, owner-requested short copy, and prominent Google Forms registration link. Added links from Home and the existing YES index; June content remains unchanged.
+- Reviewed all four supplied images, including decoding IMG_0818.HEIC. Used two complementary photos (IMG_1124.JPG and 2343.JPG), preserving proportions and identifying them as previous-trip imagery. Other photos remain untouched. No itinerary, eligibility, cost, or affiliation details invented.
+- Found the participant-facing URL in the supplied edit page. Its title is AWEC YES JUNE 2026 Scholarship Application; the owner explicitly approved using it for now. Browser redirects to Google sign-in; anonymous HTTP returned 401. The site notes sign-in is required. Access after sign-in and form submission remain unverified; Google permissions/content were not changed.
+- Created: `src/app/education/us-china/yes-2026-december/page.tsx`, `public/images/yes-2026-december/welcome.webp`, `public/images/yes-2026-december/tower.webp`.
+- Modified: `src/app/page.tsx`, `src/app/education/us-china/page.tsx`, `BLUEPRINT.md`, `CODEBASE_MAP.md`, `DAILY_LOG.md`.
+- Passed `corepack pnpm lint`, `corepack pnpm typecheck`, `corepack pnpm build` (33 static routes), and `git diff --check`. Browser checks passed for Home/YES entry links, return link, two loaded images, and desktop/390px layouts without horizontal overflow; warning/error log empty.
+- Standing owner workflow authorizes GitHub commit/push and Firebase deployment. Unrelated intake-document deletion and local archives/output/tmp are preserved.
+- Firebase Hosting deployment succeeded (337 files). Live HTTP checks passed for Home, YES index, December page and both images; entry links and registration destination are present. DNS unchanged. Remaining limitation: Google Form requires sign-in and still uses its June title.
