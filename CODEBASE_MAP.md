@@ -54,7 +54,7 @@ This file describes the repository as it exists on 2026-10-24. The planned archi
 ## Current routes
 
 - `/` — photo-led homepage using existing historical content, with an archive action and selected activity previews
-- `/about` — editorial chapters with in-page navigation for overview, direction, focus, and background/people; company copy remains provisional
+- `/about` — editorial chapters for overview, mission, education/exchange, and recognition; adapted from owner-supplied profiles
 - `/contact` — split contact layout with unboxed channel rows and a disabled form preview; no delivery behavior or real contact details
 - `/business` — numbered directory of Build International Connect and International Exhibition, both empty placeholders
 - `/education` — two linked directions: China - US and US - China
@@ -197,3 +197,7 @@ Business now lists only Build International Connect and International Exhibition
 ## YES December introduction (2026-10-25)
 
 `src/app/education/us-china/yes-2026-december/page.tsx` is a static event-introduction route with registration link, short approved copy, and two prior-trip photos. `public/images/yes-2026-december/` contains `welcome.webp` (IMG_1124.JPG) and `tower.webp` (2343.JPG). Home includes an upcoming-trip link; the YES index lists December and June. Google Forms requires sign-in; access/submission after login was not tested. No embedded form or new application dependency.
+
+## About profile integration (2026-10-25)
+
+About Us now uses client-profile-derived English copy in `src/content/pages.ts`, plus two California State Assembly Certificates of Recognition under `public/images/about/`. `ABOUT_CONTENT_SOURCES.md` maps claims and images to the two source PDFs and records omissions/conflicting dates. The existing chapter layout is retained; unrelated Home/Contact placeholder wording is unchanged.

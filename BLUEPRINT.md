@@ -641,3 +641,7 @@ Owner approved integrating the June photo-journal draft into `/education/us-chin
 ## 2026-10-25 — YES December 2026
 
 Approved event-introduction page at `/education/us-china/yes-2026-december/`, linked from Home and the YES section. Title: YES December 2026. Copy: "Restart the December YES trip to China with AWEC." Registration links to the participant-facing version of the supplied Google Form. Owner explicitly approved using the same form despite its June 2026 title. Photos are supporting visuals from previous trips, not a December archive or promised itinerary.
+
+## 2026-10-25 — About Us client profiles
+
+Owner authorized adapting two supplied Chinese company profiles for About Us and displaying their recognition certificates. Publish concise company, mission, education/exchange information and accurately labeled historical recognition for AWEC (2018) and Linda Liu (2024). Do not turn those certificates into accreditation or official program-endorsement claims. Source mapping and omitted/conflicting material are recorded in ABOUT_CONTENT_SOURCES.md.

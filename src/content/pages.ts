@@ -61,61 +61,33 @@ export const homeContent = {
   },
 } as const;
 
+// Adapted from the two client-supplied Chinese company profiles, reviewed 2026-10-25.
 export const aboutContent = {
   metadata: {
     title: "About Us",
-    description:
-      "A structural overview prepared for approved information about American West Educational Center.",
+    description: "Learn about American West Educational Center, its US-China educational and cultural exchange work, and certificates of recognition.",
   },
   intro: {
-    eyebrow: "About the organization",
-    title: "About American West Educational Center",
-    description:
-      "This page is prepared for approved information about the organization, its educational focus, and its role in international connections.",
+    description: "Connecting people, schools, and ideas through education and cultural exchange between the United States and China.",
   },
   overview: {
-    eyebrow: "Organization overview",
-    title: "A flexible overview for client-supplied material",
-    description:
-      "Approved details about the organization’s work, priorities, and approach will be added during the content phase.",
+    description: "American West Educational Center (AWEC) is a California-based organization focused on educational and cultural exchange between the United States and China. Its work brings together educational resources and international learning opportunities to support young people and mutual understanding.",
+    body: "Alongside education, AWEC's work includes business visits, international exchange, trade cooperation, and support for participation in international exhibitions.",
   },
-  direction: [
-    {
-      title: "Mission",
-      description:
-        "The organization’s approved mission statement and supporting context will appear here after client review.",
-    },
-    {
-      title: "Vision",
-      description:
-        "This area is prepared for the approved long-term vision and the language selected to describe it.",
-    },
+  mission: {
+    statement: "Education without borders, growing together through culture.",
+    description: "AWEC works to build connections between schools in China and the United States and create opportunities for students and educators to learn from one another. Its approach emphasizes cross-cultural understanding and a global outlook.",
+  },
+  activities: [
+    { title: "Student and educator exchange", description: "School visits, student and teacher exchanges, and online and in-person learning connections between China and the United States." },
+    { title: "Camps and study visits", description: "International summer and winter camps, study visits, and educational travel experiences." },
+    { title: "Youth cultural exchange", description: "Visits to China involving language learning, history and culture, STEAM learning, and community activities." },
+    { title: "Learning and dialogue", description: "Joint teaching activities, themed lectures, international education conferences, and seminars." },
   ],
-  educationalFocus: {
-    eyebrow: "Educational focus",
-    title: "Structured for the themes the website will explain",
-    description:
-      "Future client-supplied material can describe education, cross-cultural learning, and international connections involving the United States and China.",
-    items: ["Education", "Cross-cultural learning", "International connections"],
-  },
-  background: {
-    eyebrow: "Organization background",
-    title: "History and development will be added when confirmed",
-    description:
-      "This section is prepared for approved company history, development, and organizational-role information. No dates or milestones are presented before client confirmation.",
-  },
-  team: {
-    eyebrow: "Team and leadership",
-    title: "Prepared for future team information",
-    description:
-      "Names, roles, portraits, and biographies will be added only when the organization supplies and approves them.",
-  },
-  contact: {
-    eyebrow: "Contact",
-    title: "Continue to the contact structure",
-    description:
-      "Official contact details are still under review, but the Contact page shows how future inquiries will be organized.",
-  },
+  recognition: [
+    { title: "American West Educational Center", date: "October 2018", description: "Certificate of Recognition from the California State Assembly for dedication and contributions to educational advancement.", src: "/images/about/recognition-awec-2018.jpg", width: 462, height: 582, alt: "California Legislature Assembly Certificate of Recognition presented to American West Educational Center, October 2018, signed by Assemblyman Phillip Chen." },
+    { title: "Linda Liu", date: "August 2024", description: "Certificate of Recognition from the California State Assembly honoring Linda Liu, identified on the certificate as President of American West Educational Center, for community contributions and leadership in education.", src: "/images/about/recognition-linda-liu-2024.jpg", width: 461, height: 593, alt: "California Legislature Assembly Certificate of Recognition presented to Linda Liu, President of American West Educational Center, August 2024, signed by Assemblyman Phillip Chen." },
+  ],
 } as const;
 
 export const contactContent = {
