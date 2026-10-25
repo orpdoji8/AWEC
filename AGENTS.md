@@ -21,6 +21,7 @@ Before relevant implementation work:
 - Inspect before editing and reuse existing patterns where appropriate.
 - Do not replace established documentation or architecture without justification and approval.
 - Run the checks required by the task and relevant checks for changed code.
+- Use browser review of the running website for page verification. Do not routinely create page PDFs or inspect PDF exports; the owner now reviews the live website. Create or review page PDFs only when explicitly requested. Continue reading supplied source PDFs when needed for an assigned content task.
 - After every approved change to local website code, content, or public assets, run `corepack pnpm build`. If the build succeeds, deploy the generated static site to Firebase Hosting with `firebase deploy --only hosting --project awec-1d59e`. Do not deploy when the build fails; report the failure and stop before deployment.
 - After approved development work, update `DAILY_LOG.md` with factual results.
 - Update `CODEBASE_MAP.md` whenever repository structure or implementation status changes.

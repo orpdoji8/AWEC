@@ -732,3 +732,10 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Modified: `src/app/about/page.tsx`, `src/content/pages.ts` (About collection only), `BLUEPRINT.md`, `CODEBASE_MAP.md`, `DAILY_LOG.md`. Original PDFs and unrelated working changes preserved. Scratch extraction/render files in `tmp/pdfs/about-review/` remain local.
 - Passed `corepack pnpm lint`, `corepack pnpm typecheck`, and `corepack pnpm build` (33 routes); repeated build after certificate pairing correction passed. Browser reviewed About anchor navigation, loaded images, desktop/mobile layouts and no horizontal overflow; console warnings/errors empty. Live navigation initially timed out but subsequently loaded successfully. Final live HTTP checks returned 200 for About and both certificate files, with image bytes matching corrected public assets.
 - `firebase deploy --only hosting --project awec-1d59e` succeeded (339 files). Owner standing workflow authorizes commit/push. No DNS changes. Certificate resolution is limited to supplied embedded originals; high-resolution scans can replace them later.
+
+## 2026-10-25 - Live website review workflow
+
+- Owner confirmed the website is officially live and requested ending routine page PDF creation and PDF-export inspection. Recorded the preference in AGENTS.md and DEV_PROCESS.md as persistent repository instructions.
+- Review website changes in the browser and on affected live routes. Read client-supplied source PDFs when relevant to an assigned content task; create or inspect page PDF exports only on explicit request.
+- Modified only AGENTS.md, DEV_PROCESS.md, and DAILY_LOG.md. No website code, content, assets, structure, or implementation status changed; no build or Firebase deployment needed for this documentation-only update.
+- Verification: reviewed the documentation diff and ran git diff --check. Existing unrelated deletion and local archive/output/scratch files preserved.

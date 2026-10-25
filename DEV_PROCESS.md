@@ -41,6 +41,8 @@ git diff --stat
 
 For visual or interactive changes, also inspect affected routes at relevant viewport sizes and check keyboard use, semantics, and obvious regressions. Record exact commands and results; never report an unrun check as passed.
 
+The owner has confirmed that the website is officially live. Use the running website and affected deployed routes for routine visual review; do not generate page PDFs or perform PDF-export inspection unless explicitly requested. This does not remove reading or inspecting client-supplied source PDFs when their content or images are needed for an assigned task. Existing PDF exports may remain as historical artifacts and do not need to be refreshed.
+
 ### Build and deploy every local website change
 
 After each approved change to local website code, content, or public assets, create a fresh production build and deploy it to the existing Firebase Hosting site:
