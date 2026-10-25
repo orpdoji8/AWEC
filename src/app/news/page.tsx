@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { newsPageContent, newsSections } from "@/content/news";
+import { PastYesList } from "@/components/news/PastYesList";
 
 export const metadata: Metadata = newsPageContent.metadata;
 
@@ -29,6 +30,10 @@ export default function NewsPage() {
             </li>
           ))}
         </ul>
+      </section>
+      <section className="mt-14" aria-labelledby="past-yes-programs">
+        <h2 id="past-yes-programs" className="mb-8 text-3xl font-semibold">Past YES Programs</h2>
+        <PastYesList />
       </section>
     </PageContainer>
   );

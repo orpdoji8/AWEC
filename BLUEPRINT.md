@@ -649,3 +649,7 @@ Owner authorized adapting two supplied Chinese company profiles for About Us and
 ## 2026-10-25 - December registration update
 
 Owner replaced the temporary June form with https://forms.gle/kR6SSRbzr779fTuS7 and confirmed it displays the December term and requires Google sign-in. Add the group photograph cropped from the supplied form screenshot to the December page. This supersedes the earlier approval to reuse the June form.
+
+## 2026-10-25 - Past YES program directory
+
+Owner approved five prominent program links in News & Activities and Past YES, ordered June 2026, December 2025, June 2025 I, June 2025 II, December 2024. Reuse the published June 2026 journal. The remaining four programs get empty placeholder pages pending photos and details; no program facts or images should be invented. This supersedes the empty Past YES collection requirement.

@@ -27,7 +27,7 @@ export const newsPageContent = {
     eyebrow: "News & Activities",
     title: "News & Activities",
     description:
-      "Explore Historical Activities and Past YES. Past YES is currently empty.",
+      "Explore historical activities and previous YES programs from American West Educational Center.",
     notice:
       "Historical entries are derived from the legacy website and remain subject to client verification. Unknown dates and missing details have been omitted.",
   },
@@ -52,7 +52,7 @@ export const newsSections = [
   {
     title: "Past YES",
     href: "/news/past-yes",
-    description: "This section is currently empty. Activities and subsections will be added later.",
+    description: "Explore YES programs from 2024 to 2026, with photos and highlights added as they become available.",
   },
 ] as const;
 

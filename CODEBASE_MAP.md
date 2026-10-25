@@ -209,3 +209,7 @@ Homepage hero, organization introduction, metadata, and Business/Education descr
 ## December registration update (2026-10-25)
 
 The December page now links to the owner-supplied December Google Form at https://forms.gle/kR6SSRbzr779fTuS7. It retains the sign-in notice and adds public/images/yes-2026-december/registration-group.png, an exact 461x345 crop of the supplied screenshot, below the registration details. No form UI or account details are included; the two existing trip photographs remain.
+
+## Past YES program directory (2026-10-25)
+
+src/content/past-yes.ts defines five ordered links and four placeholder records. src/components/news/PastYesList.tsx renders prominent linked titles on /news and /news/past-yes. src/app/news/past-yes/[slug]/page.tsx statically generates /news/past-yes/yes-2025-december, /news/past-yes/yes-2025-june-i, /news/past-yes/yes-2025-june-ii, and /news/past-yes/yes-2024-december, each with a title, pending-content message, and return link. June 2026 links directly to the existing Education journal without duplicating it. News collection copy no longer calls Past YES empty.
