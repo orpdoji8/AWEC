@@ -56,9 +56,18 @@ export default function HomePage() {
           </figure>
       </PageContainer>
       <PageContainer className="pb-12">
-        <Link href="/education/us-china/yes-2026-december" className="group flex flex-wrap items-center justify-between gap-4 border-y border-border py-6">
-          <div><p className="eyebrow">Upcoming trip</p><h2 className="mt-2 text-2xl font-semibold">YES December 2026</h2></div>
-          <span className="text-link">Explore &amp; register <span aria-hidden="true">&rarr;</span></span>
+        <Link href="/education/us-china/yes-2026-december" className="group flex flex-wrap items-center justify-between gap-8 border-y border-border py-10 sm:py-12">
+          <div>
+            <p className="eyebrow">Upcoming trip</p>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">YES December 2026</h2>
+            <div className="mt-6 space-y-3 text-lg leading-8 sm:text-xl">
+              <p className="font-semibold text-accent">Applications Now Open! <span aria-hidden="true">⭐</span> <span lang="zh-Hans">现已开放申请!</span></p>
+              <p>Join Us! Limited Spots Available! <span lang="zh-Hans">欢迎加入！名额有限!</span></p>
+              <p>Now Accepting Applications!</p>
+              <p className="font-semibold">Don’t Miss Out – Apply Today!</p>
+            </div>
+          </div>
+          <span className="text-link text-lg font-bold">Explore &amp; register <span aria-hidden="true">&rarr;</span></span>
         </Link>
       </PageContainer>
       <section className="border-y border-border bg-surface">

@@ -233,3 +233,7 @@ public/images/brand/awec-logo.png is the original owner-supplied 320x132 logo. S
 ## Replacement logo variants (2026-10-25)
 
 Supersedes the original branding asset: public/images/brand/awec-logo-transparent.png is the supplied 1254px square transparent logo for Home (144/176px display) and the source of favicon.ico and apple-icon.png. public/images/brand/awec-logo-white.png is the supplied white-background square for SiteHeader (64/80px display). The obsolete awec-logo.png was removed; variant-specific names avoid stale browser-cache artwork. All assets retain proportions; Home has no white background class.
+
+## Homepage December invitation (2026-10-25)
+
+Home's existing December event link now uses a bold 36/48px title, increased spacing, and the four client-supplied application invitation lines (including Chinese wording). The entire section still links to the December introduction page; no registration destination changes.

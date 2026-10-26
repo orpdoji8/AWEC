@@ -806,3 +806,9 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Created public/images/brand/awec-logo-transparent.png and awec-logo-white.png; removed superseded public/images/brand/awec-logo.png. Modified src/app/page.tsx, src/components/layout/SiteHeader.tsx, src/app/favicon.ico, src/app/apple-icon.png, CODEBASE_MAP.md, DAILY_LOG.md.
 - corepack pnpm build passed (38 routes including TypeScript), corepack pnpm lint passed. Initial browser review showed the old cached image at the reused path; renamed transparent asset, rebuilt successfully, and redeployed. Final Firebase deployment succeeded (383 files). Live desktop/mobile inspection confirmed both new images loaded, square proportions, transparent Home background, and no horizontal overflow. Screenshot: tmp/home-new-logos.jpg. No remaining blockers; unrelated work preserved.
 - Final whitespace check flagged an extra trailing blank line in Home; removed it, rebuilt and redeployed successfully. git diff --check then passed.
+
+## 2026-10-25 - Enlarge homepage December invitation
+
+- Enlarged YES December 2026 to responsive 36/48px bold type and increased section spacing. Added all four invitation lines from the owner screenshot beneath the title, preserving English/Chinese copy and emphasizing the opening and closing lines. Whole section retains its December page link. Application-open/limited-spots copy is client-provided, not inferred.
+- Modified src/app/page.tsx, CODEBASE_MAP.md, and DAILY_LOG.md only. No new assets, dependencies, or routes. Remaining visual redesign deferred as requested.
+- corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed; Firebase Hosting deployment succeeded (383 files). Live desktop/mobile inspection confirmed readable layout without horizontal overflow and correct December href. Screenshot: tmp/december-home-invitation.jpg. No blockers; unrelated local changes preserved.
