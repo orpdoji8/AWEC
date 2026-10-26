@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { DesktopNavigation } from "./DesktopNavigation";
@@ -10,10 +11,10 @@ export function SiteHeader() {
       <PageContainer className="flex min-h-18 items-center justify-between gap-4 py-3 sm:gap-6">
         <Link
           href="/"
-          className="max-w-[13rem] rounded-sm text-base font-bold leading-tight tracking-[-0.025em] text-chrome-text sm:max-w-[17rem] sm:text-lg lg:max-w-none lg:text-xl"
+          className="shrink-0 rounded-md bg-white p-2"
           aria-label={`${siteConfig.name} home`}
         >
-          {siteConfig.name}
+          <Image src="/images/brand/awec-logo.png" width={320} height={132} alt={siteConfig.name} priority className="h-auto w-32 sm:w-40" />
         </Link>
         <DesktopNavigation />
         <MobileNavigation />

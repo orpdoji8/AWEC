@@ -225,3 +225,7 @@ src/content/past-yes.ts defines five ordered links and four placeholder records.
 ## Contact inquiry embed (2026-10-25)
 
 src/components/forms/ContactFormEmbed.tsx renders the owner-completed Google Form in a responsive iframe with accessible title and separate-tab fallback. /contact uses this component instead of ContactFormShell and removes the obsolete response-expectations block. The unused old shell and copy remain in source but are not rendered. Google controls collection, access, notifications, and receipts; no Firebase function, database, mail integration, or billing changes. Anonymous form requests return 401; signed-in form renders.
+
+## AWEC branding (2026-10-25)
+
+public/images/brand/awec-logo.png is the original owner-supplied 320x132 logo. SiteHeader uses it as the home link on every page (128/160px wide), and Home includes it above the introduction (192/224px wide); both retain natural proportions. src/app/favicon.ico contains square, white-padded 32/48/256px versions, and src/app/apple-icon.png provides a 180px touch icon through Next metadata conventions. No dependencies added.
