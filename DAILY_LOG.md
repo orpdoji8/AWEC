@@ -785,3 +785,10 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Proposed Google Forms with Sheets/notifications as the simplest Google-managed option, or retaining the current form with a Firebase HTTPS function and authenticated email delivery. These are proposals only, not approved implementation scope.
 - corepack pnpm build passed (37 routes including TypeScript); git diff --check passed. Browser confirmed all four values and three link destinations, disabled form, and mobile layout without overflow. Desktop review screenshot: tmp/contact-details.jpg. Existing unrelated changes preserved.
 - Contact completion follow-up: lint passed and Firebase deployment succeeded (380 files) before the discussion interruption. Live HTTP check confirmed the contact email/address. Recording and committing the already-published contact update; inquiry implementation remains pending Google Workspace sign-in.
+
+## 2026-10-25 - Embed owner-completed inquiry form
+
+- Embedded the owner-supplied published AWEC Contact & Inquiries Google Form on Contact, replacing the disabled preview. Added an accessible iframe title, responsive sizing, sign-in notice, and direct-open fallback. Removed obsolete pre-launch response expectations; retained contact details.
+- Created src/components/forms/ContactFormEmbed.tsx. Modified src/app/contact/page.tsx, BLUEPRINT.md, CODEBASE_MAP.md, and DAILY_LOG.md. Old unused ContactFormShell remains available. No Firebase backend, billing, mail, or Google form settings changed.
+- corepack pnpm build passed (37 routes including TypeScript); corepack pnpm lint passed. Firebase Hosting deployment succeeded (380 files). Live desktop and narrow-screen browser checks confirmed embedded fields and Submit, fallback link, and no horizontal page overflow. Review screenshot: tmp/contact-form-embed.jpg.
+- Form renders in signed-in Workspace browser; anonymous HTTP request returned 401. Preserved owner access settings. No test submission sent, so email notifications and respondent receipts are not verified. No implementation blockers; unrelated intake deletion and local archive/output/tmp files preserved.

@@ -653,3 +653,7 @@ Owner replaced the temporary June form with https://forms.gle/kR6SSRbzr779fTuS7 
 ## 2026-10-25 - Past YES program directory
 
 Owner approved five prominent program links in News & Activities and Past YES, ordered June 2026, December 2025, June 2025 I, June 2025 II, December 2024. Reuse the published June 2026 journal. The remaining four programs get empty placeholder pages pending photos and details; no program facts or images should be invented. This supersedes the empty Past YES collection requirement.
+
+## 2026-10-25 - Google Forms inquiry embed
+
+Owner chose an embedded Google Form instead of a Firebase backend and supplied the completed published form (ID 1FAIpQLScfXnzv18eZc3fj_tzWQhgax72x9QDWSPT_ty21uFDQebT2cA). Replace the disabled Contact preview with this form and a direct-link fallback. No Blaze upgrade or API integration. Preserve owner-managed Google settings; the supplied form currently requires sign-in.

@@ -221,3 +221,7 @@ src/content/past-yes.ts defines five ordered links and four placeholder records.
 ## Contact details (2026-10-25)
 
 /contact displays client-supplied info@meixiedu.org, 626-677-1565, 17528 Rowland Street, City of Industry, CA 91748, and meixiedu.org. Email/phone/website are links; address is text. src/content/pages.ts holds these channel values, and src/app/contact/page.tsx renders them. The inquiry form remains disabled and unchanged; no backend, mailbox, or DNS configuration was added.
+
+## Contact inquiry embed (2026-10-25)
+
+src/components/forms/ContactFormEmbed.tsx renders the owner-completed Google Form in a responsive iframe with accessible title and separate-tab fallback. /contact uses this component instead of ContactFormShell and removes the obsolete response-expectations block. The unused old shell and copy remain in source but are not rendered. Google controls collection, access, notifications, and receipts; no Firebase function, database, mail integration, or billing changes. Anonymous form requests return 401; signed-in form renders.

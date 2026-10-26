@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContactFormShell } from "@/components/forms/ContactFormShell";
+import { ContactFormEmbed } from "@/components/forms/ContactFormEmbed";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { contactContent } from "@/content/pages";
 
@@ -30,17 +30,9 @@ export default function ContactPage() {
             ))}
           </dl>
         </section>
-        <section className="mt-6 border-t border-border pt-6">
-          <h2 className="text-lg font-semibold">
-            {contactContent.response.title}
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-muted">
-            {contactContent.response.description}
-          </p>
-        </section>
       </div>
       <div className="min-w-0 border-t border-border pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
-        <ContactFormShell {...contactContent.form} />
+        <ContactFormEmbed />
       </div>
     </PageContainer>
   );
