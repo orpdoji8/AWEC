@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <PageContainer className="grid gap-10 py-12 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
         <div>
-          <Image src="/images/brand/awec-logo.png" width={320} height={132} alt="American West Educational Center logo" priority className="mb-6 h-auto w-48 rounded-md bg-white sm:w-56" />
+          <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" priority className="mb-6 h-auto w-36 sm:w-44" />
           <p className="eyebrow">{homeContent.hero.eyebrow}</p>
           <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
             Learning and connection across borders.
@@ -145,3 +145,4 @@ export default function HomePage() {
     </>
   );
 }
+

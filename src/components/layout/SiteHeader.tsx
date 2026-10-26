@@ -11,10 +11,10 @@ export function SiteHeader() {
       <PageContainer className="flex min-h-18 items-center justify-between gap-4 py-3 sm:gap-6">
         <Link
           href="/"
-          className="shrink-0 rounded-md bg-white p-2"
+          className="shrink-0 overflow-hidden rounded-md bg-white"
           aria-label={`${siteConfig.name} home`}
         >
-          <Image src="/images/brand/awec-logo.png" width={320} height={132} alt={siteConfig.name} priority className="h-auto w-32 sm:w-40" />
+          <Image src="/images/brand/awec-logo-white.png" width={1254} height={1254} alt={siteConfig.name} priority className="h-auto w-16 sm:w-20" />
         </Link>
         <DesktopNavigation />
         <MobileNavigation />

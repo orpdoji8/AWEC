@@ -229,3 +229,7 @@ src/components/forms/ContactFormEmbed.tsx renders the owner-completed Google For
 ## AWEC branding (2026-10-25)
 
 public/images/brand/awec-logo.png is the original owner-supplied 320x132 logo. SiteHeader uses it as the home link on every page (128/160px wide), and Home includes it above the introduction (192/224px wide); both retain natural proportions. src/app/favicon.ico contains square, white-padded 32/48/256px versions, and src/app/apple-icon.png provides a 180px touch icon through Next metadata conventions. No dependencies added.
+
+## Replacement logo variants (2026-10-25)
+
+Supersedes the original branding asset: public/images/brand/awec-logo-transparent.png is the supplied 1254px square transparent logo for Home (144/176px display) and the source of favicon.ico and apple-icon.png. public/images/brand/awec-logo-white.png is the supplied white-background square for SiteHeader (64/80px display). The obsolete awec-logo.png was removed; variant-specific names avoid stale browser-cache artwork. All assets retain proportions; Home has no white background class.
