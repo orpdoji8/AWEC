@@ -29,7 +29,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
               {formatPublishedDate(article.publishedAt)}
             </time>
           ) : null}
-          <h1 className={`${article.publishedAt ? "mt-3" : ""} text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl`}>
+          <h1 className={`${article.publishedAt ? "mt-3" : ""} text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-7xl`}>
             {article.title}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -50,7 +50,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
         <div className="mt-14 max-w-3xl space-y-12">
           {article.body.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                 {section.heading}
               </h2>
               <div className="mt-5 space-y-4 text-lg leading-8 text-muted">
@@ -64,7 +64,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
 
         {article.gallery?.length ? (
           <section className="mt-14" aria-labelledby="news-gallery">
-            <h2 id="news-gallery" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+            <h2 id="news-gallery" className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
               Photo gallery
             </h2>
             <ul className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -83,7 +83,7 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
 
         {relatedArticles.length ? (
           <aside className="mt-14 border-t border-border pt-10" aria-labelledby="related-news">
-            <h2 id="related-news" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+            <h2 id="related-news" className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
               Related news &amp; activities
             </h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">

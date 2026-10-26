@@ -18,7 +18,7 @@ export function OperationDetail({ operation }: OperationDetailProps) {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
               Content coming soon
             </p>
-            <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-7xl">
               {operation.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
@@ -37,7 +37,7 @@ export function OperationDetail({ operation }: OperationDetailProps) {
 
           {operation.overview?.length ? (
             <section className="mt-14 max-w-3xl" aria-labelledby="operation-overview">
-              <h2 id="operation-overview" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 id="operation-overview" className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                 Overview
               </h2>
               <div className="mt-5 space-y-4 text-lg leading-8 text-muted">
@@ -50,7 +50,7 @@ export function OperationDetail({ operation }: OperationDetailProps) {
 
           {operation.intendedAudience?.length ? (
             <section className="mt-14" aria-labelledby="operation-audience">
-              <h2 id="operation-audience" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 id="operation-audience" className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                 Intended audience
               </h2>
               <ul className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -65,7 +65,7 @@ export function OperationDetail({ operation }: OperationDetailProps) {
 
           {operation.details?.map((section) => (
             <section key={section.heading} className="mt-14 max-w-3xl">
-              <h2 className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                 {section.heading}
               </h2>
               <div className="mt-5 space-y-4 text-lg leading-8 text-muted">
@@ -78,7 +78,7 @@ export function OperationDetail({ operation }: OperationDetailProps) {
 
           {operation.gallery?.length ? (
             <section className="mt-14" aria-labelledby="operation-gallery">
-              <h2 id="operation-gallery" className="text-3xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 id="operation-gallery" className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
                 Gallery
               </h2>
               <ul className="mt-6 grid gap-5 sm:grid-cols-2">

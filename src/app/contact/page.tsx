@@ -16,7 +16,7 @@ export default function ContactPage() {
           </p>
         </header>
         <section className="mt-10" aria-labelledby="contact-channels">
-          <h2 id="contact-channels" className="eyebrow">
+          <h2 id="contact-channels" className="eyebrow lg:text-sm">
             Contact details
           </h2>
           <dl className="mt-4 divide-y divide-border">

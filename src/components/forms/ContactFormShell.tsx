@@ -19,7 +19,7 @@ export function ContactFormShell({
       <div className="min-w-0">
         <h2
           id="inquiry-form-heading"
-          className="text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
+          className="text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl"
         >
           {title}
         </h2>

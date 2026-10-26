@@ -812,3 +812,32 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Enlarged YES December 2026 to responsive 36/48px bold type and increased section spacing. Added all four invitation lines from the owner screenshot beneath the title, preserving English/Chinese copy and emphasizing the opening and closing lines. Whole section retains its December page link. Application-open/limited-spots copy is client-provided, not inferred.
 - Modified src/app/page.tsx, CODEBASE_MAP.md, and DAILY_LOG.md only. No new assets, dependencies, or routes. Remaining visual redesign deferred as requested.
 - corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed; Firebase Hosting deployment succeeded (383 files). Live desktop/mobile inspection confirmed readable layout without horizontal overflow and correct December href. Screenshot: tmp/december-home-invitation.jpg. No blockers; unrelated local changes preserved.
+
+## 2026-10-26 - Increase desktop title sizes
+
+- Interpreted +1 as the next Tailwind font-size step at desktop lg (1024px), retaining mobile/tablet sizes. Enlarged all repository heading styles, title-like YES links, and footer organization name; June hero moves 88px to 96px. No layout exceptions were needed in checked templates; Google-hosted form titles are outside site styling control.
+- corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint and git diff --check passed. Browser reviewed Home, About, June/December layouts and News visually; DOM checks across 13 representative routes at 1024px found no horizontal page overflow or clipped headings. News also reviewed at 1440px; Home mobile checked at 390px with unchanged 36px hero. Screenshot: tmp/desktop-heading-review.jpg.
+- Firebase deploy attempted after successful build but failed because saved credentials expired. Owner explicitly deferred publishing until home; no further deploy attempted. Current live site remains unchanged. Local preview serves out on http://127.0.0.1:3003. No form submission, new dependencies, assets, routes, or content changes.
+- Modified CODEBASE_MAP.md, DAILY_LOG.md and the following source files:
+  - src/app/about/page.tsx
+  - src/app/contact/page.tsx
+  - src/app/education/page.tsx
+  - src/app/education/us-china/page.tsx
+  - src/app/education/us-china/yes-2026-december/page.tsx
+  - src/app/education/us-china/yes-2026-june/page.tsx
+  - src/app/globals.css
+  - src/app/news/page.tsx
+  - src/app/not-found.tsx
+  - src/app/page.tsx
+  - src/components/forms/ContactFormEmbed.tsx
+  - src/components/forms/ContactFormShell.tsx
+  - src/components/layout/SiteFooter.tsx
+  - src/components/news/NewsArticle.tsx
+  - src/components/news/NewsCard.tsx
+  - src/components/news/PastYesList.tsx
+  - src/components/operations/OperationCard.tsx
+  - src/components/operations/OperationDetail.tsx
+  - src/components/sections/CallToAction.tsx
+  - src/components/sections/PageIntro.tsx
+  - src/components/sections/SectionIntro.tsx
+  - src/components/ui/FeatureCard.tsx

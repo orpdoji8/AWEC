@@ -18,7 +18,7 @@ export function SectionIntro({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="text-3xl font-semibold tracking-[-0.025em] text-foreground sm:text-4xl">
+      <h2 className="text-3xl font-semibold tracking-[-0.025em] text-foreground sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       <p className="mt-4 text-lg leading-8 text-muted">{description}</p>

@@ -19,14 +19,14 @@ export default function NewsPage() {
       <section className="mt-10" aria-labelledby="historical-activities">
         <Link href="/news/historical-activities" className="group block border-b border-border py-8 sm:py-10">
           <p className="eyebrow" aria-hidden="true">01</p>
-          <h2 id="historical-activities" className="mt-4 flex items-center justify-between gap-5 text-4xl font-semibold tracking-tight group-hover:text-accent sm:text-5xl">
+          <h2 id="historical-activities" className="mt-4 flex items-center justify-between gap-5 text-4xl font-semibold tracking-tight group-hover:text-accent sm:text-5xl lg:text-6xl">
             Historical Activities<span className="shrink-0" aria-hidden="true">&rarr;</span>
           </h2>
         </Link>
       </section>
       <section className="mt-14" aria-labelledby="past-yes-programs">
         <p className="eyebrow" aria-hidden="true">02</p>
-        <h2 id="past-yes-programs" className="mb-8 mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Past YES Programs</h2>
+        <h2 id="past-yes-programs" className="mb-8 mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">Past YES Programs</h2>
         <PastYesList />
       </section>
     </PageContainer>

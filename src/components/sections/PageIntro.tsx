@@ -15,7 +15,7 @@ export function PageIntro({ title, message }: PageIntroProps) {
         </p>
         <h1
           id="page-heading"
-          className="text-4xl font-semibold tracking-[-0.025em] text-foreground sm:text-5xl"
+          className="text-4xl font-semibold tracking-[-0.025em] text-foreground sm:text-5xl lg:text-6xl"
         >
           {title}
         </h1>

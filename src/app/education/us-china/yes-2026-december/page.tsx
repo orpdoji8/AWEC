@@ -18,7 +18,7 @@ export default function YesDecemberPage() {
       <section className="mt-10 grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div className="lg:pt-8">
           <p className="eyebrow">China / December 2026</p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             YES <span className="block">December</span> <span className="block font-serif font-normal italic text-accent">2026</span>
           </h1>
           <p className="mt-7 max-w-md text-xl leading-8 text-muted">Restart the December YES trip to China with AWEC.</p>

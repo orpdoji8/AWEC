@@ -18,7 +18,7 @@ export default function HomePage() {
         <div>
           <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" priority className="mb-6 h-auto w-36 sm:w-44" />
           <p className="eyebrow">{homeContent.hero.eyebrow}</p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Learning and connection across borders.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
@@ -59,7 +59,7 @@ export default function HomePage() {
         <Link href="/education/us-china/yes-2026-december" className="group flex flex-wrap items-center justify-between gap-8 border-y border-border py-10 sm:py-12">
           <div>
             <p className="eyebrow">Upcoming trip</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">YES December 2026</h2>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">YES December 2026</h2>
             <div className="mt-6 space-y-3 text-lg leading-8 sm:text-xl">
               <p className="font-semibold text-accent">Applications Now Open! <span aria-hidden="true">⭐</span> <span lang="zh-Hans">现已开放申请!</span></p>
               <p>Join Us! Limited Spots Available! <span lang="zh-Hans">欢迎加入！名额有限!</span></p>
@@ -82,7 +82,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
               American West Educational Center
             </h2>
             <p className="mt-4 max-w-3xl leading-8 text-muted">
@@ -97,7 +97,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
               <p className="eyebrow">From the archive</p>
-              <h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                 Visits, learning & exchange
               </h2>
             </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
                     className="aspect-[16/9] w-full bg-surface-subtle object-contain"
                   />
                 ) : null}
-                <h3 className="mt-5 text-xl font-semibold leading-snug">
+                <h3 className="mt-5 text-xl lg:text-2xl font-semibold leading-snug">
                   <Link
                     className="hover:text-accent"
                     href={`/news/${article.slug}`}
@@ -136,12 +136,12 @@ export default function HomePage() {
       <section className="border-t border-border bg-surface-subtle" aria-labelledby="focus-areas">
         <PageContainer className="py-14 sm:py-20">
           <p className="eyebrow">Explore AWEC</p>
-          <h2 id="focus-areas" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Business and Education</h2>
+          <h2 id="focus-areas" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Business and Education</h2>
           <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-16">
             {focusAreas.map((area, index) => (
               <article key={area.href} className="border-t border-border pt-6">
                 <p className="eyebrow" aria-hidden="true">0{index + 1}</p>
-                <h3 className="mt-4 text-3xl font-semibold">{area.title}</h3>
+                <h3 className="mt-4 text-3xl lg:text-4xl font-semibold">{area.title}</h3>
                 <p className="mt-4 max-w-lg leading-8 text-muted">{area.description}</p>
                 <Link href={area.href} className="text-link mt-6 inline-flex min-h-11 items-center">
                   Explore {area.title} <span className="ml-3" aria-hidden="true">&rarr;</span>

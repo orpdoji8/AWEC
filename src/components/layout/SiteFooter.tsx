@@ -10,7 +10,7 @@ export function SiteFooter() {
       <PageContainer className="py-10 sm:py-12">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
           <div className="max-w-xl">
-            <p className="text-xl font-bold tracking-[-0.02em]">
+            <p className="text-xl lg:text-2xl font-bold tracking-[-0.02em]">
               {siteConfig.name}
             </p>
             <p className="mt-3 leading-7 text-chrome-text">

@@ -36,7 +36,7 @@ export function NewsCard({ article }: NewsCardProps) {
           </time>
         ) : null}
         <h2
-          className={`${article.publishedAt ? "mt-3" : ""} text-2xl font-semibold tracking-[-0.02em] text-foreground`}
+          className={`${article.publishedAt ? "mt-3" : ""} text-2xl lg:text-3xl font-semibold tracking-[-0.02em] text-foreground`}
         >
           {article.title}
         </h2>

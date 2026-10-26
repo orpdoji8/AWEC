@@ -24,7 +24,7 @@ export default function EducationPage() {
             <li key={direction.href}>
               <Link href={direction.href} className="group block border-b border-border py-6">
                 <p className="eyebrow" aria-hidden="true">0{index + 1}</p>
-                <h2 className="mt-4 flex items-center justify-between gap-4 text-3xl font-semibold group-hover:text-accent">
+                <h2 className="mt-4 flex items-center justify-between gap-4 text-3xl lg:text-4xl font-semibold group-hover:text-accent">
                   {direction.title}<span aria-hidden="true">&rarr;</span>
                 </h2>
                 <p className="mt-4 leading-7 text-muted">{direction.description}</p>

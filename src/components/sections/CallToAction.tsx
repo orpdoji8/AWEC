@@ -24,7 +24,7 @@ export function CallToAction({
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-chrome-text-muted">
               {eyebrow}
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.025em] sm:text-4xl lg:text-5xl">
               {title}
             </h2>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-chrome-text-muted">

@@ -28,7 +28,7 @@ export default function YesJunePage() {
       <header className="grid items-end gap-8 pb-9 pt-12 md:grid-cols-[1.5fr_1fr] md:gap-12">
         <div>
           <p className="eyebrow">YES / Photo journal</p>
-          <h1 className="mt-5 text-5xl font-semibold leading-none tracking-[-0.055em] sm:text-7xl lg:text-[88px]">
+          <h1 className="mt-5 text-5xl font-semibold leading-none tracking-[-0.055em] sm:text-7xl lg:text-8xl">
             YES 2026 <span className="block font-serif font-normal italic">June</span>
           </h1>
         </div>
@@ -47,7 +47,7 @@ export default function YesJunePage() {
         <section key={chapter.id} id={chapter.id} aria-labelledby={`${chapter.id}-title`} className="scroll-mt-8 pt-12 sm:pt-18">
           <header className="mb-8 md:grid md:grid-cols-[1fr_2fr] md:gap-x-10">
             <p className="eyebrow md:row-span-2">0{index + 1} / Photo chapter</p>
-            <h2 id={`${chapter.id}-title`} className="my-3 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">{chapter.title}</h2>
+            <h2 id={`${chapter.id}-title`} className="my-3 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">{chapter.title}</h2>
             <p className="leading-7 text-muted">{chapter.description}</p>
           </header>
           <div className="grid items-start gap-x-7 gap-y-10 md:grid-cols-2">

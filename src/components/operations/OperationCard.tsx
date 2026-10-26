@@ -15,7 +15,7 @@ export function OperationCard({ operation, index }: OperationCardProps) {
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
-          <h2 className="text-2xl font-semibold tracking-tight group-hover:text-accent sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight group-hover:text-accent sm:text-3xl lg:text-4xl">
             {operation.title}
           </h2>
           <p className="mt-3 text-sm leading-6 text-muted">

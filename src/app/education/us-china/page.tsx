@@ -10,11 +10,11 @@ export default function EducationDirectionPage() {
     <PageContainer className="py-12 sm:py-18">
       <BackLink href="/education">Back to Education</BackLink>
       <h1 className="page-title mt-8">US - China</h1>
-      <h2 className="mt-12 text-3xl font-semibold">YES</h2>
-      <Link href="/education/us-china/yes-2026-december" className="text-link mt-6 block text-xl">
+      <h2 className="mt-12 text-3xl lg:text-4xl font-semibold">YES</h2>
+      <Link href="/education/us-china/yes-2026-december" className="text-link mt-6 block text-xl lg:text-2xl">
         YES December 2026 <span aria-hidden="true">&rarr;</span>
       </Link>
-      <Link href="/education/us-china/yes-2026-june" className="text-link mt-6 inline-block text-xl">
+      <Link href="/education/us-china/yes-2026-june" className="text-link mt-6 inline-block text-xl lg:text-2xl">
         YES 2026 June <span aria-hidden="true">&rarr;</span>
       </Link>
     </PageContainer>

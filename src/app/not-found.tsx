@@ -17,7 +17,7 @@ export default function NotFound() {
           </p>
           <h1
             id="not-found-heading"
-            className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl"
+            className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-6xl"
           >
             We could not find the requested page.
           </h1>

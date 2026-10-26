@@ -237,3 +237,7 @@ Supersedes the original branding asset: public/images/brand/awec-logo-transparen
 ## Homepage December invitation (2026-10-25)
 
 Home's existing December event link now uses a bold 36/48px title, increased spacing, and the four client-supplied application invitation lines (including Chinese wording). The entire section still links to the December introduction page; no registration destination changes.
+
+## Desktop heading scale (2026-10-26)
+
+At the lg breakpoint (1024px), page and section headings now advance one Tailwind size step, including shared page-title, article/detail/card titles, YES program directory links, and the footer organization name. June journal hero advances from 88px to 96px. Existing mobile/tablet styles and all content/routes remain unchanged. Google Forms iframe typography is externally managed and unchanged. Local build is ready; Firebase publication is pending owner reauthentication.

@@ -32,18 +32,18 @@ export default function AboutPage() {
         <div className="min-w-0 max-w-3xl">
           <section id="overview" className="scroll-mt-8 pb-12">
             <p className="eyebrow">01 / Overview</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">A bridge between the United States and China</h2>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold tracking-tight">A bridge between the United States and China</h2>
             <p className="mt-5 text-lg leading-8 text-muted">{aboutContent.overview.description}</p>
             <p className="mt-5 leading-8 text-muted">{aboutContent.overview.body}</p>
           </section>
           <section id="direction" className="scroll-mt-8 border-t border-border py-12">
             <p className="eyebrow">02 / Our mission</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">{aboutContent.mission.statement}</h2>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold tracking-tight">{aboutContent.mission.statement}</h2>
             <p className="mt-5 leading-8 text-muted">{aboutContent.mission.description}</p>
           </section>
           <section id="focus" className="scroll-mt-8 border-t border-border py-12">
             <p className="eyebrow">03 / Education &amp; exchange</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">Learning through connection</h2>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold tracking-tight">Learning through connection</h2>
             <dl className="mt-7 space-y-7">
               {aboutContent.activities.map((item) => (
                 <div key={item.title}><dt className="text-xl font-semibold">{item.title}</dt><dd className="mt-2 leading-8 text-muted">{item.description}</dd></div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
           </section>
           <section id="recognition" className="scroll-mt-8 border-t border-border py-12">
             <p className="eyebrow">04 / Recognition</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">Certificates of Recognition</h2>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-semibold tracking-tight">Certificates of Recognition</h2>
             <p className="mt-5 leading-8 text-muted">Recognition from the California State Assembly for contributions to education and the community.</p>
             <div className="mt-8 grid items-start gap-10 md:grid-cols-2">
               {aboutContent.recognition.map((item) => (
@@ -61,7 +61,7 @@ export default function AboutPage() {
                   <a href={item.src} target="_blank" rel="noopener noreferrer" className="block" aria-label={`View certificate for ${item.title}, ${item.date} (new tab)`}>
                     <Image src={item.src} alt={item.alt} width={item.width} height={item.height} sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw" className="h-auto w-full bg-white" />
                   </a>
-                  <figcaption className="mt-5"><p className="eyebrow">{item.date}</p><h3 className="mt-2 text-xl font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-muted">{item.description}</p><a href={item.src} target="_blank" rel="noopener noreferrer" className="text-link mt-3 inline-block text-sm">View certificate<span className="sr-only"> for {item.title} (new tab)</span> &rarr;</a></figcaption>
+                  <figcaption className="mt-5"><p className="eyebrow">{item.date}</p><h3 className="mt-2 text-xl lg:text-2xl font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-7 text-muted">{item.description}</p><a href={item.src} target="_blank" rel="noopener noreferrer" className="text-link mt-3 inline-block text-sm">View certificate<span className="sr-only"> for {item.title} (new tab)</span> &rarr;</a></figcaption>
                 </figure>
               ))}
             </div>
