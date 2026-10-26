@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageContainer } from "@/components/ui/PageContainer";
-import { newsPageContent, newsSections } from "@/content/news";
+import { newsPageContent } from "@/content/news";
 import { PastYesList } from "@/components/news/PastYesList";
 
 export const metadata: Metadata = newsPageContent.metadata;
@@ -16,23 +16,17 @@ export default function NewsPage() {
         </div>
         <p className="max-w-xl text-lg leading-8 text-muted">{newsPageContent.intro.description}</p>
       </header>
-      <section className="mt-12" aria-label="Activity collections">
-        <ul className="grid gap-10 md:grid-cols-2 md:gap-16">
-          {newsSections.map((section, index) => (
-            <li key={section.href}>
-              <Link href={section.href} className="group block border-b border-border py-6">
-                <p className="eyebrow" aria-hidden="true">0{index + 1}</p>
-                <h2 className="mt-4 flex items-center justify-between gap-4 text-3xl font-semibold group-hover:text-accent">
-                  {section.title}<span aria-hidden="true">&rarr;</span>
-                </h2>
-                <p className="mt-4 leading-7 text-muted">{section.description}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <section className="mt-10" aria-labelledby="historical-activities">
+        <Link href="/news/historical-activities" className="group block border-b border-border py-8 sm:py-10">
+          <p className="eyebrow" aria-hidden="true">01</p>
+          <h2 id="historical-activities" className="mt-4 flex items-center justify-between gap-5 text-4xl font-semibold tracking-tight group-hover:text-accent sm:text-5xl">
+            Historical Activities<span className="shrink-0" aria-hidden="true">&rarr;</span>
+          </h2>
+        </Link>
       </section>
       <section className="mt-14" aria-labelledby="past-yes-programs">
-        <h2 id="past-yes-programs" className="mb-8 text-3xl font-semibold">Past YES Programs</h2>
+        <p className="eyebrow" aria-hidden="true">02</p>
+        <h2 id="past-yes-programs" className="mb-8 mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Past YES Programs</h2>
         <PastYesList />
       </section>
     </PageContainer>

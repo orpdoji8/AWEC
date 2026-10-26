@@ -213,3 +213,7 @@ The December page now links to the owner-supplied December Google Form at https:
 ## Past YES program directory (2026-10-25)
 
 src/content/past-yes.ts defines five ordered links and four placeholder records. src/components/news/PastYesList.tsx renders prominent linked titles on /news and /news/past-yes. src/app/news/past-yes/[slug]/page.tsx statically generates /news/past-yes/yes-2025-december, /news/past-yes/yes-2025-june-i, /news/past-yes/yes-2025-june-ii, and /news/past-yes/yes-2024-december, each with a title, pending-content message, and return link. June 2026 links directly to the existing Education journal without duplicating it. News collection copy no longer calls Past YES empty.
+
+## News directory simplification (2026-10-25)
+
+/news now presents two stacked numbered sections: 01 is a larger Historical Activities link without descriptive copy; 02 is the larger Past YES Programs heading followed directly by the five program links. The duplicate Past YES collection teaser is removed. Existing /news/past-yes and all program routes remain available.
