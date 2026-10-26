@@ -777,3 +777,11 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Modified src/app/news/page.tsx, CODEBASE_MAP.md, and DAILY_LOG.md. No new files, dependencies, assets, or route changes.
 - corepack pnpm build passed (37 routes including TypeScript), corepack pnpm lint passed, and Firebase Hosting deployment succeeded (380 files). Live browser verified exactly the two section headings, five direct program links, absent teaser descriptions, and desktop/mobile layouts without horizontal overflow. Keyboard tab focus remains visible. git diff --check passed. Screenshot: tmp/news-two-sections.jpg.
 - No blockers. Existing placeholder pages, historical records, and unrelated local changes preserved.
+
+## 2026-10-25 - Client contact details
+
+- Transcribed the supplied screenshot: info@meixiedu.org; 626-677-1565; 17528 Rowland Street, City of Industry, CA 91748; meixiedu.org. Added mailto/tel/website links and replaced the awaiting-confirmation introduction and contact-channel label. Updated contact metadata. No mailbox delivery claims or office hours added.
+- Modified src/content/pages.ts, src/app/contact/page.tsx, CODEBASE_MAP.md, and DAILY_LOG.md. Inquiry form component, form copy, disabled state, and response-expectations section are unchanged as requested. No backend, form integration, account, DNS, or mail settings changed.
+- Proposed Google Forms with Sheets/notifications as the simplest Google-managed option, or retaining the current form with a Firebase HTTPS function and authenticated email delivery. These are proposals only, not approved implementation scope.
+- corepack pnpm build passed (37 routes including TypeScript); git diff --check passed. Browser confirmed all four values and three link destinations, disabled form, and mobile layout without overflow. Desktop review screenshot: tmp/contact-details.jpg. Existing unrelated changes preserved.
+- Contact completion follow-up: lint passed and Firebase deployment succeeded (380 files) before the discussion interruption. Live HTTP check confirmed the contact email/address. Recording and committing the already-published contact update; inquiry implementation remains pending Google Workspace sign-in.

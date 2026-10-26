@@ -12,19 +12,20 @@ export default function ContactPage() {
           <p className="eyebrow">American West Educational Center</p>
           <h1 className="page-title mt-4">Contact us</h1>
           <p className="mt-5 text-lg leading-8 text-muted">
-            Official contact details and inquiry procedures will be published
-            after client approval.
+            Get in touch with American West Educational Center by email or phone.
           </p>
         </header>
         <section className="mt-10" aria-labelledby="contact-channels">
           <h2 id="contact-channels" className="eyebrow">
-            Contact channels · awaiting confirmation
+            Contact details
           </h2>
           <dl className="mt-4 divide-y divide-border">
             {contactContent.channels.items.map((item) => (
               <div key={item.label} className="py-5">
                 <dt className="font-semibold">{item.label}</dt>
-                <dd className="mt-2 leading-7 text-muted">{item.value}</dd>
+                <dd className="mt-2 leading-7 text-muted">
+                  {item.href ? <a href={item.href} className="text-link break-words">{item.value}</a> : item.value}
+                </dd>
               </div>
             ))}
           </dl>

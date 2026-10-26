@@ -217,3 +217,7 @@ src/content/past-yes.ts defines five ordered links and four placeholder records.
 ## News directory simplification (2026-10-25)
 
 /news now presents two stacked numbered sections: 01 is a larger Historical Activities link without descriptive copy; 02 is the larger Past YES Programs heading followed directly by the five program links. The duplicate Past YES collection teaser is removed. Existing /news/past-yes and all program routes remain available.
+
+## Contact details (2026-10-25)
+
+/contact displays client-supplied info@meixiedu.org, 626-677-1565, 17528 Rowland Street, City of Industry, CA 91748, and meixiedu.org. Email/phone/website are links; address is text. src/content/pages.ts holds these channel values, and src/app/contact/page.tsx renders them. The inquiry form remains disabled and unchanged; no backend, mailbox, or DNS configuration was added.

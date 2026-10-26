@@ -94,7 +94,7 @@ export const contactContent = {
   metadata: {
     title: "Contact",
     description:
-      "A temporary contact-page structure for American West Educational Center pending approved contact information.",
+      "Contact American West Educational Center by email or phone, or find our office in City of Industry, California.",
   },
   intro: {
     eyebrow: "Contact",
@@ -121,10 +121,10 @@ export const contactContent = {
     description:
       "This area is structured for confirmed contact methods without displaying invented details.",
     items: [
-      { label: "Email", value: "Official email will be added after approval." },
-      { label: "Phone", value: "Phone information will be published when confirmed." },
-      { label: "Office location", value: "Location information will be added after approval." },
-      { label: "WeChat or social channels", value: "Approved channel details will be added before launch." },
+      { label: "Email", value: "info@meixiedu.org", href: "mailto:info@meixiedu.org" },
+      { label: "Phone", value: "626-677-1565", href: "tel:+16266771565" },
+      { label: "Office location", value: "17528 Rowland Street, City of Industry, CA 91748", href: null },
+      { label: "Website", value: "meixiedu.org", href: "https://meixiedu.org" },
     ],
   },
   response: {
