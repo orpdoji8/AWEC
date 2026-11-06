@@ -661,3 +661,7 @@ Owner chose an embedded Google Form instead of a Firebase backend and supplied t
 ## 2026-11-05 - Curated YES galleries
 
 Owner approved replacing the four Past YES placeholder pages with curated selections from the four supplied folders, prioritizing people, activities, scenery and artwork and omitting repetitive images. Remove visible placeholder captions from June 2026 while preserving its layout. No new program claims or invented captions. Original sources remain untouched; videos are outside this photo-gallery task.
+
+## 2026-11-06 - December application links
+
+Owner approved adding clickable bilingual China Online VISA Application (COVA) text linking to https://consular.mfa.gov.cn/VISA/ on YES December 2026. Keep registration prominent beside it, with all existing photographs in a separate desktop column and application links first on mobile. Business deferral, China-US content and overall visual redesign remain separate future tasks.
