@@ -16,7 +16,6 @@ function Photo({ number, wide = false, priority = false }: { number: number; wid
       <a href={photo.src} target="_blank" rel="noopener noreferrer" className="block" aria-label={`Open photograph: ${photo.alt} (new tab)`}>
         <Image {...photo} alt={photo.alt} priority={priority} sizes={wide ? "(min-width: 1200px) 1152px, 100vw" : "(min-width: 768px) 50vw, 100vw"} className="h-auto w-full bg-surface-subtle" />
       </a>
-      <figcaption className="pt-3 text-sm text-muted">placeholder</figcaption>
     </figure>
   );
 }

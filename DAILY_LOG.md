@@ -841,3 +841,12 @@ Two review JPGs were saved outside the repository in the chat visualization dire
   - src/components/sections/PageIntro.tsx
   - src/components/sections/SectionIntro.tsx
   - src/components/ui/FeatureCard.tsx
+
+## 2026-11-05 - Complete curated YES photo galleries
+
+- Reviewed all 252 supplied still images across four folders. Selected 98 meaningful photos: December 2025 (19), June 2025 I (33), June 2025 II (23), December 2024 (23). Omitted repetitive shots and an unrelated chat screenshot; excluded nine videos. Original files remain untouched. Folder names supply the program assignments; no itinerary or affiliation claims added.
+- Converted selected JPG/PNG/HEIC sources into proportionate, orientation-correct WebP exports, max 1800px, with metadata stripped. Installed pillow-heif in the local Python user environment for conversion only; no application dependency added. All generated rejected exports were removed from public before building.
+- Replaced four pending pages with responsive photo journals and full-image links; retained existing directory routes. Removed visible placeholder captions from June 2026, retaining its existing design.
+- Modified src/app/education/us-china/yes-2026-june/page.tsx, src/app/news/past-yes/[slug]/page.tsx, src/content/past-yes.ts, BLUEPRINT.md, CODEBASE_MAP.md, DAILY_LOG.md. Created src/content/past-yes-photos.json, YES_GALLERY_SOURCES.md and 98 public/images/past-yes WebPs, individually listed in the source manifest. Local tmp conversion/review scripts, manifests and contact sheets are not committed.
+- corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed without warnings after making image alt explicit; git diff --check passed. First deployment failed with a content-hash mismatch after output changed during upload. Final deployment from the completed rebuild succeeded (481 files). All 98 live WebP responses were byte-compared with local exports and matched.
+- Live browser verified all four routes/counts, desktop layout, narrow-screen December 2024 layout, and June 2026 caption removal with no horizontal overflow in checked views. Firebase authentication succeeded following owner reauthorization. Previously pending desktop heading changes are included in this release. No remaining deployment blocker. Unrelated CLIENT_CONTENT_INTAKE.md deletion and old content/output/tmp files preserved.

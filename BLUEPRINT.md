@@ -657,3 +657,7 @@ Owner approved five prominent program links in News & Activities and Past YES, o
 ## 2026-10-25 - Google Forms inquiry embed
 
 Owner chose an embedded Google Form instead of a Firebase backend and supplied the completed published form (ID 1FAIpQLScfXnzv18eZc3fj_tzWQhgax72x9QDWSPT_ty21uFDQebT2cA). Replace the disabled Contact preview with this form and a direct-link fallback. No Blaze upgrade or API integration. Preserve owner-managed Google settings; the supplied form currently requires sign-in.
+
+## 2026-11-05 - Curated YES galleries
+
+Owner approved replacing the four Past YES placeholder pages with curated selections from the four supplied folders, prioritizing people, activities, scenery and artwork and omitting repetitive images. Remove visible placeholder captions from June 2026 while preserving its layout. No new program claims or invented captions. Original sources remain untouched; videos are outside this photo-gallery task.

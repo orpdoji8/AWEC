@@ -241,3 +241,7 @@ Home's existing December event link now uses a bold 36/48px title, increased spa
 ## Desktop heading scale (2026-10-26)
 
 At the lg breakpoint (1024px), page and section headings now advance one Tailwind size step, including shared page-title, article/detail/card titles, YES program directory links, and the footer organization name. June journal hero advances from 88px to 96px. Existing mobile/tablet styles and all content/routes remain unchanged. Google Forms iframe typography is externally managed and unchanged. Local build is ready; Firebase publication is pending owner reauthentication.
+
+## Curated Past YES galleries (2026-11-05)
+
+The four existing dynamic Past YES routes now render responsive photo journals instead of pending-content messages. src/content/past-yes.ts exports pastYesGalleries; src/content/past-yes-photos.json provides ordered assets, dimensions and descriptive alt text. public/images/past-yes contains 98 optimized WebP photographs: December 2025 (19), June 2025 I (33), June 2025 II (23), December 2024 (23). YES_GALLERY_SOURCES.md lists every selected original and published asset. Photos retain their proportions and open at full exported resolution in a new tab. June 2026 retains its existing journal layout with visible placeholder figcaptions removed. Existing News/Past YES links are reused.

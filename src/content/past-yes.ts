@@ -1,4 +1,4 @@
-export const pastYesPlaceholders = [
+export const pastYesGalleries = [
   { slug: "yes-2025-december", title: "December, 2025 YES Program" },
   { slug: "yes-2025-june-i", title: "June, 2025 YES Program I" },
   { slug: "yes-2025-june-ii", title: "June, 2025 YES Program II" },
@@ -7,7 +7,7 @@ export const pastYesPlaceholders = [
 
 export const pastYesPrograms = [
   { title: "June, 2026 YES Program", href: "/education/us-china/yes-2026-june" },
-  ...pastYesPlaceholders.map((program) => ({
+  ...pastYesGalleries.map((program) => ({
     title: program.title,
     href: `/news/past-yes/${program.slug}`,
   })),
