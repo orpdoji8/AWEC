@@ -19,7 +19,7 @@ export default function HomePage() {
           <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" priority className="mb-6 h-auto w-36 sm:w-44" />
           <p className="eyebrow">{homeContent.hero.eyebrow}</p>
           <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Learning and connection across borders.
+            Learning and Connecting across borders.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
             {homeContent.hero.description}

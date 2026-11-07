@@ -669,3 +669,7 @@ Owner approved adding clickable bilingual China Online VISA Application (COVA) t
 ## 2026-11-07 - December trip leader introduction
 
 Owner supplied the statement that Dr. Ryan Allen from Soka University will lead the December China trip and requested his introduction at the upper left, with existing trip photos arranged horizontally below. Use the supplied name and academic title plus portrait from https://www.soka.edu/about/faculty-staff/ryan-allen. The trip-leading statement is client-provided; the university profile verifies name/title, not the December trip. No broader institutional sponsorship claims are authorized.
+
+## 2026-11-07 - Advisor label reserved
+
+Owner requested only the About sidebar label "05 Our advisor" for future content. Do not add an advisor block, placeholder message or advisor claims yet. Keep the label unlinked until its content exists. Home heading is approved as "Learning and Connecting across borders."

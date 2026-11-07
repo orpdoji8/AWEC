@@ -253,3 +253,7 @@ src/app/education/us-china/yes-2026-december/page.tsx now groups all three exist
 ## December trip leader (2026-11-07)
 
 The December route now has Ryan Allen's portrait, exact client-supplied name/title and trip-leading statement in the upper-left desktop column, opposite the event/application links. A lower responsive photo row contains the three existing trip images, retaining natural proportions and stacking on small screens. public/images/yes-2026-december/ryan-allen.jpg is the unaltered 318x406 portrait from Soka's faculty profile, linked and credited on-page. Source: https://www.soka.edu/sites/default/files/styles/318x406/public/faculty-staff/ryan2.jpg?h=866b2820&itok=2_bG12jd. Published to Firebase after owner reauthentication on 2026-11-07; browser access recovered and live desktop/narrow-screen checks completed.
+
+## Home wording and About advisor label (2026-11-07)
+
+src/app/page.tsx uses "Learning and Connecting across borders." The About sidebar in src/app/about/page.tsx includes the non-interactive label "05 Our advisor" after Recognition; there is no advisor section, anchor or placeholder content. Advisor implementation remains deferred.

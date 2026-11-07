@@ -27,6 +27,8 @@ export default function AboutPage() {
             {chapters.map((item, index) => (
               <li key={item.id}><a href={`#${item.id}`} className="flex min-h-11 items-center gap-3 text-sm text-muted hover:text-accent"><span className="text-accent" aria-hidden="true">0{index + 1}</span>{item.title}</a></li>
             ))}
+            {/* Advisor content is deferred; keep this label unlinked until a section exists. */}
+            <li><span className="flex min-h-11 items-center gap-3 text-sm text-muted"><span className="text-accent" aria-hidden="true">05</span>Our advisor</span></li>
           </ol>
         </nav>
         <div className="min-w-0 max-w-3xl">

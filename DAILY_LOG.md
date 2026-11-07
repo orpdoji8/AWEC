@@ -871,3 +871,9 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Re-read project instructions and latest status; corepack pnpm build passed (38 routes including TypeScript). firebase deploy --only hosting --project awec-1d59e succeeded with 482 files following owner reauthentication.
 - Browser access worked on retry without changing settings. Previous tool message had reported local browser use disabled in Work settings; underlying cause is unknown. Reviewed live desktop layout and narrow 520 CSS-pixel viewport: no horizontal overflow, all four images loaded, exact registration/COVA/faculty link destinations present. Desktop showed the leader at upper left and the three trip photographs in a lower horizontal row. Screenshot saved locally at tmp/ryan-december-live.png.
 - Updated CODEBASE_MAP.md and DAILY_LOG.md only; no application code or public asset changes in this retry. Unrelated local changes preserved. No remaining publishing blocker.
+
+## 2026-11-07 - Home wording and reserved advisor label
+
+- Changed Home heading to "Learning and Connecting across borders." Added "05 Our advisor" in the About left panel as plain text, avoiding a broken anchor while content is deferred. No advisor block or placeholder message added.
+- Modified src/app/page.tsx, src/app/about/page.tsx, BLUEPRINT.md, CODEBASE_MAP.md and DAILY_LOG.md. No new public assets or dependencies. Unrelated local changes preserved.
+- corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed. Firebase deploy succeeded (482 files). Live browser confirmed both changes, readable layout, Home without horizontal overflow, and advisor label as text rather than a link. Screenshot: tmp/about-advisor-label.png. No blockers; future advisor content intentionally pending.
