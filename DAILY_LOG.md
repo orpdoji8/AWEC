@@ -865,3 +865,9 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Modified src/app/education/us-china/yes-2026-december/page.tsx, BLUEPRINT.md, CODEBASE_MAP.md and DAILY_LOG.md; created the portrait asset. Temporary profile HTML and local validation scripts remain untracked in tmp.
 - corepack pnpm build passed (38 routes with TypeScript), corepack pnpm lint passed, git diff --check passed. Export validation confirmed exact client copy, registration/COVA/faculty URLs, and all four December images present. Portrait visually inspected locally.
 - Firebase deployment attempted after successful build but rejected expired credentials. Asked owner to reauthenticate; live site remains at the previous version. Browser review attempted but local browser use is disabled in Work settings, so desktop/mobile visual verification remains pending. These limitations were disclosed before committing. Unrelated intake deletion and old content/output/tmp files preserved.
+
+## 2026-11-07 - Publish trip leader update after reauthentication
+
+- Re-read project instructions and latest status; corepack pnpm build passed (38 routes including TypeScript). firebase deploy --only hosting --project awec-1d59e succeeded with 482 files following owner reauthentication.
+- Browser access worked on retry without changing settings. Previous tool message had reported local browser use disabled in Work settings; underlying cause is unknown. Reviewed live desktop layout and narrow 520 CSS-pixel viewport: no horizontal overflow, all four images loaded, exact registration/COVA/faculty link destinations present. Desktop showed the leader at upper left and the three trip photographs in a lower horizontal row. Screenshot saved locally at tmp/ryan-december-live.png.
+- Updated CODEBASE_MAP.md and DAILY_LOG.md only; no application code or public asset changes in this retry. Unrelated local changes preserved. No remaining publishing blocker.
