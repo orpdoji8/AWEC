@@ -665,3 +665,7 @@ Owner approved replacing the four Past YES placeholder pages with curated select
 ## 2026-11-06 - December application links
 
 Owner approved adding clickable bilingual China Online VISA Application (COVA) text linking to https://consular.mfa.gov.cn/VISA/ on YES December 2026. Keep registration prominent beside it, with all existing photographs in a separate desktop column and application links first on mobile. Business deferral, China-US content and overall visual redesign remain separate future tasks.
+
+## 2026-11-07 - December trip leader introduction
+
+Owner supplied the statement that Dr. Ryan Allen from Soka University will lead the December China trip and requested his introduction at the upper left, with existing trip photos arranged horizontally below. Use the supplied name and academic title plus portrait from https://www.soka.edu/about/faculty-staff/ryan-allen. The trip-leading statement is client-provided; the university profile verifies name/title, not the December trip. No broader institutional sponsorship claims are authorized.

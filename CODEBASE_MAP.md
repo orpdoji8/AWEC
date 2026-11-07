@@ -249,3 +249,7 @@ The four existing dynamic Past YES routes now render responsive photo journals i
 ## December application layout (2026-11-06)
 
 src/app/education/us-china/yes-2026-december/page.tsx now groups all three existing photographs in the left desktop column. The right column contains the event title, existing copy, large registration link and bilingual COVA text link to https://consular.mfa.gov.cn/VISA/. Both external links open in a new tab with notices; registration destination and Google sign-in notice remain unchanged. On smaller screens, application information precedes the images. No new assets, routes or dependencies.
+
+## December trip leader (2026-11-07)
+
+The December route now has Ryan Allen's portrait, exact client-supplied name/title and trip-leading statement in the upper-left desktop column, opposite the event/application links. A lower responsive photo row contains the three existing trip images, retaining natural proportions and stacking on small screens. public/images/yes-2026-december/ryan-allen.jpg is the unaltered 318x406 portrait from Soka's faculty profile, linked and credited on-page. Source: https://www.soka.edu/sites/default/files/styles/318x406/public/faculty-staff/ryan2.jpg?h=866b2820&itok=2_bG12jd. Local build is complete; publication awaits Firebase reauthentication and visual review awaits browser access.

@@ -41,13 +41,23 @@ export default function YesDecemberPage() {
             <p className="mt-4 text-sm leading-6 text-muted">Opens the consular visa application website in a new tab.</p>
           </div>
         </div>
-        <div className="min-w-0 lg:col-start-1 lg:row-start-1">
-          <Image src="/images/yes-2026-december/welcome.webp" alt="Group holding an AWEC banner beneath a welcome sign on a previous trip" width={1800} height={1013} priority sizes="(min-width: 1024px) 548px, 100vw" className="h-auto w-full" />
-          <div className="mt-5 grid grid-cols-[1.1fr_0.9fr] items-start gap-5">
-            <Image src="/images/yes-2026-december/registration-group.png" alt="Group in matching yellow shirts posing in front of a green display" width={461} height={345} sizes="(min-width: 1024px) 290px, 55vw" className="h-auto w-full" />
-            <Image src="/images/yes-2026-december/tower.webp" alt="Group on the steps beneath a tower during a previous trip" width={750} height={1000} sizes="(min-width: 1024px) 238px, 45vw" className="h-auto w-full" />
-          </div>
-          <p className="mt-6 border-t border-border pt-5 text-sm leading-6 text-muted">Photos from previous trips, shared as a glimpse of the experience.</p>
+        <section aria-labelledby="trip-leader" className="min-w-0 lg:col-start-1 lg:row-start-1">
+          <p className="eyebrow">Meet your trip leader</p>
+          <Image src="/images/yes-2026-december/ryan-allen.jpg" alt="Ryan Allen, PhD" width={318} height={406} priority sizes="318px" className="mt-6 h-auto w-full max-w-[318px]" />
+          <h2 id="trip-leader" className="mt-7 text-3xl font-bold tracking-tight sm:text-4xl">Ryan Allen, PhD</h2>
+          <p className="mt-3 max-w-lg text-xl font-semibold leading-8 text-accent">Associate Professor of Comparative and International Education and Leadership</p>
+          <p className="mt-3 text-lg text-muted">Soka University of America</p>
+          <p className="mt-6 max-w-lg text-xl leading-8">Dr. Ryan Allen from Soka University will be leading the group on the December China trip.</p>
+          <a href="https://www.soka.edu/about/faculty-staff/ryan-allen" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-link">View Soka faculty profile <span aria-hidden="true">&#8599;</span><span className="sr-only"> (opens in a new tab)</span></a>
+          <p className="mt-2 text-sm text-muted">Portrait source: Soka University of America.</p>
+        </section>
+      </section>
+      <section aria-label="Photos from previous trips" className="mt-16 border-t border-border pt-8 sm:mt-20">
+        <p className="mb-6 text-sm leading-6 text-muted">Photos from previous trips, shared as a glimpse of the experience.</p>
+        <div className="grid items-center gap-5 md:grid-cols-[1.78fr_1.34fr_0.75fr]">
+          <Image src="/images/yes-2026-december/welcome.webp" alt="Group holding an AWEC banner beneath a welcome sign on a previous trip" width={1800} height={1013} sizes="(min-width: 768px) 46vw, 100vw" className="h-auto w-full" />
+            <Image src="/images/yes-2026-december/registration-group.png" alt="Group in matching yellow shirts posing in front of a green display" width={461} height={345} sizes="(min-width: 768px) 35vw, 100vw" className="h-auto w-full" />
+            <Image src="/images/yes-2026-december/tower.webp" alt="Group on the steps beneath a tower during a previous trip" width={750} height={1000} sizes="(min-width: 768px) 19vw, 100vw" className="h-auto w-full" />
         </div>
       </section>
     </PageContainer>
