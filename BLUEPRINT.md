@@ -686,3 +686,8 @@ Owner approved the visualtest editorial refinement as the official website: loca
 ## 2026-11-16 - Approve editorial News archive and title simplification
 
 Owner approved the completed visualtest News design for official release: photographic News landing, unchanged chronological YES program links, full historical article cards with green/ivory hover borders, and a stronger Historical Activities masthead. Remove the verification/unknown-dates paragraph directly below that archive title, as explicitly requested; underlying source-status metadata and individual article content remain. This supersedes the earlier notice-display requirement for the archive introduction only. No new dates, activities, claims or services are introduced. Future experiments continue in visualtest until separately approved.
+
+
+## 2026-11-16 - Approve Contact card refinement
+
+Owner approved the completed visualtest Contact design for the official website and authorized main synchronization, commit/push and deployment. Contact uses a larger editorial title, paper-colored black-outline contact cards inset from the title edges, and pointer-responsive green light revealing diagonal texture. Existing contact details, destinations, inquiry form and architecture remain. Future experiments continue in visualtest until separately approved.

@@ -1,0 +1,106 @@
+/* Original CSS material treatment inspired by vGPU's Holographic Card.
+   Reuses FeatureLight's optional, event-driven pointer response. */
+.contactColumn {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Let the heading determine the column width, rather than the card contents. */
+.channels { contain: inline-size; }
+
+.title {
+  font-size: clamp(3.5rem, 7vw, 6.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  margin-inline: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 3px solid #111;
+  background: var(--page-background);
+  color: #111;
+}
+
+.details { position: relative; z-index: 1; }
+
+.label {
+  margin-bottom: 0.75rem;
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.value {
+  max-width: 24ch;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.5rem, 2.25vw, 1.875rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 200ms ease;
+}
+
+.link::after { position: absolute; inset: 0; content: ""; }
+.arrow { flex: none; color: inherit; font: 1.125rem var(--font-sans); }
+.link:focus-visible { outline: none; }
+.card:focus-within { outline: 2px solid #2f6b55; outline-offset: 4px; }
+.card:focus-within .link { text-decoration-color: currentColor; }
+
+/* Green light stays below the readable black text.
+   No canvas, blur, tilt, idle loop or WebGPU requirement. */
+.card :global(.feature-light[data-light="heading"]) {
+  width: 38rem;
+  height: 28rem;
+  background:
+    radial-gradient(ellipse at center, rgb(106 140 112 / 0.24), rgb(124 151 127 / 0.12) 32%, transparent 66%),
+    linear-gradient(118deg, transparent 35%, rgb(130 155 134 / 0.065) 46%, rgb(106 140 112 / 0.104) 50%, transparent 64%);
+}
+
+/* Fine diagonal engraving exists across the surface but is revealed only
+   within the pointer light. Counter-positioning keeps the grain fixed to
+   the card as the light moves over it. Hidden with the light's fallbacks. */
+.card :global(.feature-light[data-light="heading"])::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(47 107 85 / 0.24) 0 1px,
+    transparent 1px 9px
+  );
+  background-position:
+    calc(50% - var(--light-x, 50%))
+    calc(50% - var(--light-y, 50%));
+  mask-image: radial-gradient(ellipse at center, black 5%, rgb(0 0 0 / 0.65) 25%, transparent 60%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .link { text-decoration-color: currentColor; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link { transition: none; }
+}

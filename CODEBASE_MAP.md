@@ -308,3 +308,8 @@ Approved News source/release documentation was committed as a53d63c and pushed t
 ## News archive publication confirmed (2026-11-16)
 
 Application commit a53d63c was pushed to origin/main before Firebase Hosting successfully published 460 export files after owner-completed reauthentication. All 32 live Firebase HTML index responses byte-match the main export; main src/public exactly match approved visualtest. Live meixiedu.org desktop (1440px) and mobile (390px) checks confirmed six loaded News images, unchanged program destinations, no horizontal overflow, the prominent archive title, all 15 archive cards, removal of the introductory notice and keyboard focus edge animation/outline. Browser error log was empty. This supersedes the pending-login status above.
+
+
+## Approved Contact card release (2026-11-16)
+
+Promoted src/app/contact/page.tsx and new route-scoped ContactCards.module.css from approved visualtest. Contact now has a 100px desktop / 56px narrow title and four warm-paper cards with 3px black borders, black editorial values, visible channel labels and existing links. Card edges inset 8-12px from the title. Unchanged FeatureLight provides green pointer lighting; a radial-masked diagonal CSS texture is revealed under the light and hidden at rest. Existing touch/reduced-motion/Save-Data fallbacks apply, without WebGPU or dependencies. Form component/column, data, public assets and all other pages remain unchanged. Main source/public exactly match approved draft. Build/lint passed; publication follows GitHub push.
