@@ -303,3 +303,8 @@ Promoted six approved source files: /news and /news/historical-activities page t
 ## News release pushed; Firebase login refresh pending (2026-11-16)
 
 Approved News source/release documentation was committed as a53d63c and pushed to origin/main. Fresh build/lint succeeded, but Firebase deployment failed before publication because the CLI login expired. A reauthentication flow is open and requires the owner to complete Google sign-in; no authentication details are stored in this repository. Live publication and live verification remain pending.
+
+
+## News archive publication confirmed (2026-11-16)
+
+Application commit a53d63c was pushed to origin/main before Firebase Hosting successfully published 460 export files after owner-completed reauthentication. All 32 live Firebase HTML index responses byte-match the main export; main src/public exactly match approved visualtest. Live meixiedu.org desktop (1440px) and mobile (390px) checks confirmed six loaded News images, unchanged program destinations, no horizontal overflow, the prominent archive title, all 15 archive cards, removal of the introductory notice and keyboard focus edge animation/outline. Browser error log was empty. This supersedes the pending-login status above.
