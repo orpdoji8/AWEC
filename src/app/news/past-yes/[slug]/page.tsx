@@ -30,12 +30,10 @@ export default async function PastYesProgramPage({ params }: Props) {
   return (
     <PageContainer className="py-12 sm:py-18">
       <BackLink href="/news/past-yes">Back to Past YES</BackLink>
-      <header className="grid items-end gap-8 pb-10 pt-12 md:grid-cols-[1.5fr_1fr] md:gap-12">
+      <header className="pb-10 pt-12">
         <div>
-          <p className="eyebrow">YES / Photo journal</p>
-          <h1 className="page-title mt-5">{program.title}</h1>
+          <h1 className="page-title">{program.title}</h1>
         </div>
-        <p className="max-w-sm leading-7 text-muted">{photos.length} photographs. Select any photograph to open its full view.</p>
       </header>
       <div className="grid items-start gap-x-7 gap-y-10 md:grid-cols-2">
         {photos.map((photo, index) => {

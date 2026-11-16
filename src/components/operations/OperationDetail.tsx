@@ -15,14 +15,11 @@ export function OperationDetail({ operation }: OperationDetailProps) {
         <PageContainer className="py-12 sm:py-16">
           <BackLink href="/business">Back to Business</BackLink>
           <header className="mt-8 max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-              Content coming soon
-            </p>
-            <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-7xl">
+            <h1 className="text-balance text-4xl font-semibold leading-tight tracking-[-0.035em] text-foreground sm:text-5xl lg:text-7xl">
               {operation.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              {operation.summary}
+              Content coming soon.
             </p>
           </header>
 

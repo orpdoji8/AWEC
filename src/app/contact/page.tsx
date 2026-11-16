@@ -9,21 +9,17 @@ export default function ContactPage() {
     <PageContainer className="grid gap-12 py-12 sm:py-18 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
       <div>
         <header>
-          <p className="eyebrow">American West Educational Center</p>
-          <h1 className="page-title mt-4">Contact us</h1>
-          <p className="mt-5 text-lg leading-8 text-muted">
-            Get in touch with American West Educational Center by email or phone.
-          </p>
+          <h1 className="page-title">Contact us</h1>
         </header>
         <section className="mt-10" aria-labelledby="contact-channels">
-          <h2 id="contact-channels" className="eyebrow lg:text-sm">
+          <h2 id="contact-channels" className="sr-only">
             Contact details
           </h2>
-          <dl className="mt-4 divide-y divide-border">
+          <dl className="divide-y divide-border">
             {contactContent.channels.items.map((item) => (
               <div key={item.label} className="py-5">
-                <dt className="font-semibold">{item.label}</dt>
-                <dd className="mt-2 leading-7 text-muted">
+                <dt className="sr-only">{item.label}</dt>
+                <dd className="leading-7 text-muted">
                   {item.href ? <a href={item.href} className="text-link break-words">{item.value}</a> : item.value}
                 </dd>
               </div>

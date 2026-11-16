@@ -673,3 +673,7 @@ Owner supplied the statement that Dr. Ryan Allen from Soka University will lead 
 ## 2026-11-07 - Advisor label reserved
 
 Owner requested only the About sidebar label "05 Our advisor" for future content. Do not add an advisor block, placeholder message or advisor claims yet. Keep the label unlinked until its content exists. Home heading is approved as "Learning and Connecting across borders."
+
+## 2026-11-15 - Approve visual simplification
+
+Owner approved the visualtest cleanup for production: remove redundant eyebrows, decorative numbering, repeated introductions/footer copy and photo-journal instructions/counts; condense repeated application prompts and empty-state copy. Omit the unused advisor sidebar label until its section exists, superseding the earlier reserved-label requirement. Keep substantive company/activity content, navigation, accessibility labels, historical verification notice, photo credits/provenance and sign-in requirements. Future visual experiments continue in the separate Desktop visualtest folder; promotion to this repository and publication require owner approval.

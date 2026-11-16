@@ -50,10 +50,10 @@ export function NewsArticle({ article, relatedArticles }: NewsArticleProps) {
         <div className="mt-14 max-w-3xl space-y-12">
           {article.body.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+              <h2 className={section.heading === "Activity" ? "sr-only" : "text-3xl lg:text-4xl font-semibold tracking-[-0.025em] text-foreground"}>
                 {section.heading}
               </h2>
-              <div className="mt-5 space-y-4 text-lg leading-8 text-muted">
+              <div className={`${section.heading === "Activity" ? "" : "mt-5"} space-y-4 text-lg leading-8 text-muted`}>
                 {section.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}

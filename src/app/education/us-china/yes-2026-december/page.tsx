@@ -18,27 +18,26 @@ export default function YesDecemberPage() {
       <BackLink href="/education/us-china">Back to YES</BackLink>
       <section className="mt-10 grid items-start gap-12 lg:grid-cols-2 lg:gap-14">
         <div className="min-w-0 lg:col-start-2 lg:row-start-1">
-          <p className="eyebrow">China / December 2026</p>
-          <h1 className="mt-5 text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             YES <span className="block">December</span> <span className="block font-serif font-normal italic text-accent">2026</span>
           </h1>
           <p className="mt-7 max-w-md text-xl leading-8 text-muted">Restart the December YES trip to China with AWEC.</p>
           <div className="mt-9">
             <a href={registrationUrl} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-5 rounded-md bg-accent px-6 py-6 text-accent-foreground hover:bg-accent-hover sm:px-7">
-              <span className="text-2xl font-bold leading-tight sm:text-3xl">Register for YES<span className="mt-2 block text-xl font-semibold sm:text-2xl">December 2026</span></span>
+              <span className="text-2xl font-bold leading-tight sm:text-3xl">Register for YES<span className="sr-only"> December 2026 (opens in a new tab)</span></span>
               <span aria-hidden="true" className="shrink-0 text-4xl">&#8599;</span>
             </a>
-            <p className="mt-3 text-sm leading-6 text-muted">Opens Google Forms in a new tab. Google sign-in is required.</p>
+            <p className="mt-3 text-sm leading-6 text-muted">Google sign-in required.</p>
           </div>
           <div className="mt-8 border-t border-border pt-7">
             <a href={visaUrl} target="_blank" rel="noopener noreferrer" className="group flex items-start justify-between gap-4 rounded-sm py-2 text-accent hover:text-accent-hover">
               <span>
                 <span lang="zh-Hans" className="block text-2xl font-bold leading-snug sm:text-3xl">中国签证在线办理</span>
                 <span className="mt-3 block text-2xl font-bold leading-tight underline decoration-1 underline-offset-8 sm:text-3xl">China Online VISA Application (COVA)</span>
+                <span className="sr-only"> (opens in a new tab)</span>
               </span>
               <span aria-hidden="true" className="shrink-0 text-4xl">&#8599;</span>
             </a>
-            <p className="mt-4 text-sm leading-6 text-muted">Opens the consular visa application website in a new tab.</p>
           </div>
         </div>
         <section aria-labelledby="trip-leader" className="min-w-0 lg:col-start-1 lg:row-start-1">
@@ -53,7 +52,7 @@ export default function YesDecemberPage() {
         </section>
       </section>
       <section aria-label="Photos from previous trips" className="mt-16 border-t border-border pt-8 sm:mt-20">
-        <p className="mb-6 text-sm leading-6 text-muted">Photos from previous trips, shared as a glimpse of the experience.</p>
+        <p className="mb-6 text-sm leading-6 text-muted">Photos from previous trips.</p>
         <div className="grid items-center gap-5 md:grid-cols-[1.78fr_1.34fr_0.75fr]">
           <Image src="/images/yes-2026-december/welcome.webp" alt="Group holding an AWEC banner beneath a welcome sign on a previous trip" width={1800} height={1013} sizes="(min-width: 768px) 46vw, 100vw" className="h-auto w-full" />
             <Image src="/images/yes-2026-december/registration-group.png" alt="Group in matching yellow shirts posing in front of a green display" width={461} height={345} sizes="(min-width: 768px) 35vw, 100vw" className="h-auto w-full" />

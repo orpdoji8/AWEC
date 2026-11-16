@@ -261,3 +261,7 @@ src/app/page.tsx uses "Learning and Connecting across borders." The About sideba
 ## June 2025 II additional photos (2026-11-15)
 
 Added ten owner-supplied photographs to src/content/past-yes-photos.json and public/images/past-yes/yes-2025-june-ii/additional-20261115-01.webp through additional-20261115-10.webp. This gallery now contains 33 photos; the four historical galleries total 108. Existing 23 entries and layout are unchanged. YES_GALLERY_SOURCES.md records every new source. Firebase publication is pending renewed authentication.
+
+## Approved visual cleanup published (2026-11-15)
+
+Promoted the owner-approved Desktop visualtest changes into the existing 20 page/shared-component files. Page hierarchy now omits redundant eyebrows and decorative numbering; galleries omit counts/instructions and chapter descriptions. About omits its unused advisor label, Contact channel labels and generic Activity subheadings remain screen-reader-accessible, archive titles link directly, and the footer retains identity/navigation/copyright without repeated mission copy. Application prompts and empty-state wording are shorter. Routes, public assets, datasets, dependencies and external destinations remain unchanged. Firebase Hosting publication succeeded after a fresh build (492 files). See DAILY_LOG.md for the complete file list and verification. Draft-only instructions/configuration were not copied.

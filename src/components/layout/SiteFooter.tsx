@@ -13,12 +13,6 @@ export function SiteFooter() {
             <p className="text-xl lg:text-2xl font-bold tracking-[-0.02em]">
               {siteConfig.name}
             </p>
-            <p className="mt-3 leading-7 text-chrome-text">
-              {siteConfig.footerDescription}
-            </p>
-            <p className="mt-3 text-sm text-chrome-text-muted">
-              {siteConfig.contentNotice}
-            </p>
           </div>
           <nav aria-label="Footer navigation">
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:flex sm:flex-wrap sm:justify-end">

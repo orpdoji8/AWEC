@@ -38,15 +38,9 @@ export function NewsCard({ article }: NewsCardProps) {
         <h2
           className={`${article.publishedAt ? "mt-3" : ""} text-2xl lg:text-3xl font-semibold tracking-[-0.02em] text-foreground`}
         >
-          {article.title}
+          <Link href={`/news/${article.slug}`} className="hover:text-accent">{article.title}</Link>
         </h2>
         <p className="mt-3 flex-1 leading-7 text-muted">{article.summary}</p>
-        <Link
-          href={`/news/${article.slug}`}
-          className="mt-5 inline-flex min-h-11 items-center self-start rounded-md font-semibold text-accent hover:text-accent-hover"
-        >
-          View activity
-        </Link>
       </div>
     </article>
   );

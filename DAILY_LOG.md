@@ -884,3 +884,33 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Modified src/content/past-yes-photos.json, YES_GALLERY_SOURCES.md, CODEBASE_MAP.md and DAILY_LOG.md. Created public/images/past-yes/yes-2025-june-ii/additional-20261115-01.webp through additional-20261115-10.webp (all ten listed in the source manifest). No dependencies or layout changes.
 - corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed. Local production-export browser review confirmed 33 entries, all ten new images loaded, preserved proportions and no horizontal overflow in the checked viewport.
 - firebase deploy --only hosting --project awec-1d59e failed due to expired credentials. Requested firebase login --reauth; publication remains pending. Unrelated CLIENT_CONTENT_INTAKE.md deletion and old content/output/tmp files preserved.
+
+## 2026-11-15 - Promote and publish approved visual cleanup
+
+- Owner approved the visualtest result and explicitly requested transfer to the current repository, GitHub commit/push and Firebase publication. Copied only the 20 approved source changes; production source exactly matches the draft. Draft-only AGENTS.md, DEV_PROCESS.md, preview files and local-only rules were not copied. Future visual iterations remain in the draft folder until approved.
+- Removed redundant labels/numbering, repeated introductions/footer copy, gallery instructions/counts, the unused advisor label and duplicate application prompts. Preserved substantive content, navigation, accessibility labels, historical notice, photo credits and sign-in requirements. No new routes, assets, dependencies or datasets. Updated BLUEPRINT.md to record approval and supersede the reserved advisor label.
+- Modified source files:
+  - src/app/page.tsx
+  - src/app/about/page.tsx
+  - src/app/business/page.tsx
+  - src/app/contact/page.tsx
+  - src/app/education/page.tsx
+  - src/app/education/china-us/page.tsx
+  - src/app/education/us-china/yes-2026-december/page.tsx
+  - src/app/education/us-china/yes-2026-june/page.tsx
+  - src/app/news/page.tsx
+  - src/app/news/historical-activities/page.tsx
+  - src/app/news/past-yes/page.tsx
+  - src/app/news/past-yes/[slug]/page.tsx
+  - src/app/not-found.tsx
+  - src/components/forms/ContactFormEmbed.tsx
+  - src/components/layout/SiteFooter.tsx
+  - src/components/news/NewsArticle.tsx
+  - src/components/news/NewsCard.tsx
+  - src/components/operations/OperationCard.tsx
+  - src/components/operations/OperationDetail.tsx
+  - src/components/operations/OperationList.tsx
+- Documentation modified: BLUEPRINT.md, CODEBASE_MAP.md and DAILY_LOG.md. No new tracked files. Build regenerated ignored export/cache files.
+- corepack pnpm build passed (38 pages including TypeScript); corepack pnpm lint and git diff --check passed. firebase deploy --only hosting --project awec-1d59e succeeded with 492 files. All 35 live content HTML pages byte-match the new production export; the /operations redirect shell is excluded.
+- Live browser confirmed Home/News at a narrow viewport and About in desktop layout, with simplified labels, no visible clipping in reviewed views and no desktop horizontal overflow. Draft desktop/400px review was completed before approval. No form submissions.
+- Preserved pre-existing CLIENT_CONTENT_INTAKE.md deletion, old content/output/tmp archives and earlier gallery-publication documentation edits. Only this task's source/blueprint changes and documentation additions are prepared for the explicitly requested commit/push to origin/main. No deployment blockers or remaining implementation work.

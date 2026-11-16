@@ -17,9 +17,9 @@ export function OperationList({ operations, emptyState }: OperationListProps) {
 
   return (
     <ul className="divide-y divide-border border-y border-border">
-      {operations.map((operation, index) => (
+      {operations.map((operation) => (
         <li key={operation.slug}>
-          <OperationCard operation={operation} index={index} />
+          <OperationCard operation={operation} />
         </li>
       ))}
     </ul>

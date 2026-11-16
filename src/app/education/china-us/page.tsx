@@ -9,7 +9,7 @@ export default function EducationDirectionPage() {
     <PageContainer className="py-12 sm:py-18">
       <BackLink href="/education">Back to Education</BackLink>
       <h1 className="page-title mt-8">China - US</h1>
-      <p className="mt-6 text-lg leading-8 text-muted">This section is currently empty. Content will be added later.</p>
+      <p className="mt-6 text-lg leading-8 text-muted">Content coming soon.</p>
     </PageContainer>
   );
 }
