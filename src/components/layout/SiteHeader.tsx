@@ -1,3 +1,4 @@
+import { FeatureLight } from "@/components/ui/FeatureLight";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/content/site";
@@ -7,7 +8,8 @@ import { MobileNavigation } from "./MobileNavigation";
 
 export function SiteHeader() {
   return (
-    <header className="site-header site-chrome relative z-50 border-b border-chrome-border bg-chrome-background text-chrome-text">
+    <header className="site-header light-surface site-chrome relative z-50 border-b border-chrome-border bg-chrome-background text-chrome-text">
+      <FeatureLight />
       <PageContainer className="site-header-inner">
         <Link
           href="/"

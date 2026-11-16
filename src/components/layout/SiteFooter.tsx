@@ -1,3 +1,4 @@
+import { FeatureLight } from "@/components/ui/FeatureLight";
 import Link from "next/link";
 import { footerNavigation, siteConfig } from "@/content/site";
 import { PageContainer } from "@/components/ui/PageContainer";
@@ -6,7 +7,8 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer site-chrome border-t border-chrome-border bg-chrome-background text-chrome-text">
+    <footer className="site-footer light-surface site-chrome border-t border-chrome-border bg-chrome-background text-chrome-text">
+      <FeatureLight />
       <PageContainer className="footer-inner">
         <div className="footer-composition">
           <div>

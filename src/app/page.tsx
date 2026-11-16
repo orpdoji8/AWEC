@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FeatureLight } from "@/components/ui/FeatureLight";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { homeContent } from "@/content/pages";
 import { newsArticles } from "@/content/news";
@@ -46,11 +47,12 @@ export default function HomePage() {
         <div className="home-hero-summary">
           <p>{homeContent.hero.description}</p>
           <Link className="editorial-button" href="/news/historical-activities">
-            Explore historical activities <span aria-hidden="true">→</span>
+            <span className="action-label">Explore historical activities</span> <span className="action-arrow" aria-hidden="true">→</span>
           </Link>
         </div>
       </PageContainer>
-      <section className="december-feature site-chrome" aria-labelledby="december-title">
+      <section className="december-feature light-surface site-chrome" aria-labelledby="december-title">
+        <FeatureLight />
         <PageContainer>
         <Link href="/education/us-china/yes-2026-december" className="home-invitation-link" aria-labelledby="december-title december-action" aria-describedby="december-status december-photo-note">
           <div className="december-copy">
@@ -59,7 +61,7 @@ export default function HomePage() {
               <p className="font-semibold text-accent">Applications Now Open! <span aria-hidden="true">⭐</span> <span lang="zh-Hans">现已开放申请!</span></p>
               <p>Join Us! Limited Spots Available! <span lang="zh-Hans">欢迎加入！名额有限!</span></p>
             </div>
-            <span id="december-action" className="december-action">Explore &amp; register <span aria-hidden="true">↗︎</span></span>
+            <span id="december-action" className="december-action"><span className="action-label">Explore &amp; register</span> <span className="action-arrow" aria-hidden="true">↗︎</span></span>
           </div>
           <figure className="december-visuals">
             <div className="december-photo-pair">
@@ -93,7 +95,8 @@ export default function HomePage() {
           </div>
         </PageContainer>
       </section>
-      <section className="home-archive site-chrome" aria-labelledby="activity-showcase-title">
+      <section className="home-archive light-surface site-chrome" aria-labelledby="activity-showcase-title">
+        <FeatureLight />
         <PageContainer className="home-section">
           <div className="archive-heading">
             <div>
@@ -119,6 +122,7 @@ export default function HomePage() {
                     sizes={index === 0 ? "(min-width: 1024px) 52vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 100vw"}
                     className="h-auto w-full"
                   />
+                  <span className="activity-image-arrow" aria-hidden="true">↗</span>
                   </Link>
                 ) : null}
                 <div className="activity-copy">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { AboutSectionNavigation } from "@/components/ui/AboutSectionNavigation";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { aboutContent } from "@/content/pages";
 
@@ -14,30 +15,24 @@ const chapters = [
 
 export default function AboutPage() {
   return (
-    <PageContainer className="py-12 sm:py-18">
-      <header className="max-w-4xl border-b border-border pb-10">
-        <h1 className="page-title">American West<br className="hidden sm:block" /> Educational Center</h1>
+    <PageContainer className="about-page py-12 sm:py-18">
+      <header className="about-header border-b border-border pb-10">
+        <h1 className="page-title about-title">American West<br className="hidden sm:block" /> Educational Center</h1>
       </header>
-      <div className="mt-10 grid gap-10 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-20">
-        <nav aria-label="About page sections" className="lg:sticky lg:top-8 lg:self-start">
-          <ol className="grid gap-x-5 sm:grid-cols-2 lg:grid-cols-1">
-            {chapters.map((item) => (
-              <li key={item.id}><a href={`#${item.id}`} className="flex min-h-11 items-center text-sm text-muted hover:text-accent">{item.title}</a></li>
-            ))}
-          </ol>
-        </nav>
-        <div className="min-w-0 max-w-3xl">
-          <section id="overview" className="scroll-mt-8 pb-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight">A bridge between the United States and China</h2>
+      <div className="about-layout">
+        <AboutSectionNavigation chapters={chapters} />
+        <div className="about-editorial-content min-w-0 max-w-3xl">
+          <section id="overview" className="about-editorial-section scroll-mt-8">
+            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight"><span className="about-editorial-heading-text">A bridge between the United States and China</span></h2>
             <p className="mt-5 text-lg leading-8 text-muted">{aboutContent.overview.description}</p>
             <p className="mt-5 leading-8 text-muted">{aboutContent.overview.body}</p>
           </section>
-          <section id="direction" className="scroll-mt-8 border-t border-border py-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight">{aboutContent.mission.statement}</h2>
+          <section id="direction" className="about-editorial-section scroll-mt-8">
+            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight"><span className="about-editorial-heading-text">{aboutContent.mission.statement}</span></h2>
             <p className="mt-5 leading-8 text-muted">{aboutContent.mission.description}</p>
           </section>
-          <section id="focus" className="scroll-mt-8 border-t border-border py-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight">Learning through connection</h2>
+          <section id="focus" className="about-editorial-section scroll-mt-8">
+            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight"><span className="about-editorial-heading-text">Learning through connection</span></h2>
             <dl className="mt-7 space-y-7">
               {aboutContent.activities.map((item) => (
                 <div key={item.title}><dt className="text-xl font-semibold">{item.title}</dt><dd className="mt-2 leading-8 text-muted">{item.description}</dd></div>
@@ -45,8 +40,8 @@ export default function AboutPage() {
             </dl>
             <Link href="/education" className="text-link mt-7 inline-block">Explore Education &rarr;</Link>
           </section>
-          <section id="recognition" className="scroll-mt-8 border-t border-border py-12">
-            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight">Certificates of Recognition</h2>
+          <section id="recognition" className="about-editorial-section scroll-mt-8">
+            <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight"><span className="about-editorial-heading-text">Certificates of Recognition</span></h2>
             <div className="mt-8 grid items-start gap-10 md:grid-cols-2">
               {aboutContent.recognition.map((item) => (
                 <figure key={item.src}>

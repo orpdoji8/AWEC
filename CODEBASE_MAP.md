@@ -283,3 +283,8 @@ Promoted the owner-approved visualtest refinement into six source files: src/app
 ## Premium editorial publication confirmed (2026-11-16)
 
 Application commit f7466e5 was pushed to origin/main, then Firebase Hosting deployed all 458 export files successfully. All 32 live HTML index pages byte-match the fresh export. Live desktop (1440px) and mobile (390px) checks confirmed aligned YES photos, readable hierarchy, contrasting activity section and working Business-free mobile navigation without horizontal overflow. This supersedes the pending-publication note above.
+
+
+## Approved interaction design release (2026-11-16)
+
+Promoted seven approved visualtest source files. New FeatureLight.tsx provides optional event-driven CSS lighting in shared header/footer, Home YES/activity sections and About's chapter links. New AboutSectionNavigation.tsx preserves native fragment links with an observer-driven reading marker. About now uses large green sidebar tabs and monochrome right-hand reading panels with original section heading sizes, static offset shadows and underline-only hover/focus; no color inversion or lift. Certificate presentation is CSS grayscale; source files and original-color image URLs are unchanged. Home actions/image links have refined feedback. Reduced-motion, touch and Save-Data fallbacks remain; no WebGPU/dependencies. INTERACTION_STUDY.md preserves design references and superseded experiment history with a release-status preface. Fresh build/lint passed; all source/public assets match approved draft, with 32 index routes. GitHub push precedes owner-authorized Firebase publication.

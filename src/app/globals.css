@@ -289,7 +289,7 @@ main .december-title {
   font-weight:600;
   transition:background-color 180ms ease;
 }
-.december-action span {
+.december-action .action-arrow {
   font-size:1.4rem;
   line-height:1;
   transition:transform 180ms ease;
@@ -297,7 +297,7 @@ main .december-title {
 .home-invitation-link:hover .december-action {
   background:#e1d8bd;
 }
-.home-invitation-link:hover .december-action span {
+.home-invitation-link:hover .december-action .action-arrow {
   transform:translate(2px,-2px);
 }
 .december-visuals {
@@ -675,4 +675,414 @@ main .home-title {
   .home-masthead { grid-template-columns:minmax(0,2.5fr) minmax(0,1fr); }
   main .home-title { font-size:5.5rem; }
   .home-motto { font-size:1.85rem; }
+}
+
+
+/* Interaction study: light on green paper, directional actions, linked photographs.
+   Original implementation inspired by vGPU Holographic Card and Uiverse buttons;
+   see INTERACTION_STUDY.md for research, tradeoffs and verification. */
+.light-surface {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(112deg, #163f32 12%, #1b4b3b 66%, #163f32);
+}
+.light-surface > .page-container {
+  position: relative;
+  z-index: 1;
+}
+.feature-light {
+  display: none;
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: min(56rem, 100%);
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 8%, rgb(225 216 189 / 0.12) 50%, transparent 92%);
+  mask-image: linear-gradient(90deg, transparent, black 25%, black 75%, transparent);
+  transform: translateX(calc(var(--light-x, 50%) - 50%));
+  opacity: var(--light-visible, 0);
+  transition: opacity 240ms ease;
+  contain: strict;
+}
+.editorial-button,
+.december-action {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  gap: 1.5rem;
+  min-height: 56px;
+  padding: 0.65rem 0.75rem 0.65rem 1.25rem;
+}
+.editorial-button::before,
+.december-action::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgb(255 255 255 / 0.1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.december-action::before {
+  background: #e1d8bd;
+}
+.action-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.editorial-button .action-arrow,
+.december-action .action-arrow {
+  display: inline-flex;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 240ms ease, background-color 240ms ease;
+}
+.editorial-button:focus-visible::before,
+.home-invitation-link:focus-visible .december-action::before {
+  transform: scaleX(1);
+}
+.home-invitation-link:focus-visible .action-arrow {
+  transform: translate(2px, -2px);
+}
+.home-invitation-link:focus-visible {
+  outline-offset: -3px;
+}
+.activity-image-link {
+  position: relative;
+  align-self: start;
+}
+.activity-image-arrow {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-background);
+  color: var(--chrome-background);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background-color 220ms ease;
+}
+.home-activity h3 a {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  transition: text-decoration-color 200ms ease;
+}
+.home-activity:focus-within h3 a {
+  text-decoration-color: currentColor;
+}
+.activity-image-link:focus-visible .activity-image-arrow {
+  background: #e1d8bd;
+}
+@media (hover: hover) and (pointer: fine) {
+  .editorial-button:hover::before,
+  .home-invitation-link:hover .december-action::before {
+    transform: scaleX(1);
+  }
+  .editorial-button:hover .action-arrow {
+    transform: translateX(2px);
+  }
+  .home-invitation-link:hover .december-action {
+    background: var(--page-background);
+  }
+  .home-activity:hover h3 a {
+    text-decoration-color: currentColor;
+  }
+  .activity-image-link:hover .activity-image-arrow {
+    background: #e1d8bd;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .feature-light { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feature-light { display: none; }
+  .activity-image-link img,
+  .editorial-button .action-arrow,
+  .home-invitation-link .december-action .action-arrow {
+    transform: none !important;
+  }
+}
+
+
+/* Shared light is clipped in its own layer: header menus and focus rings stay free. */
+.feature-light-clip {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.about-header { max-width: 66rem; }
+main .about-title {
+  font-size: clamp(2.6rem, 5.5vw, 5.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.about-layout {
+  display: grid;
+  gap: 2.75rem;
+  margin-top: 2.5rem;
+}
+.about-chapter-nav ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.5rem;
+}
+.about-chapter-nav li { display: flex; }
+.about-chapter-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 48px;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  transition: color 180ms ease;
+}
+.about-chapter-link::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+.about-chapter-link[aria-current="location"],
+.about-chapter-link:hover,
+.about-chapter-link:focus-visible { color: var(--accent); }
+.about-chapter-link[aria-current="location"]::after { transform: scaleX(1); }
+.chapter-arrow { opacity: 0; transform: translateX(-4px); transition: opacity 180ms ease, transform 180ms ease; }
+.about-chapter-link[aria-current="location"] .chapter-arrow,
+.about-chapter-link:hover .chapter-arrow,
+.about-chapter-link:focus-visible .chapter-arrow { opacity: 1; transform: none; }
+.about-mission {
+  --text-muted: var(--chrome-text-muted);
+  margin-block: 0 3rem;
+  padding: 2rem 1.5rem;
+  color: var(--chrome-text);
+}
+.about-mission-copy { position: relative; z-index: 1; }
+.about-mission h2 { font-size: 2.3rem; line-height: 1.15; font-weight: 400; }
+.about-mission p { max-width: 39rem; }
+.about-focus-list { margin-top: 1.75rem; }
+.about-focus-row { padding-block: 1.5rem; border-top: 1px solid var(--border); }
+.about-focus-row:last-child { border-bottom: 1px solid var(--border); }
+.certificate-mount {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 1rem 1rem 3.5rem;
+  border: 1px solid #d4d8ce;
+  background: #eaece4;
+  box-shadow: 0 5px 18px rgb(22 63 50 / 0.06);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+.certificate-mount::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 0.22) 50%, transparent 75%);
+  transform: translateX(-100%);
+  transition: transform 500ms ease;
+}
+.certificate-open {
+  position: absolute;
+  z-index: 2;
+  bottom: 6px;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--chrome-background);
+  color: var(--chrome-text);
+  font-size: 1.4rem;
+}
+.certificate-mount:focus-visible { border-color: var(--accent); }
+.certificate-mount:focus-visible::before { transform: translateX(100%); }
+@media (hover: hover) and (pointer: fine) {
+  .certificate-mount:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 24px rgb(22 63 50 / 0.12);
+  }
+  .certificate-mount:hover::before { transform: translateX(100%); }
+}
+@media (min-width: 640px) {
+  .about-mission { padding: 3rem; }
+  .about-mission h2 { font-size: 3rem; }
+}
+@media (min-width: 1024px) {
+  .about-layout { grid-template-columns: 14rem minmax(0, 1fr); gap: 5rem; }
+  .about-chapter-nav { position: sticky; top: 2rem; align-self: start; }
+  .about-chapter-nav ol { grid-template-columns: 1fr; }
+  .about-focus-row { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; }
+  .about-focus-row dd { margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .certificate-mount, .chapter-arrow { transform: none !important; }
+  .certificate-mount::before { display: none; }
+}
+
+
+/* About chapter headings: local LED radiance inspired by vGPU Triangle LED Hero.
+   The light stays behind real HTML type; no canvas or GPU requirement. */
+main .about-section-heading {
+  position: relative;
+  isolation: isolate;
+  padding: 1.75rem 1.5rem;
+  background: var(--chrome-background);
+  color: var(--chrome-text);
+  font-family: var(--font-editorial);
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.about-section-heading::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(218 224 185 / 0.45), transparent);
+  pointer-events: none;
+}
+.about-heading-text { position: relative; z-index: 1; }
+.feature-light[data-light="heading"] {
+  inset-block: auto;
+  top: 0;
+  width: 28rem;
+  height: 24rem;
+  background: radial-gradient(ellipse at center, rgb(173 224 176 / 0.25), rgb(91 175 121 / 0.15) 30%, transparent 68%);
+  mask-image: none;
+  transform: translate(calc(var(--light-x, 50%) - 50%), calc(var(--light-y, 50%) - 50%));
+}
+main .about-mission .about-section-heading {
+  margin: -2rem -1.5rem 0;
+  padding: 2rem 1.5rem 1.25rem;
+  background: transparent;
+}
+.about-mission .about-section-heading::after { display: none; }
+@media (min-width: 640px) {
+  main .about-section-heading { padding: 2rem; font-size: 2.75rem; }
+  main .about-mission .about-section-heading { margin: -3rem -3rem 0; padding: 3rem 3rem 1.5rem; }
+}
+@media (min-width: 1024px) {
+  main .about-section-heading { font-size: 3.25rem; }
+}
+
+
+/* About index: larger green chapter tabs with restrained LED radiance. */
+.about-chapter-nav ol { gap: 0.75rem; }
+.about-chapter-link {
+  isolation: isolate;
+  min-height: 84px;
+  padding: 1rem;
+  border: 1px solid var(--chrome-border);
+  background: var(--chrome-background);
+  color: var(--chrome-text);
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.about-chapter-link[aria-current="location"],
+.about-chapter-link:hover,
+.about-chapter-link:focus-visible { color: var(--chrome-text); }
+.about-chapter-link::after {
+  z-index: 2;
+  bottom: 0;
+  background: #e1d8bd;
+}
+.about-chapter-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse at center, rgb(173 224 176 / 0.22), transparent 75%);
+  opacity: 0;
+  pointer-events: none;
+}
+.about-chapter-link:focus-visible::before { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .about-chapter-link:hover::before { opacity: 1; }
+}
+.chapter-label, .about-chapter-link .chapter-arrow { position: relative; z-index: 1; }
+.about-chapter-link .chapter-arrow { flex: 0 0 auto; font-family: var(--font-sans); font-size: 1rem; }
+.about-chapter-link .feature-light[data-light="heading"] { width: 22rem; height: 16rem; }
+@media (min-width: 1024px) {
+  .about-chapter-link { min-height: 104px; font-size: 1.65rem; padding: 1.2rem; }
+}
+
+
+/* About reading sections: adapted from 0xnihilism/nasty-husky-13 (Uiverse).
+   Original CSS interpretation; reference and attribution in INTERACTION_STUDY.md. */
+.about-editorial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.about-editorial-section {
+  --text-muted: #252525;
+  --accent: #111111;
+  --accent-hover: #111111;
+  --border: #b8b8b8;
+  padding: 1.5rem;
+  border: 2px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 6px 6px 0 #111111;
+
+}
+.about-editorial-section p,
+.about-editorial-section dd,
+.about-editorial-section a { transition: color 220ms ease; }
+.about-editorial-heading-text {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 2px;
+  padding-bottom: 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 260ms ease;
+}
+.about-editorial-section img { filter: grayscale(1); }
+.about-editorial-section:focus-within .about-editorial-heading-text { background-size: 100% 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .about-editorial-section:hover .about-editorial-heading-text { background-size: 100% 2px; }
+}
+@media (min-width: 640px) {
+  .about-editorial-section { padding: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-editorial-section { transform: none !important; }
 }
