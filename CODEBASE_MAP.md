@@ -288,3 +288,8 @@ Application commit f7466e5 was pushed to origin/main, then Firebase Hosting depl
 ## Approved interaction design release (2026-11-16)
 
 Promoted seven approved visualtest source files. New FeatureLight.tsx provides optional event-driven CSS lighting in shared header/footer, Home YES/activity sections and About's chapter links. New AboutSectionNavigation.tsx preserves native fragment links with an observer-driven reading marker. About now uses large green sidebar tabs and monochrome right-hand reading panels with original section heading sizes, static offset shadows and underline-only hover/focus; no color inversion or lift. Certificate presentation is CSS grayscale; source files and original-color image URLs are unchanged. Home actions/image links have refined feedback. Reduced-motion, touch and Save-Data fallbacks remain; no WebGPU/dependencies. INTERACTION_STUDY.md preserves design references and superseded experiment history with a release-status preface. Fresh build/lint passed; all source/public assets match approved draft, with 32 index routes. GitHub push precedes owner-authorized Firebase publication.
+
+
+## Interaction release publication confirmed (2026-11-16)
+
+Application commit 8d692e4 was pushed to origin/main before successful Firebase Hosting deployment of 459 files. All 32 Firebase HTML index pages byte-match the new export. Live meixiedu.org browser review confirmed the large green chapter tabs, original About section sizes and monochrome panels with underline-only hover, plus working mobile menu/fragment navigation. Home also shows the shared light layers/action treatment, loaded primary photo and no overflow. This supersedes pending publication above.
