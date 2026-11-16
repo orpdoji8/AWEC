@@ -269,3 +269,7 @@ Promoted the owner-approved Desktop visualtest changes into the existing 20 page
 ## Official editorial design and Business removal (2026-11-16)
 
 The approved visualtest source is promoted into this repository. Shared typography uses local Iowan/Palatino/Georgia serif fallbacks with sans-serif body/navigation; Home leads with the organization name, wide June group photograph and the existing motto/copy. Shared width is 80rem, section spacing is centralized, and header/footer use the updated brand typography. Navigation and the Home focus section now contain Education without Business. Removed /business, /operations and both /operations/[slug] placeholder pages, their three components and src/content/operations.ts. firebase.json no longer redirects Operations to Business. Historical article routes remain intact. The fresh static export generates 34 pages, including 32 index routes. Main-repository local export preview: http://127.0.0.1:3012/. Owner-authorized Firebase publication follows GitHub push; the release result will be recorded separately.
+
+## Official release publication confirmed (2026-11-16)
+
+Application commit 060ac57 was pushed to origin/main before Firebase Hosting deployment. Deployment then succeeded with 458 exported files. All 32 live index-page responses match the new export byte-for-byte; /business, /operations and both retired detail URLs return HTTP 404. Live desktop and 390px mobile review confirmed the official editorial design and Business-free navigation. This supersedes the pending-publication wording above.
