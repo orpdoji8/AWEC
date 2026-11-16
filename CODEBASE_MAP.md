@@ -298,3 +298,8 @@ Application commit 8d692e4 was pushed to origin/main before successful Firebase 
 ## Approved News archive release (2026-11-16)
 
 Promoted six approved source files: /news and /news/historical-activities page templates, NewsCard.tsx and new NewsProgramPreview.tsx, NewsLanding.module.css and NewsHoverCard.module.css. News has an editorial masthead, green photographic archive feature and five chronological program covers using existing assets/alt text. All 15 historical cards are full-card article links with hover/focus edge glow; native underline/skip-ink and reduced-motion fallbacks remain. Archive title uses the larger News masthead/double rule, and its introductory notice is no longer rendered at the owner's request. Data, articles, galleries, routes, dependencies and configuration remain unchanged. Source/public files match approved visualtest; build generates 34 pages with 32 index routes. Publication follows owner-authorized GitHub push.
+
+
+## News release pushed; Firebase login refresh pending (2026-11-16)
+
+Approved News source/release documentation was committed as a53d63c and pushed to origin/main. Fresh build/lint succeeded, but Firebase deployment failed before publication because the CLI login expired. A reauthentication flow is open and requires the owner to complete Google sign-in; no authentication details are stored in this repository. Live publication and live verification remain pending.
