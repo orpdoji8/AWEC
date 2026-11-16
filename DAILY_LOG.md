@@ -877,3 +877,10 @@ Two review JPGs were saved outside the repository in the chat visualization dire
 - Changed Home heading to "Learning and Connecting across borders." Added "05 Our advisor" in the About left panel as plain text, avoiding a broken anchor while content is deferred. No advisor block or placeholder message added.
 - Modified src/app/page.tsx, src/app/about/page.tsx, BLUEPRINT.md, CODEBASE_MAP.md and DAILY_LOG.md. No new public assets or dependencies. Unrelated local changes preserved.
 - corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed. Firebase deploy succeeded (482 files). Live browser confirmed both changes, readable layout, Home without horizontal overflow, and advisor label as text rather than a link. Screenshot: tmp/about-advisor-label.png. No blockers; future advisor content intentionally pending.
+
+## 2026-11-15 - Add ten June 2025 Program II photographs
+
+- Added all ten supplied Downloads JPGs to the existing gallery, increasing it from 23 to 33 photographs. Original files and existing gallery entries remain unchanged. Exported proportional, metadata-free WebPs with the existing quality 84 / maximum 1800px settings; neutral descriptive alt text, no visible captions.
+- Modified src/content/past-yes-photos.json, YES_GALLERY_SOURCES.md, CODEBASE_MAP.md and DAILY_LOG.md. Created public/images/past-yes/yes-2025-june-ii/additional-20261115-01.webp through additional-20261115-10.webp (all ten listed in the source manifest). No dependencies or layout changes.
+- corepack pnpm build passed (38 routes including TypeScript); corepack pnpm lint passed. Local production-export browser review confirmed 33 entries, all ten new images loaded, preserved proportions and no horizontal overflow in the checked viewport.
+- firebase deploy --only hosting --project awec-1d59e failed due to expired credentials. Requested firebase login --reauth; publication remains pending. Unrelated CLIENT_CONTENT_INTAKE.md deletion and old content/output/tmp files preserved.

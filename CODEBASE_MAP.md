@@ -257,3 +257,7 @@ The December route now has Ryan Allen's portrait, exact client-supplied name/tit
 ## Home wording and About advisor label (2026-11-07)
 
 src/app/page.tsx uses "Learning and Connecting across borders." The About sidebar in src/app/about/page.tsx includes the non-interactive label "05 Our advisor" after Recognition; there is no advisor section, anchor or placeholder content. Advisor implementation remains deferred.
+
+## June 2025 II additional photos (2026-11-15)
+
+Added ten owner-supplied photographs to src/content/past-yes-photos.json and public/images/past-yes/yes-2025-june-ii/additional-20261115-01.webp through additional-20261115-10.webp. This gallery now contains 33 photos; the four historical galleries total 108. Existing 23 entries and layout are unchanged. YES_GALLERY_SOURCES.md records every new source. Firebase publication is pending renewed authentication.

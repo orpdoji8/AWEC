@@ -123,3 +123,20 @@ Source folder: `2024YES`. Selected 23 of 50 images.
 | IMG_4681.JPG | `/images/past-yes/yes-2024-december/046.webp` |
 | IMG_4686.JPG | `/images/past-yes/yes-2024-december/049.webp` |
 | IMG_4687.JPG | `/images/past-yes/yes-2024-december/050.webp` |
+
+## June 2025 II additions (2026-11-15)
+
+Added all ten owner-supplied Downloads photographs to the existing 23-photo gallery, for 33 total. Original files remain unchanged; exports follow the existing WebP settings and have descriptive alt text without visible captions.
+
+| Original file | Published asset |
+| --- | --- |
+| Image_20261109224418_465_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-01.webp` |
+| Image_20261109224416_464_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-02.webp` |
+| Image_20261109224422_467_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-03.webp` |
+| Image_20261109224424_468_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-04.webp` |
+| Image_20261109224420_466_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-05.webp` |
+| Image_20261109224426_469_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-06.webp` |
+| Image_20261109224433_471_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-07.webp` |
+| Image_20261109224427_470_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-08.webp` |
+| Image_20261109224434_472_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-09.webp` |
+| Image_20261109224437_473_2.jpg | `/images/past-yes/yes-2025-june-ii/additional-20261115-10.webp` |
