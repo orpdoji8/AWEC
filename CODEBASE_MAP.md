@@ -293,3 +293,8 @@ Promoted seven approved visualtest source files. New FeatureLight.tsx provides o
 ## Interaction release publication confirmed (2026-11-16)
 
 Application commit 8d692e4 was pushed to origin/main before successful Firebase Hosting deployment of 459 files. All 32 Firebase HTML index pages byte-match the new export. Live meixiedu.org browser review confirmed the large green chapter tabs, original About section sizes and monochrome panels with underline-only hover, plus working mobile menu/fragment navigation. Home also shows the shared light layers/action treatment, loaded primary photo and no overflow. This supersedes pending publication above.
+
+
+## Approved News archive release (2026-11-16)
+
+Promoted six approved source files: /news and /news/historical-activities page templates, NewsCard.tsx and new NewsProgramPreview.tsx, NewsLanding.module.css and NewsHoverCard.module.css. News has an editorial masthead, green photographic archive feature and five chronological program covers using existing assets/alt text. All 15 historical cards are full-card article links with hover/focus edge glow; native underline/skip-ink and reduced-motion fallbacks remain. Archive title uses the larger News masthead/double rule, and its introductory notice is no longer rendered at the owner's request. Data, articles, galleries, routes, dependencies and configuration remain unchanged. Source/public files match approved visualtest; build generates 34 pages with 32 index routes. Publication follows owner-authorized GitHub push.

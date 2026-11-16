@@ -1,0 +1,60 @@
+/* Original adaptation of ElSombrero2/fresh-wombat-97 on Uiverse.
+   Green/ivory rotating edge; no overlay, blur pass or hidden content. */
+@property --news-card-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  background: var(--news-card-surface, var(--page-background));
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.title {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+  text-decoration-skip-ink: auto;
+  transition: text-decoration-color 180ms ease;
+}
+
+.card:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgb(47 107 85 / 0.2);
+}
+.card:focus-within .title { text-decoration-color: currentColor; }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { border-color: var(--accent); box-shadow: 0 0 18px rgb(47 107 85 / 0.2); }
+  .card:hover .title { text-decoration-color: currentColor; }
+}
+
+@supports (background: conic-gradient(from 0deg, #163f32, #e1d8bd)) {
+  .card:focus-within {
+    border-color: transparent;
+    background: linear-gradient(var(--news-card-surface, var(--page-background)), var(--news-card-surface, var(--page-background))) padding-box,
+      conic-gradient(from var(--news-card-angle, 0deg), #527567, #e1d8bd, #2f6b55, #b9e2cc, #527567) border-box;
+    animation: edge-turn 8s linear infinite;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover {
+      border-color: transparent;
+      background: linear-gradient(var(--news-card-surface, var(--page-background)), var(--news-card-surface, var(--page-background))) padding-box,
+        conic-gradient(from var(--news-card-angle, 0deg), #527567, #e1d8bd, #2f6b55, #b9e2cc, #527567) border-box;
+      animation: edge-turn 8s linear infinite;
+    }
+  }
+}
+
+@keyframes edge-turn { to { --news-card-angle: 360deg; } }
+.archiveCard { display: flex; flex-direction: column; height: 100%; padding: 1rem; color: var(--text-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover, .card:focus-within { animation: none; }
+}

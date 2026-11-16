@@ -3,6 +3,7 @@ import { BackLink } from "@/components/ui/BackLink";
 import { NewsList } from "@/components/news/NewsList";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { newsArticles, newsPageContent } from "@/content/news";
+import styles from "@/components/news/NewsLanding.module.css";
 
 export const metadata: Metadata = {
   title: "Historical Activities",
@@ -10,17 +11,13 @@ export const metadata: Metadata = {
 };
 export default function HistoricalActivitiesPage() {
   return (
-    <PageContainer className="py-12 sm:py-18">
+    <PageContainer className={styles.page}>
       <BackLink href="/news">Back to News &amp; Activities</BackLink>
-      <header className="mt-8 border-b border-border pb-8">
-        <div>
-          <h1 className="page-title">Historical Activities</h1>
-        </div>
+      <header className="mt-8">
+        <h1 className={styles.title}>Historical <em>Activities</em></h1>
+        <div className={styles.mastheadRule} aria-hidden="true" />
       </header>
-      <p className="max-w-3xl py-6 text-sm leading-7 text-muted">
-        {newsPageContent.intro.notice}
-      </p>
-      <section aria-label="Historical activities" className="pt-3">
+      <section aria-label="Historical activities" className="pt-8 sm:pt-12">
         <NewsList
           articles={newsArticles}
           emptyState={newsPageContent.emptyState}

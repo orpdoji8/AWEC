@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { NewsArticleContent } from "@/content/news";
+import cardStyles from "./NewsHoverCard.module.css";
 
 type NewsCardProps = {
   article: NewsArticleContent;
@@ -17,7 +18,8 @@ function formatPublishedDate(date: string) {
 
 export function NewsCard({ article }: NewsCardProps) {
   return (
-    <article className="flex h-full flex-col border-b border-border pb-6">
+    <article className="h-full">
+      <Link href={`/news/${article.slug}`} className={`${cardStyles.card} ${cardStyles.archiveCard}`} aria-labelledby={`title-${article.id}`}>
       {article.featuredImage ? (
         <Image
           {...article.featuredImage}
@@ -36,12 +38,14 @@ export function NewsCard({ article }: NewsCardProps) {
           </time>
         ) : null}
         <h2
+          id={`title-${article.id}`}
           className={`${article.publishedAt ? "mt-3" : ""} text-2xl lg:text-3xl font-semibold tracking-[-0.02em] text-foreground`}
         >
-          <Link href={`/news/${article.slug}`} className="hover:text-accent">{article.title}</Link>
+          <span className={cardStyles.title}>{article.title}</span>
         </h2>
         <p className="mt-3 flex-1 leading-7 text-muted">{article.summary}</p>
       </div>
+      </Link>
     </article>
   );
 }

@@ -80,3 +80,12 @@ Owner requested restoring the right column to its former typography/stacked layo
 Modified src/app/about/page.tsx and src/app/globals.css; updated this report, CODEBASE_MAP.md and DAILY_LOG.md. Created .visual-backups/before-about-section-cards-20261116.zip and about-section-underline-desktop.jpg. No dependencies, assets or destinations changed. Build/cache/export refreshed.
 
 Final build and lint passed (34 generated pages including TypeScript). Browser reviewed at 1440px/768px/390px: no overflow or broken About images. Desktop hover reports white background, dark text, transform none and 100% 2px underline; heading sizes match the earlier layout. Mission anchor/current marker still work. Certificate keyboard focus has a solid outline and starts the same heading underline while remaining monochrome. Browser error log empty; viewport reset and local About preview retained. No deploy/commit/push/production writes. No blockers; physical-device/FPS profiling not performed.
+
+
+## Approved News archive release - 2026-11-16
+
+Owner approved the final News design for promotion and publication. /news now uses an editorial masthead, green photographic Historical Activities feature with an inset uncropped image, and five authentic YES program covers in the existing chronological order. Shared server-side NewsProgramPreview and scoped NewsLanding.module.css preserve original content/destinations without additional dependencies.
+
+NewsHoverCard.module.css adapts the rotating edge idea from [ElSombrero2/fresh-wombat-97](https://uiverse.io/ElSombrero2/fresh-wombat-97) (ElSombrero2 / Rakotondrasoa Nirilala, MIT reference) into original green/ivory CSS: conic gradient borders and diffuse shadow only on hover/focus. No source blur/backdrop-filter pass or hidden content. Static/reduced-motion/unsupported-gradient fallbacks remain. Native underline with skip-ink replaces the background-painted rule that crossed multiline text.
+
+All 15 historical entries are full-card links to their original articles. The historical archive title now reuses the News editorial masthead; its introductory notice is removed per explicit owner request while source metadata and individual articles remain. No gallery/article redesign or public asset changes. Source exactly matches the approved draft. Build and lint passed; live publication verification is recorded in DAILY_LOG.md. Draft backups and screenshots are not promoted.

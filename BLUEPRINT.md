@@ -681,3 +681,8 @@ Owner approved the visualtest cleanup for production: remove redundant eyebrows,
 ## 2026-11-16 - Approve editorial design and remove Business
 
 Owner approved the visualtest editorial refinement as the official website: local serif heading hierarchy, prominent organization-name Home headline with the existing motto retained, wide authentic educational photography, refined shared spacing/header/footer and preserved dark-green branding. Client requested complete removal of the Business section, navigation/Home links, Business and Operations routes/details, and the Operations-to-Business redirect. Education and historical activities remain intact, including historical news whose names contain business. This supersedes earlier Business-section and homepage-heading requirements. The owner explicitly authorized promotion to the main local repository, GitHub commit/push, then Firebase deployment. Future experiments still begin in visualtest.
+
+
+## 2026-11-16 - Approve editorial News archive and title simplification
+
+Owner approved the completed visualtest News design for official release: photographic News landing, unchanged chronological YES program links, full historical article cards with green/ivory hover borders, and a stronger Historical Activities masthead. Remove the verification/unknown-dates paragraph directly below that archive title, as explicitly requested; underlying source-status metadata and individual article content remain. This supersedes the earlier notice-display requirement for the archive introduction only. No new dates, activities, claims or services are introduced. Future experiments continue in visualtest until separately approved.
