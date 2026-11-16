@@ -278,3 +278,8 @@ Application commit 060ac57 was pushed to origin/main before Firebase Hosting dep
 ## Approved premium editorial release (2026-11-16)
 
 Promoted the owner-approved visualtest refinement into six source files: src/app/globals.css, src/app/page.tsx and SiteHeader, SiteFooter, DesktopNavigation and MobileNavigation in src/components/layout. The reference hero remains unchanged. Home now features a dark-green YES announcement with dominant YES typography, smaller December 2026 date and two aligned uncropped prior-trip images. The warm off-white About introduction precedes a dark-green editorial activity showcase with one featured story and two supporting entries. Shared navigation proportions, current-page detection (including trailing slash URLs), section spacing and footer composition follow the approved experiment. All source/public assets exactly match the draft; routes, data, dependencies and hosting configuration are preserved. Fresh build and lint passed; owner-authorized GitHub push and Firebase publication follow.
+
+
+## Premium editorial publication confirmed (2026-11-16)
+
+Application commit f7466e5 was pushed to origin/main, then Firebase Hosting deployed all 458 export files successfully. All 32 live HTML index pages byte-match the fresh export. Live desktop (1440px) and mobile (390px) checks confirmed aligned YES photos, readable hierarchy, contrasting activity section and working Business-free mobile navigation without horizontal overflow. This supersedes the pending-publication note above.
