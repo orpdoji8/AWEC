@@ -273,3 +273,8 @@ The approved visualtest source is promoted into this repository. Shared typograp
 ## Official release publication confirmed (2026-11-16)
 
 Application commit 060ac57 was pushed to origin/main before Firebase Hosting deployment. Deployment then succeeded with 458 exported files. All 32 live index-page responses match the new export byte-for-byte; /business, /operations and both retired detail URLs return HTTP 404. Live desktop and 390px mobile review confirmed the official editorial design and Business-free navigation. This supersedes the pending-publication wording above.
+
+
+## Approved premium editorial release (2026-11-16)
+
+Promoted the owner-approved visualtest refinement into six source files: src/app/globals.css, src/app/page.tsx and SiteHeader, SiteFooter, DesktopNavigation and MobileNavigation in src/components/layout. The reference hero remains unchanged. Home now features a dark-green YES announcement with dominant YES typography, smaller December 2026 date and two aligned uncropped prior-trip images. The warm off-white About introduction precedes a dark-green editorial activity showcase with one featured story and two supporting entries. Shared navigation proportions, current-page detection (including trailing slash URLs), section spacing and footer composition follow the approved experiment. All source/public assets exactly match the draft; routes, data, dependencies and hosting configuration are preserved. Fresh build and lint passed; owner-authorized GitHub push and Firebase publication follow.

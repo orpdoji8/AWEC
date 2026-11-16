@@ -50,20 +50,29 @@ export default function HomePage() {
           </Link>
         </div>
       </PageContainer>
-      <PageContainer className="home-invitation">
-        <Link href="/education/us-china/yes-2026-december" className="home-invitation-link group">
-          <div>
-            <h2 className="home-section-title">YES December 2026</h2>
-            <div className="mt-5 space-y-2 leading-8">
+      <section className="december-feature site-chrome" aria-labelledby="december-title">
+        <PageContainer>
+        <Link href="/education/us-china/yes-2026-december" className="home-invitation-link" aria-labelledby="december-title december-action" aria-describedby="december-status december-photo-note">
+          <div className="december-copy">
+            <h2 id="december-title" className="december-title"><span className="december-program">YES</span>{" "}<span>December</span>{" "}<em>2026</em></h2>
+            <div id="december-status" className="december-details">
               <p className="font-semibold text-accent">Applications Now Open! <span aria-hidden="true">⭐</span> <span lang="zh-Hans">现已开放申请!</span></p>
               <p>Join Us! Limited Spots Available! <span lang="zh-Hans">欢迎加入！名额有限!</span></p>
             </div>
+            <span id="december-action" className="december-action">Explore &amp; register <span aria-hidden="true">↗︎</span></span>
           </div>
-          <span className="text-link text-lg font-bold">Explore &amp; register <span aria-hidden="true">&rarr;</span></span>
+          <figure className="december-visuals">
+            <div className="december-photo-pair">
+              <Image src="/images/yes-2026-december/welcome.webp" alt="Group holding an AWEC banner beneath a welcome sign on a previous trip" width={1800} height={1013} sizes="(min-width: 1024px) 36vw, 72vw" className="december-group-photo" />
+              <Image src="/images/yes-2026-december/tower.webp" alt="Group on the steps beneath a tower during a previous trip" width={750} height={1000} sizes="(min-width: 1024px) 13vw, 24vw" className="december-tower-photo" />
+            </div>
+            <figcaption id="december-photo-note">Photos from previous trips.</figcaption>
+          </figure>
         </Link>
-      </PageContainer>
+        </PageContainer>
+      </section>
       <section className="home-introduction border-y border-border bg-surface">
-        <PageContainer className="home-section grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20">
+        <PageContainer className="home-section home-introduction-grid">
           <div className="home-introduction-mark">
             <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" className="h-auto w-24 sm:w-28" />
             <Link
@@ -84,11 +93,11 @@ export default function HomePage() {
           </div>
         </PageContainer>
       </section>
-      <section>
+      <section className="home-archive site-chrome" aria-labelledby="activity-showcase-title">
         <PageContainer className="home-section">
-          <div className="flex flex-wrap items-end justify-between gap-5">
+          <div className="archive-heading">
             <div>
-              <h2 className="home-section-title">
+              <h2 id="activity-showcase-title" className="home-section-title">
                 Visits, learning & exchange
               </h2>
             </div>
@@ -100,17 +109,20 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="home-activity-grid">
-            {selected.map((article) => (
-              <article key={article.id} className="home-activity">
+            {selected.map((article, index) => (
+              <article key={article.id} className={`home-activity ${index === 0 ? "home-activity-featured" : "home-activity-supporting"}`}>
                 {article.featuredImage ? (
+                  <Link href={`/news/${article.slug}`} className="activity-image-link" aria-label={article.title}>
                   <Image
                     {...article.featuredImage}
                     alt={article.featuredImage.alt}
-                    sizes="(min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw"
+                    sizes={index === 0 ? "(min-width: 1024px) 52vw, 100vw" : "(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 100vw"}
                     className="h-auto w-full"
                   />
+                  </Link>
                 ) : null}
-                <h3 className="mt-5 text-2xl lg:text-3xl">
+                <div className="activity-copy">
+                <h3>
                   <Link
                     className="hover:text-accent"
                     href={`/news/${article.slug}`}
@@ -119,6 +131,7 @@ export default function HomePage() {
                   </Link>
                 </h3>
                 <p className="mt-3 leading-7 text-muted">{article.summary}</p>
+                </div>
               </article>
             ))}
           </div>

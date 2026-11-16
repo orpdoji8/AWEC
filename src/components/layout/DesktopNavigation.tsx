@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { primaryNavigation } from "@/content/site";
 
 export function DesktopNavigation() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/+$/, "") || "/";
 
   return (
     <nav className="hidden lg:block" aria-label="Primary navigation">
-      <ul className="flex items-center gap-1">
+      <ul className="desktop-nav-list">
         {primaryNavigation.map((item) => {
           const isContact = item.href === "/contact";
 
@@ -20,8 +20,8 @@ export function DesktopNavigation() {
                 aria-current={pathname === item.href ? "page" : undefined}
                 className={
                   isContact
-                    ? "ml-2 inline-flex min-h-11 items-center rounded-sm bg-chrome-action px-4 py-2 text-sm font-semibold text-chrome-action-text transition-colors hover:bg-chrome-action-hover"
-                    : "inline-flex min-h-11 items-center rounded-sm px-3 py-2 text-sm font-medium text-chrome-text transition-colors hover:bg-chrome-background-hover"
+                    ? "desktop-nav-link desktop-nav-contact"
+                    : "desktop-nav-link"
                 }
               >
                 {item.label}

@@ -7,7 +7,7 @@ import { MobileNavigation } from "./MobileNavigation";
 
 export function SiteHeader() {
   return (
-    <header className="site-chrome relative z-50 border-b border-chrome-border bg-chrome-background text-chrome-text">
+    <header className="site-header site-chrome relative z-50 border-b border-chrome-border bg-chrome-background text-chrome-text">
       <PageContainer className="site-header-inner">
         <Link
           href="/"

@@ -6,21 +6,21 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-chrome border-t border-chrome-border bg-chrome-background text-chrome-text">
-      <PageContainer className="py-10 sm:py-12">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
-          <div className="max-w-xl">
+    <footer className="site-footer site-chrome border-t border-chrome-border bg-chrome-background text-chrome-text">
+      <PageContainer className="footer-inner">
+        <div className="footer-composition">
+          <div>
             <p className="footer-name">
               {siteConfig.name}
             </p>
           </div>
           <nav aria-label="Footer navigation">
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 sm:flex sm:flex-wrap sm:justify-end">
+            <ul className="footer-navigation">
               {footerNavigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="rounded-sm text-sm font-medium text-chrome-text-muted transition-colors hover:text-chrome-text"
+                    className="footer-navigation-link"
                   >
                     {item.label}
                   </Link>
@@ -29,7 +29,7 @@ export function SiteFooter() {
             </ul>
           </nav>
         </div>
-        <p className="mt-8 border-t border-chrome-border pt-6 text-sm text-chrome-text-muted">
+        <p className="footer-copyright">
           &copy; {currentYear} {siteConfig.name}. All rights reserved.
         </p>
       </PageContainer>

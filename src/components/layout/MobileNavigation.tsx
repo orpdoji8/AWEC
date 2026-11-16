@@ -11,7 +11,7 @@ export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/+$/, "") || "/";
 
   useEffect(() => {
     if (!isOpen) return;
