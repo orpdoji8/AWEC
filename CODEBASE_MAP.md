@@ -313,3 +313,8 @@ Application commit a53d63c was pushed to origin/main before Firebase Hosting suc
 ## Approved Contact card release (2026-11-16)
 
 Promoted src/app/contact/page.tsx and new route-scoped ContactCards.module.css from approved visualtest. Contact now has a 100px desktop / 56px narrow title and four warm-paper cards with 3px black borders, black editorial values, visible channel labels and existing links. Card edges inset 8-12px from the title. Unchanged FeatureLight provides green pointer lighting; a radial-masked diagonal CSS texture is revealed under the light and hidden at rest. Existing touch/reduced-motion/Save-Data fallbacks apply, without WebGPU or dependencies. Form component/column, data, public assets and all other pages remain unchanged. Main source/public exactly match approved draft. Build/lint passed; publication follows GitHub push.
+
+
+## Contact release publication confirmed (2026-11-16)
+
+Application commit 48076de was pushed to origin/main, then Firebase Hosting successfully published 461 export files. All 32 live Firebase HTML index pages byte-match the main export. Live meixiedu.org Contact checks at 1440px and 390px confirmed approved title sizes, card insets, paper/black styling, pointer texture reveal, keyboard outline, original links and loaded unchanged Google Form with no page overflow or browser errors. Main src/public exactly match approved visualtest; this supersedes pending publication above.
