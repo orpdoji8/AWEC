@@ -8,13 +8,14 @@ import { MobileNavigation } from "./MobileNavigation";
 export function SiteHeader() {
   return (
     <header className="site-chrome relative z-50 border-b border-chrome-border bg-chrome-background text-chrome-text">
-      <PageContainer className="flex min-h-18 items-center justify-between gap-4 py-3 sm:gap-6">
+      <PageContainer className="site-header-inner">
         <Link
           href="/"
-          className="shrink-0 overflow-hidden rounded-md bg-white"
+          className="site-brand"
           aria-label={`${siteConfig.name} home`}
         >
-          <Image src="/images/brand/awec-logo-white.png" width={1254} height={1254} alt={siteConfig.name} priority className="h-auto w-16 sm:w-20" />
+          <Image src="/images/brand/awec-logo-white.png" width={1254} height={1254} alt="" priority className="site-brand-logo" />
+          <span className="site-brand-name" aria-hidden="true"><span>American West</span><span>Educational Center</span></span>
         </Link>
         <DesktopNavigation />
         <MobileNavigation />

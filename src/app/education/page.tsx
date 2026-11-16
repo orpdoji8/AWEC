@@ -5,7 +5,7 @@ import { educationDirections, focusAreas } from "@/content/areas";
 
 export const metadata: Metadata = {
   title: "Education",
-  description: focusAreas[1].description,
+  description: focusAreas[0].description,
 };
 
 export default function EducationPage() {
@@ -15,7 +15,7 @@ export default function EducationPage() {
         <div>
           <h1 className="page-title">Education</h1>
         </div>
-        <p className="text-lg leading-8 text-muted lg:pt-8">{focusAreas[1].description}</p>
+        <p className="text-lg leading-8 text-muted lg:pt-8">{focusAreas[0].description}</p>
       </header>
       <section className="mt-12" aria-label="Education directions">
         <ul className="grid gap-10 md:grid-cols-2 md:gap-16">

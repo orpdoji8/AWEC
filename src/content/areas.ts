@@ -1,11 +1,5 @@
 export const focusAreas = [
   {
-    title: "Business",
-    href: "/business",
-    description:
-      "Connecting China and the United States through business visits, international trade cooperation, overseas business development, and international conferences and exhibitions.",
-  },
-  {
     title: "Education",
     href: "/education",
     description:

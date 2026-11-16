@@ -14,37 +14,27 @@ const selected = newsArticles.filter((article) =>
 export default function HomePage() {
   return (
     <>
-      <PageContainer className="grid gap-10 py-12 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
-        <div>
-          <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" priority className="mb-6 h-auto w-36 sm:w-44" />
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-            Learning and Connecting across borders.
+      <PageContainer className="home-hero">
+        <header className="home-masthead">
+          <h1 className="home-title">
+            <span>American West</span>
+            <span>Educational Center</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-            {homeContent.hero.description}
+          <p className="home-motto">
+            Learning and Connecting<br className="hidden lg:block" /> across borders.
           </p>
-          <Link
-            className="mt-8 inline-flex min-h-12 items-center rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground hover:bg-accent-hover"
-            href="/news/historical-activities"
-          >
-            Explore historical activities{" "}
-            <span className="ml-4" aria-hidden="true">
-              →
-            </span>
-          </Link>
-        </div>
-
-          <figure className="min-w-0">
+        </header>
+          <figure className="home-photograph">
             <Image
               src="/images/yes-2026-june/homepage.jpg"
               width={2275}
               height={1280}
               alt="YES June group holding a banner beside an exhibition display"
               priority
-              sizes="(min-width: 1024px) 600px, 100vw"
-              className="h-auto w-full"
+              sizes="(min-width: 1344px) 1280px, 100vw"
+              className="home-hero-image"
             />
-            <figcaption className="mt-4 flex flex-wrap items-start justify-between gap-3 border-b border-border pb-4 text-sm leading-6 text-muted">
+            <figcaption className="home-photo-caption">
               <span className="max-w-sm">
                 YES PROGRAM-JUNE, 2026
               </span>
@@ -53,12 +43,18 @@ export default function HomePage() {
               </Link>
             </figcaption>
           </figure>
+        <div className="home-hero-summary">
+          <p>{homeContent.hero.description}</p>
+          <Link className="editorial-button" href="/news/historical-activities">
+            Explore historical activities <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </PageContainer>
-      <PageContainer className="pb-12">
-        <Link href="/education/us-china/yes-2026-december" className="group flex flex-wrap items-center justify-between gap-8 border-y border-border py-10 sm:py-12">
+      <PageContainer className="home-invitation">
+        <Link href="/education/us-china/yes-2026-december" className="home-invitation-link group">
           <div>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">YES December 2026</h2>
-            <div className="mt-6 space-y-3 text-lg leading-8 sm:text-xl">
+            <h2 className="home-section-title">YES December 2026</h2>
+            <div className="mt-5 space-y-2 leading-8">
               <p className="font-semibold text-accent">Applications Now Open! <span aria-hidden="true">⭐</span> <span lang="zh-Hans">现已开放申请!</span></p>
               <p>Join Us! Limited Spots Available! <span lang="zh-Hans">欢迎加入！名额有限!</span></p>
             </div>
@@ -66,9 +62,10 @@ export default function HomePage() {
           <span className="text-link text-lg font-bold">Explore &amp; register <span aria-hidden="true">&rarr;</span></span>
         </Link>
       </PageContainer>
-      <section className="border-y border-border bg-surface">
-        <PageContainer className="grid gap-8 py-12 lg:grid-cols-[1fr_2fr] lg:gap-20">
-          <div>
+      <section className="home-introduction border-y border-border bg-surface">
+        <PageContainer className="home-section grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-20">
+          <div className="home-introduction-mark">
+            <Image src="/images/brand/awec-logo-transparent.png" width={1254} height={1254} alt="American West Educational Center logo" className="h-auto w-24 sm:w-28" />
             <Link
               href="/about"
               className="text-link inline-flex min-h-11 items-center"
@@ -77,7 +74,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
+            <h2 className="home-section-title">
               American West Educational Center
             </h2>
             <p className="mt-4 max-w-3xl leading-8 text-muted">
@@ -88,10 +85,10 @@ export default function HomePage() {
         </PageContainer>
       </section>
       <section>
-        <PageContainer className="py-14 sm:py-20">
+        <PageContainer className="home-section">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+              <h2 className="home-section-title">
                 Visits, learning & exchange
               </h2>
             </div>
@@ -102,18 +99,18 @@ export default function HomePage() {
               All activities →
             </Link>
           </div>
-          <div className="mt-9 grid gap-9 md:grid-cols-3">
+          <div className="home-activity-grid">
             {selected.map((article) => (
-              <article key={article.id}>
+              <article key={article.id} className="home-activity">
                 {article.featuredImage ? (
                   <Image
                     {...article.featuredImage}
                     alt={article.featuredImage.alt}
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="aspect-[16/9] w-full bg-surface-subtle object-contain"
+                    sizes="(min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw"
+                    className="h-auto w-full"
                   />
                 ) : null}
-                <h3 className="mt-5 text-xl lg:text-2xl font-semibold leading-snug">
+                <h3 className="mt-5 text-2xl lg:text-3xl">
                   <Link
                     className="hover:text-accent"
                     href={`/news/${article.slug}`}
@@ -128,14 +125,14 @@ export default function HomePage() {
         </PageContainer>
       </section>
       <section className="border-t border-border bg-surface-subtle" aria-labelledby="focus-areas">
-        <PageContainer className="py-14 sm:py-20">
-          <h2 id="focus-areas" className="sr-only">Business and Education</h2>
-          <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-16">
+        <PageContainer className="home-section">
+          <h2 id="focus-areas" className="sr-only">Education</h2>
+          <div>
             {focusAreas.map((area) => (
-              <article key={area.href} className="border-t border-border pt-6">
+              <article key={area.href} className="grid gap-x-16 border-t border-border pt-6 md:grid-cols-[1fr_2fr]">
                 <h3 className="text-3xl lg:text-4xl font-semibold">{area.title}</h3>
-                <p className="mt-4 max-w-lg leading-8 text-muted">{area.description}</p>
-                <Link href={area.href} className="text-link mt-6 inline-flex min-h-11 items-center">
+                <p className="mt-4 max-w-2xl leading-8 text-muted md:mt-0">{area.description}</p>
+                <Link href={area.href} className="text-link mt-6 inline-flex min-h-11 items-center justify-self-start md:col-start-2">
                   Explore {area.title} <span className="ml-3" aria-hidden="true">&rarr;</span>
                 </Link>
               </article>
